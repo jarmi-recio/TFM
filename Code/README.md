@@ -1,1 +1,1 @@
-Este directorio contiene archivos de código.
+Directorio contenedor de código.
