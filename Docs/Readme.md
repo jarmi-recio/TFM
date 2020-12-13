@@ -1,0 +1,1 @@
+Directorio contenedor de documentos.
