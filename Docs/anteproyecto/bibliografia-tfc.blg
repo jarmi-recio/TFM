@@ -1,0 +1,5 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is 'bibliografia-tfc.blg'
+[124] biber-darwin:322> INFO - === Sun Dec 13, 2020, 16:56:31
+[318] Utils.pm:320> ERROR - Cannot find 'bibliografia-tfc.bcf'!
+[318] Biber.pm:132> INFO - ERRORS: 1
