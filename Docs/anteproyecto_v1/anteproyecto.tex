@@ -61,39 +61,33 @@ Diciembre - 2020
 \newpage
 
 \section{Introducción}
-Este proyecto se titula \textit{Desarrollo de soluciones de inteligencia artificial para datación de estrellas} y tiene por objetivo la estimación de la edad de estrellas mediante técnicas de inteligencia artificial.
+Este proyecto se titula, \textit{Desarrollo de soluciones de inteligencia artificial para datación de estrellas}, y tiene por objetivo la estimación de la edad de estrellas mediante técnicas de inteligencia artificial.
 
 Masa, composición y edad son los tres determinantes clave del estado físico de una estrella.
-La masa de las estrellas se puede determinar a partir de la física básica, mientras que, la obtención de la composición de las estrellas no es sencilla, aunque, el proceso es inequívoco y permite comprender sus limitaciones.
-Por otro lado, la edad de las estrellas no puede medirse de forma concreta, solo puede realizarse una estimación para obtener una aproximación de esta.
+La masa de las estrellas se puede determinar a partir de modelos físicos, mientras que la obtención de la composición de las estrellas no es sencilla, aunque, el proceso es inequívoco.
+Con respecto a la edad, ésta no puede medirse de forma concreta, solo puede realizarse una estimación para obtener una aproximación de la misma.
 
-En ocasiones, es posible determinar la edad de las estrellas, si se logra colocar los eventos en la secuencia correcta y comprender la duración relativa de las fases. Pero, a menudo se necesita unir observaciones de objetos independientes para llegar a la comprensión de un proceso.
+El objetivo principal de este trabajo fin de máster es investigar los beneficios que las últimas técnicas de inteligencia artificial pueden ofrecer al problema de la datación estelar.
 
-Por lo tanto, la comprensión completa de los fenómenos astrofísicos, se traduce en una secuencia correcta de eventos, conociendo su escala de tiempos. Gran parte de estos fenómenos están relacionados con estrellas individuales o con las estrellas más cercanas, por lo que se necesitan métodos confiables para obtener la edad de estas.
-
+A continuación incluimos una breve revisión del estado del arte en cuanto a técnicas de estimación de edad de estrellas se refiere.
 
 \subsection{Estado del arte}
-Para conocer los métodos de estimación de edad y la calidad de estos, se hace referencia al estudio \textit{The Age of Stars}, realizado por \textit{David R. Soderblom}, Doctor en Astronomía en el \textit{Space Telescope Science Institute}. \cite{Soderblom2010}
 
-En este documento, se muestra una clasificación de los principales métodos de estimación empleados en la actualidad. Entre los que se encuentran:
+Para conocer los métodos de estimación de edad y la calidad de estos, se hace referencia al estudio  \cite{Soderblom2010}, realizado por \textit{David R. Soderblom}, Doctor en Astronomía en el \textit{Space Telescope Science Institute}.
+
+En este documento, se muestra la siguiente clasificación de los principales métodos de estimación de edad empleados en la actualidad:
 \begin{itemize}
-\item Edades fundamentales y semifundamentales: nucleocosmocronometría, edades cinemáticas o de expansión y límite de agotamiento de litio.
-\item Edades dependientes del modelo: ajuste de isocronas y astrosismología.
+\item Edades fundamentales y semi-fundamentales: nucleocosmocronometría, edades cinemáticas o de expansión y límite de agotamiento de litio.
+\item Edades dependientes de modelos: ajuste de isocronas y astrosismología.
 \item Edades empíricas: \textit{spin down} rotacional y girocronología, actividad y edad, agotamiento de litio y variabilidad fotométrica.
-\item Edades estadísticas: relación edad-metalicidad y \textit{disk heating}
+\item Edades estadísticas: relación edad-metalicidad y \textit{disk heating}.
 \end{itemize}
 
-Otro de los métodos empleados para la estimación de estrellas involucra al ajuste de isocronas con la girocronología empírica, detallado en el estudio \textit{Toward Precise Stellar Ages: Combining Isochrone Fitting with Empirical
-Gyrochronology}, publicado en \textit{The Astronomical Journal} en noviembre del 2019. En esta publicación, se describe el modelo empleado para la media y la varianza de los periodos de rotación en función de la edad estelar, además de la combinación de este modelo con otro modelo de estimación de edades estelares mediante girocronología y ajuste de isocronas simultáneamente. \cite{Angus2019}
+A continuación, vamos a destacar algunos de los trabajos más recientes para la datación estelar, que utilizan técnicas de inteligencia artificial y reconocimiento de patrones.
 
-También es oportuno añadir el estudio realizado por \textit{Payel Das} y \textit{Jason L. Sanders}, titulado \textit{A spectroscopic Mass, Age, and Distance Estimator for red
-giant stars with Bayesian machine learning}. En este se presenta una serie de estimaciones de masa, edad y distancia entre estrellas mediante redes neuronales bayesianas a partir de una combinación de datos astrométricos, fotométricos y espectroscópicos. \cite{Das2018}
+Recientemente, Angus et al. \cite{Angus2019} proponen un sistema para la estimación de la edad de las estrellas que combina el ajuste de isocronas con la girocronología empírica, empleando modelos bayesianos clásicos para resolver la regresión de la edad. El código para reproducir los resultados ha sido liberado \footnote{Puede accederse a la documentación del proyecto en el siguiente enlace: \url{https://stardate.readthedocs.io/en/latest/}}, por lo que pueden reproducirse todos los experimentos.
 
-Dentro de las soluciones de inteligencia artificial que se van a desarrollar, concretamente, dentro de las redes neuronales bayesianas, se abordará el estudio y desarrollo de las técnicas \textit{Few-Shot Learning} y \textit{One-Shot Learning}, seguido de otras técnicas que puedan ser relevantes para la solución del problema de estimación de edades estelares.
-
-Para realizar una primera aproximación sobre la técnica de \textit{Few-Shot Learning}, se puede consultar la pulicación \textit{Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks} donde se muestran resultados de esta técnica de metaaprendidaje (aprender a aprender) en regresión para un conjunto reducido de muestras. \cite{Chelsea2017}
-
-Por otro lado, como introducción a la técnica de \textit{One-Shot Learning} se revisa la publicación \text{Learning to Remember Rare Events}, donde se establece el estado del arte de dicha técnica empleándola sobre el conjunto de datos \textit{Omniglot} para la traducción automática mediante redes neuronales recurrentes. \cite{Kaiser2017}
+También es oportuno añadir el estudio realizado por Payel Das et al. \cite{Das2018} donde se presenta un modelo basado en redes neuronales bayesianas capaz de realizar estimaciones de masa, edad y distancia entre estrellas a partir de una combinación de datos astrométricos, fotométricos y espectroscópicos.
 
 
 \section{Objetivos y campos de aplicación}
@@ -101,19 +95,29 @@ Este proyecto tiene por objetivo principal la estimación de edad de las estrell
 
 Los siguientes ejemplos ayudan a comprender el interés y la necesidad por conocer la edad de las estrellas:
 \begin{itemize}
-\item La formación y evolución de los discos protoplanetarios parece ocurrir en los primeros 100 Myr de la vida de una estrella, y los discos de escombros se forman más tarde. En la actualidad, apenas se puede limitar esta escala temporal con los métodos disponibles y para comprender la física de los procesos implicados, es necesario observar las diferencias en los procesos de formación y conocer la escala temporal entre ellos, además del de las estrellas implicadas.
+\item La formación y evolución de los discos protoplanetarios parece ocurrir en los primeros 100 Myr de la vida de una estrella, y los discos de escombros se forman más tarde. En la actualidad, apenas se puede limitar esta escala temporal con los métodos disponibles, y para comprender la física de los procesos implicados, es necesario observar las diferencias en los procesos de formación y conocer la escala temporal entre ellos, además del de las estrellas implicadas.
 \item Se han descubierto muchos planetas gigantes gaseosos alrededor de estrellas de tipo solar cercanas. Para obtener una mejor comprensión de, por ejemplo, la dinámica de tales sistemas y la migración hacia el interior de los planetas, se requieren edades precisas.
 \item Se podría comprender mejor el comportamiento y el futuro de nuestro Sol si pudiéramos crear una verdadera cohorte basada en la masa, la composición y la edad. En la actualidad, las comparaciones del Sol con otras estrellas a menudo se basan en las propiedades estelares, el proceso es autorreferencial.
-\item Para comprender completamente la historia de formación, enriquecimiento y dinámica de la Galaxia, se necesita poder asignar edades a las estrellas individuales. Las estrellas de baja masa viven lo suficiente para estar presentes en todas las épocas de formación estelar, lo que las hace atractivas para estos fines. Estudios recientes han aplicado algunas de las técnicas descritas en la publicación de \textit{David R. Soderblom} a los problemas galácticos, con resultados diferentes y a veces contradictorios.
+\item Para comprender completamente la historia de formación, enriquecimiento y dinámica de la Galaxia, se necesita poder asignar edades a las estrellas individuales. Las estrellas de baja masa viven lo suficiente para estar presentes en todas las épocas de formación estelar, lo que las hace atractivas para estos fines.
 \item La búsqueda de vida y cualquier comprensión obtenida al observar signos de vida más allá de nuestro sistema solar tiene una profunda necesidad de medir las edades estelares si se espera obtener información sobre la evolución biológica.
 \end{itemize}
 
 \section{Descripción del trabajo}
-Para llegar al objetivo principal del proyecto, la datación de estrellas, se van a realizar tareas de limpieza sobre la base de datos y posteriormente, estimaciones mediante diversas técnicas de inteligencia artificial.
 
-En primer lugar, y de forma introductoria a las técnicas de estimación, se van a realizar estimaciones empleando algoritmos clásicos de inteligencia artificial. Estos algoritmos son \textit{Random Forest}, \textit{Gaussian Process} y \textit{Support Vector Machine}, con los que se pretende conseguir una primera aproximación que permita valorar la precisión de las estimaciones. A continuación, se van a realizar técnicas de \textit{stacking}, combinando los diferentes algoritmos clásicos mencionados.
+Para llegar al objetivo principal del proyecto, la datación de estrellas, se van a comenzar realizando tareas de limpieza sobre las bases de datos disponibles para tal fin. Es muy común, que dichas bases datos proporcionen información incompleta para algunas estrellas.
 
-En segundo lugar, y como desarrollo principal de este proyecto, se van a aplicar técnicas avanzadas de inteligencia artificial. Por un lado, se emplearán técnicas de \textit{Deep Learning} de caracter bayesiano, usando a la herramienta \textit{Stardate} \cite{Angus2019} que combina el ajuste de isocronas con la girocronología para aumentar la precisión en la estimación de las edades estelares. Por otro lado, se aplicarán redes neuronales de carácter bayesiano, profundizando en algoritmos específicos para problemas con pocos datos (\textit{Few-Shot Learning} y \textit{One-Shot Learning}).
+Una vez implementada una técnica eficiente de lectura de las bases de datos, comenzaremos con las estimaciones mediante diversas técnicas de inteligencia artificial.
+
+En primer lugar, y de forma introductoria a las técnicas de estimación, se van a realizar estimaciones empleando algoritmos clásicos de inteligencia artificial para regresión. Estos algoritmos son \textit{Random Forest}, \textit{Gaussian Process} y \textit{Support Vector Machines}, con los que se pretende conseguir una primera aproximación que permita valorar la precisión de las estimaciones. También se van a realizar técnicas de \textit{stacking}, combinando los diferentes algoritmos clásicos mencionados.
+
+En segundo lugar, y como desarrollo principal de este proyecto, se van a aplicar técnicas avanzadas de inteligencia artificial para la estimación de la edad. Por un lado, se emplearán modelos bayesianos, usando la herramienta \textit{Stardate} \cite{Angus2019} que combina el ajuste de isocronas con la girocronología para aumentar la precisión en la estimación de las edades estelares. 
+
+Por otro lado, se aplicarán redes neuronales de carácter bayesiano, profundizando en el estudio de algoritmos específicos para problemas con pocos datos. Concretamente, se abordará el estudio y desarrollo de las técnicas \textit{Few-Shot Learning} y \textit{One-Shot Learning}, seguido de otras técnicas que puedan ser relevantes para la solución del problema de estimación de edades estelares.
+
+Para realizar una primera aproximación sobre la técnica de \textit{Few-Shot Learning}, pretendemos comenzar estudiando el modelo propuesto en \cite{Chelsea2017}, donde se muestran resultados de esta técnica de meta-aprendizaje (aprender a aprender) en regresión para un conjunto reducido de muestras.
+
+Por otro lado, como introducción a la técnica de \textit{One-Shot Learning}, se revisará el trabajo propuesto en \cite{Kaiser2017}, donde se establece el estado del arte de dicha técnica empleándola sobre el conjunto de datos \textit{Omniglot}, valorando su posible aplicación a nuestro problema.
+
 
 \section{Fases de desarrollo}
 A continuación, se enumeran las principales fases del proyecto:
@@ -123,9 +127,9 @@ A continuación, se enumeran las principales fases del proyecto:
 \item Estudio de bibliografía y documentación sobre las soluciones de inteligencia artificial a emplear.
 \item Estudio y depuración del conjunto de datos.
 \item Aplicación de algoritmos clásicos de inteligencia artificial (\textit{Random Forest}, \textit{Gaussian Process} y \textit{Support Vector Machine}) y técnicas de \textit{stacking}, combinando los diferentes métodos clásicos de regresión.
-\item Aplicación de técnicas de \textit{Deep Learning} de caracter bayesiano (herramienta \textit{Stardate}).
-\item Estudio y desarrollo de redes neuronales bayesianas, \textit{Few-Shot Learning} y \textit{One-Shot Learning} entre otras.
-\item Extracción de resultados y elaboración de conclusiones.
+\item Aplicación de técnicas de caracter bayesiano (herramienta \textit{Stardate}).
+\item Estudio y desarrollo de redes neuronales bayesianas, así como aplicación de técnicas \textit{Few-Shot Learning} y \textit{One-Shot Learning} entre otras.
+\item Implementación de la evaluación experiemntal. Extracción de resultados y elaboración de conclusiones.
 \item Realización de la memoria.
 \end{enumerate}
 

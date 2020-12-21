@@ -1,0 +1,10 @@
+*.pdf
+*.dvi
+*.log
+*.out
+*.ps
+*.bbl
+*.blg
+*.brf
+*.aux
+
