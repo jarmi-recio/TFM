@@ -1,7 +1,12 @@
-# AI for dating stars: scripts
+## AI for dating stars: scripts
 This folder contains the scripts developed for each Benchmark:
 
+### Benchmark A
 * ai4stellarage_Benchmark_A.py: script to evaluate the different regression models following a classical training/test data splitting scheme. From the data sample distribution (gyro_tot_v20180801.txt), we release a training set and a testing set, where 80 % and 20 % of the stars have been randomly included, respectively.
+
+### Benchmark B
 * ai4stellarage_Benchmark_B1.py: script to evaluate the generalization capability of models, where we train the approaches on young stars, and evaluate their performance on old stars.
 * ai4stellarage_Benchmark_B2.py: script of a second scenario to evaluate the generalization capability of the models when they are trained only with stars belonging to clusters or only with field stars.
+
+### Benchmark C
 * ai4stellarage_Benchmark_C.py: script to examine the age estimation performance of all the models on a control data sample (test_gyro.txt), composed only of stars not belonging to any cluster, and with a more realistic age distribution.
