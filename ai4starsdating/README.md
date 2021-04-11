@@ -10,14 +10,14 @@ This code requires the following:
 * python 3.*
 
 ## Usage instructions
-Benchmark A:  
+* Benchmark A:  
 python ai4stellarage_Benchmark_A.py
 
-Benchmark B:  
+* Benchmark B:  
 python ai4stellarage_Benchmark_B1.py  
 python ai4stellarage_Benchmark_B2.py
 
-Benchmark C:  
+* Benchmark C:  
 python ai4stellarage_Benchmark_C.py
 
 
