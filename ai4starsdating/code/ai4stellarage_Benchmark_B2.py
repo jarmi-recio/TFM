@@ -21,7 +21,7 @@ plt.rcParams.update({'font.size': 16})
 
 # the script imports the data from a data file with the information of the stars
 def get_dataset():
-	data = pd.read_csv('data/gyro_tot_v20180801.txt', sep="\t", header=0)
+	data = pd.read_csv('../datasets/gyro_tot_v20180801.txt', sep="\t", header=0)
 	df = data[['M', 'R', 'Teff','L','Meta','logg','Prot','Age','eAge1','eAge2','class','mode']]
 	# age limits, only for graphics
 	df['low_age'] = df.Age - df.eAge1
