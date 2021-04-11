@@ -11,13 +11,13 @@ This code requires the following:
 
 ## Usage instructions
 Benchmark A:
-python ai4stellarage_Benchmark_A.py
+  python ai4stellarage_Benchmark_A.py
 
 Benchmark B:
-python ai4stellarage_Benchmark_B1.py
-python ai4stellarage_Benchmark_B2.py
+  python ai4stellarage_Benchmark_B1.py
+  python ai4stellarage_Benchmark_B2.py
 
 Benchmark C:
-python ai4stellarage_Benchmark_C.py
+  python ai4stellarage_Benchmark_C.py
 
 
