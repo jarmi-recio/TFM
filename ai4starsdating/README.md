@@ -69,6 +69,8 @@ The folder `code` contains the following scripts:
 
 ### Usage  
 
+After cloning or downloading the repo, you can choose between training and testing our models to reproduce our results or testing with some pretrained models, using our models or your own pretrained models.
+
 #### Training and testing  
   
 To reproduce our results, training and testing our models, you just have to run the following command, taking into account the desire Benchmark:
