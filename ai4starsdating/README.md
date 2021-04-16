@@ -17,7 +17,8 @@ The folder `datasets` contains the two main datasets of the project:
 
 ## Dependencies
 This code requires the following: 
-* python 3.*
+- python 3.*
+- scikit-learn 0.24.*
 
 ## Usage instructions
 * Benchmark A:  
