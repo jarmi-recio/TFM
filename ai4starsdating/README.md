@@ -8,9 +8,8 @@ This repo contains data and code accompaning the paper, INCLUIR PAPER. It includ
   * [Dependencies](#dependencies)
   * [Data](#data)
   * [Usage](#usage)
-    * [*Recommended: Prepare your Python environment*](#recommended-prepare-your-python-environment)
-    * [Exeution options](#execution-options)
-    * [Reproducing our results](#reproducing-our-results)
+    * [*Training & testing*](#training-&-testing)
+    * [Testing with pretrained models](#testing-with-pretrained-models)
   * [Results](#results)
   * [Contact](#contact)
 
@@ -47,7 +46,7 @@ The folder `datasets` contains the two main datasets of the project:
 
 ### Usage  
 
-* Training & testing:  
+###Training & testing:  
   
 To reproduce our results, you just have to run the following command, taking into account the desire Benchmark:
 
@@ -58,7 +57,7 @@ python ai4stellarage_Benchmark_B2.py
 python ai4stellarage_Benchmark_C.py
 ```
 
-* Testing with pretrained models:
+###Testing with pretrained models:
 
 
 
