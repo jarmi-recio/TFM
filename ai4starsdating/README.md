@@ -40,21 +40,25 @@ The folder `datasets` contains the two main datasets of the project:
   
   Data sample of 1464 stars with accurate ages coming from asteroseismology or cluster belonging. Used to perform the training of the models of all Benchmarks and testing these  models in Benchmarks A and B.  
 
-- est_gyro.txt:  
+- test_gyro.txt:  
   
   Control data sample of novel non-clustered 32 stars, including the Sun, to examine the age estimation performance of all the models in the Benchmark C.
 
 
-### Usage
-* Benchmark A:  
-python ai4stellarage_Benchmark_A.py
+### Usage  
 
-* Benchmark B:  
+* Training & testing:
+
+```bash
+python ai4stellarage_Benchmark_A.py
 python ai4stellarage_Benchmark_B1.py  
 python ai4stellarage_Benchmark_B2.py
-
-* Benchmark C:  
 python ai4stellarage_Benchmark_C.py
+```
+
+* Testing with pretrained models:
+
+
 
 ### Results
 
