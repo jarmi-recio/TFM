@@ -29,9 +29,12 @@ If you find anything of this repository useful for your projects, please conside
 ```
 
 ### Dependencies
-This code requires the following: 
-- python 3.*
-- scikit-learn 0.24.*
+The project has been developed with the following packages: 
+- python 3.8
+- numpy 1.19.5
+- pandas 1.2.1
+- matplotlib 3.3.3
+- scikit-learn 0.24.1
 
 
 ### Data
