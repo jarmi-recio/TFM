@@ -7,7 +7,7 @@ This repo contains data and code accompaning the paper, INCLUIR PAPER. It includ
   * [Citation](#citation)  
   * [Dependencies](#dependencies)
   * [Data](#data)
-  * [Scripts](#scripts)
+  * [Code](#code)
     * [Bemchmark A](#benchmark-a)
     * [Bemchmark B](#benchmark-b)
     * [Bemchmark C](#benchmark-c)
@@ -50,9 +50,9 @@ The folder `datasets` contains the two main datasets of the project:
   Control data sample of novel non-clustered 32 stars, including the Sun, to examine the age estimation performance of all the models in the Benchmark C.
 
 
-### Scripts
+### Code
 
-The folder `scripts` contains the following scripts:
+The folder `code` contains the following scripts:
 
 #### Benchmark A  
 
