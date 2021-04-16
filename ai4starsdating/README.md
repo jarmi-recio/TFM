@@ -45,7 +45,7 @@ The folder `datasets` contains the two main datasets of the project:
   Control data sample of novel non-clustered 32 stars, including the Sun, to examine the age estimation performance of all the models in the Benchmark C.
 
 
-### Usage instructions
+### Usage
 * Benchmark A:  
 python ai4stellarage_Benchmark_A.py
 
@@ -56,4 +56,11 @@ python ai4stellarage_Benchmark_B2.py
 * Benchmark C:  
 python ai4stellarage_Benchmark_C.py
 
+### Results
+
+### Contact
+
+For any question, you can open an issue or contact:
+
+- Jarmi Recio Martínez: jarmi.recio@edu.uah.es
 
