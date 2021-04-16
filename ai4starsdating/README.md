@@ -47,7 +47,9 @@ The folder `datasets` contains the two main datasets of the project:
 
 ### Usage  
 
-* Training & testing:
+* Training & testing:  
+  
+To reproduce our results, you just have to run the following command, taking into account the desire Benchmark:
 
 ```bash
 python ai4stellarage_Benchmark_A.py
