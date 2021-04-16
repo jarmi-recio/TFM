@@ -46,7 +46,7 @@ The folder `datasets` contains the two main datasets of the project:
 
 ### Usage  
 
-#### Training & testing  
+#### Training and testing  
   
 To reproduce our results, you just have to run the following command, taking into account the desire Benchmark:
 
