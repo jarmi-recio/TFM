@@ -8,9 +8,6 @@ This repo contains data and code accompaning the paper, INCLUIR PAPER. It includ
   * [Dependencies](#dependencies)
   * [Data](#data)
   * [Code](#code)
-    * [Bemchmark A](#benchmark-a)
-    * [Bemchmark B](#benchmark-b)
-    * [Bemchmark C](#benchmark-c)
   * [Usage](#usage)
     * [Training and testing](#training-and-testing)
     * [Testing with pretrained models](#testing-with-pretrained-models)
@@ -54,20 +51,14 @@ The folder `datasets` contains the two main datasets of the project:
 
 The folder `code` contains the following scripts:
 
-#### Benchmark A  
-
 - `ai4stellarage_Benchmark_A.py`:  
   Script to evaluate the different regression models following a classical training/test data splitting scheme. From the data sample distribution `datasets/gyro_tot_v20180801.txt`, we release a training set and a testing set, where 80 % and 20 % of the stars have been randomly included, respectively.
-
-#### Benchmark B  
 
 - `ai4stellarage_Benchmark_B1.py`:  
   Script to evaluate the generalization capability of models, where we train the approaches on young stars, and evaluate their performance on old stars.  
   
 - `ai4stellarage_Benchmark_B2.py`:  
   Script of a second scenario to evaluate the generalization capability of the models when they are trained only with stars belonging to clusters or only with field stars.
-
-#### Benchmark C  
 
 - `ai4stellarage_Benchmark_C.py`:  
   Script to examine the age estimation performance of all the models on a control data sample `datasets/test_gyro.txt`, composed only of stars not belonging to any cluster, and with a more realistic age distribution.
