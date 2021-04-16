@@ -2,7 +2,37 @@
 
 This repo contains data and code accompaning the paper, INCLUIR PAPER. It includes code for running all regression models developed for each Benchmark.
 
-## Data
+### Content
+
+  * [Citation](#citation)  
+  * [Dependencies](#dependencies)
+  * [Data](#data)
+  * [Usage](#usage)
+    * [*Recommended: Prepare your Python environment*](#recommended-prepare-your-python-environment)
+    * [Exeution options](#execution-options)
+    * [Reproducing our results](#reproducing-our-results)
+  * [Results](#results)
+  * [Contact](#contact)
+
+### Citation
+
+If you find anything of this repository useful for your projects, please consider citing our work:
+
+```bibtex
+@inprocceedings{ai4dscvpr2021w,
+	author  = {A. Moya and J. {Recio-Marti\'inez} and R.~J. {L\'opez-Sastre}},
+	title   = {AI for dating stars: a benchmarking study for gyrochronology},
+  	booktitle = {1st Workshop on AI for Space, CVPR},
+	year	= {2021},	
+}
+```
+
+### Dependencies
+This code requires the following: 
+- python 3.*
+- scikit-learn 0.24.*
+
+### Data
 
 The folder `datasets` contains the two main datasets of the project:
 
@@ -15,12 +45,7 @@ The folder `datasets` contains the two main datasets of the project:
   Control data sample of novel non-clustered 32 stars, including the Sun, to examine the age estimation performance of all the models in the Benchmark C.
 
 
-## Dependencies
-This code requires the following: 
-- python 3.*
-- scikit-learn 0.24.*
-
-## Usage instructions
+### Usage instructions
 * Benchmark A:  
 python ai4stellarage_Benchmark_A.py
 
