@@ -8,7 +8,7 @@ This repo contains data and code accompaning the paper, INCLUIR PAPER. It includ
   * [Dependencies](#dependencies)
   * [Data](#data)
   * [Usage](#usage)
-    * [*Training & testing*](#training-&-testing)
+    * [Training and testing](#training-and-testing)
     * [Testing with pretrained models](#testing-with-pretrained-models)
   * [Results](#results)
   * [Contact](#contact)
