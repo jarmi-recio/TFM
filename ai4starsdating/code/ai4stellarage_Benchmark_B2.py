@@ -11,9 +11,9 @@ from sklearn.svm import SVR
 from sklearn.ensemble import StackingRegressor
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import DotProduct, WhiteKernel, RBF, ExpSineSquared # define the kernels to use in the GPs
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV #To perform the search for the best parameters
-from sklearn.metrics import mean_absolute_error #define the metrics to use for the evaluation
+from sklearn.model_selection import train_test_split # to split arrays into random train and test subsets
+from sklearn.model_selection import GridSearchCV # to perform the search for the best parameters
+from sklearn.metrics import mean_absolute_error # define the metric to use for the evaluation
 import matplotlib.pyplot as plt
 from joblib import dump, load
 import pandas as pd
@@ -28,18 +28,18 @@ def get_dataset():
 	df['high_age'] = df.Age + df.eAge2
 	# clean NA values
 	df.dropna(inplace=True, axis=0)
-	#Select Andy's favourites
+	# filter the datasets because of the physics behind gyrochronology
 	df = df.loc[(df['class'] == 'MS') & (df['M'] < 2) & (df['M'] > 0.7) & (df['Prot'] < 50)]
-	#sort the dataframe by age
+	# sort the dataframe by age
 	df = df.sort_values(by=['Age'])
-	#cluster stars
+	# cluster stars
 	df_train = df.loc[(df['mode'] == 'Clust')]
-	#ast stars
+	# asteroseismology stars
 	df_test = df.loc[(df['mode'] != 'Clust')]
-	#chose target variable: age
+	# chose target variable: age
 	y_train = np.array(df_train['Age'])
 	y_test = np.array(df_test['Age'])
-	#selection of the data to be used
+	# selection of the data to be used
 	X_train = np.array(df_train[['M', 'R', 'Teff','L','Meta','logg','Prot']])
 	X_test = np.array(df_test[['M', 'R', 'Teff', 'L', 'Meta', 'logg', 'Prot']])
 
@@ -90,9 +90,7 @@ def get_models():
 	models['knn'] = clf_knn
 
 	# Gaussian Process
-	# best params: {'kernel': WhiteKernel(noise_level=1) + RBF(length_scale=1) + DotProduct(sigma_0=1), 'random_state': 0}
-	tuned_parameters_gp = [{'kernel': [WhiteKernel() + RBF() + DotProduct(), RBF() + DotProduct()],
-							'random_state':[0]}]
+	tuned_parameters_gp = [{'kernel': [WhiteKernel() + RBF() + DotProduct(), RBF() + DotProduct()], 'random_state':[0]}]
 	clf_gp = GridSearchCV(GaussianProcessRegressor(), tuned_parameters_gp, scoring='neg_mean_absolute_error')
 	models['gp'] = clf_gp
 
@@ -106,21 +104,10 @@ def evaluate_model(model, X_train_norm, y_train, X_test_norm, y_test):
 	score_train = mean_absolute_error(y_train, y_pred_train)
 	score_test = mean_absolute_error(y_test, y_pred_test)
 
-	df_evaluate_aux = pd.DataFrame(list(zip(y_test, y_pred_test)), columns=['y_test', 'y_pred'])
-	df_evaluate_aux.to_csv('df_data_' + name + '.csv')
-
 	return score_train, score_test
 
 # define dataset
 X_train, y_train, X_test, y_test, df = get_dataset()
-
-# save train and data test as unique dataframe
-df_data_aux1 = pd.DataFrame(list(zip(X_train, y_train)), columns =['X_train', 'y_train'])
-df_data_aux2 = pd.DataFrame(list(zip(X_test, y_test)), columns =['X_test', 'y_test'])
-df_data_1 = pd.concat([df_data_aux1, df_data_aux2], ignore_index=True, axis=1)
-df_data_1.columns = ['X_train', 'y_train', 'X_test', 'y_test']
-
-df_data_1.to_csv('df_data_B_B2.csv')
 
 # data normalization
 scaler = preprocessing.StandardScaler().fit(X_train)
@@ -141,10 +128,10 @@ for name, model in models.items():
 
 df_results = pd.DataFrame(list(zip(names, results_train, results_test)), columns =['Name', 'MAE_train', 'MAE_test'])
 print(df_results)
-df_results.to_csv('df_results_B_B2.csv')
 
 
-## Bar Plot
+
+## display bar plot for the M.A.E of all models
 fig, ax = plt.subplots(figsize=(10, 5))
 
 ax.bar(names, results_test, 0.5)
@@ -152,17 +139,17 @@ ax.bar(names, results_test, 0.5)
 for i, v in enumerate(results_test):
 	ax.text(i - 0.35, v + 0.02, round(results_test[i], 4), fontsize=14)
 
-# Remove the axes
+# remove the axes
 for s in ['top', 'bottom', 'left', 'right']:
 	ax.spines[s].set_visible(False)
 
-# Add x, y gridlines
+# rdd x, y gridlines
 ax.grid(b=True, color='grey', linestyle='-.', linewidth=0.5, alpha=0.2)
 ax.set_ylabel('M.A.E (Gyr)')
 ax.set_xlabel('Models')
 plt.show()
 
-## Training histogram
+## display training ages histogram
 num_bins = 15
 fig, ax1 = plt.subplots(figsize=(10,5))
 
@@ -172,7 +159,7 @@ ax1.set_xlabel('Training ages (Gyr)')
 ax1.set_ylabel('Number of Stars')
 plt.show()
 
-## Test histogram
+## display test ages histogram
 fig, ax2 = plt.subplots(figsize=(10,5))
 n2, bins2, patches2 = ax2.hist(y_test, num_bins, density=False, color='blue')
 
@@ -198,17 +185,21 @@ X_test_new = aux.iloc[:,0:7]
 y_test_new = aux['Age'].to_numpy()
 
 perc = list()
+# in each iteration of the loop, the two graphs of each model will be displayed, which show their performance in the estimation
 for name, model in models.items():
 	y_pred_model = models[name].predict(X_test_new)
 	reg_error = y_test_new - y_pred_model
 
+	# add the reg error and the error limits for each star
 	df_final_test = pd.DataFrame(list(zip(y_test_new, y_pred_model, reg_error)), columns=['y_test', 'y_pred_model', 'reg_error'])
 	df_final_test['low_age'] = X_test_limits_df['low_age'].values
 	df_final_test['high_age'] = X_test_limits_df['high_age'].values
 
+	# save the number of stars inside the error band
 	df_model_B1_error_band = df_final_test.loc[((df_final_test['y_pred_model'] >= df_final_test['low_age']) &
 											  (df_final_test['y_pred_model'] <= df_final_test['high_age']))]
 
+	# calculate de percentage of stars inside the error band
 	percent_B1 = round((len(df_model_B1_error_band)) * 100 / (len(df_final_test)), 3)
 	perc.append(percent_B1)
 	print('{}: {}% stars inside error band'.format(name,percent_B1))
@@ -230,7 +221,7 @@ for name, model in models.items():
 
 	n = np.arange(df_final_test['y_pred_model'].size)
 
-	#figure 2
+	# figure 2
 	fig, ax2 = plt.subplots(figsize=(10, 5))
 	ax2.plot(n, df_final_test['y_test'], c='tab:blue', label='Age')
 	ax2.plot(n, df_final_test['y_pred_model'], c='tab:orange', label='Prediction')
@@ -273,6 +264,5 @@ for name, model in models.items():
 
 df_results_percent = pd.DataFrame(list(zip(names, perc)), columns =['Name', 'Percentage'])
 print(df_results_percent)
-df_results.to_csv('df_percent_B_B2.csv')
 
 dump(models,'results/models.joblib')
