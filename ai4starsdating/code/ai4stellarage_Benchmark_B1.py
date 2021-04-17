@@ -143,24 +143,6 @@ ax.set_ylabel('M.A.E (Gyr)')
 ax.set_xlabel('Models')
 plt.show()
 
-## display training ages histogram
-num_bins = 15
-fig, ax1 = plt.subplots(figsize=(10,5))
-
-n1, bins1, patches1 = ax1.hist(y_train, num_bins, density=False, color='blue')
-
-ax1.set_xlabel('Training ages (Gyr)')
-ax1.set_ylabel('Number of Stars')
-plt.show()
-
-## display test ages histogram
-fig, ax2 = plt.subplots(figsize=(10,5))
-n2, bins2, patches2 = ax2.hist(y_test, num_bins, density=False, color='blue')
-
-ax2.set_xlabel('Test ages (Gyr)')
-ax2.set_ylabel('Number of Stars')
-plt.show()
-
 # process to add the age limits from no normalized data
 X_test_df = pd.DataFrame(X_test, columns=['M', 'R', 'Teff','L','Meta','logg','Prot'])
 y_test_df = pd.DataFrame(y_test)
@@ -227,33 +209,6 @@ for name, model in models.items():
 	plt.yticks(np.arange(0, 21, 1))
 	plt.legend()
 	plt.grid(True)
-	plt.show()
-
-	# histogram of mean errors by bin
-
-	aux = []
-	mean_error = []
-	for i in range(len(bins2) - 1):
-		if (i == 14):
-			mean_err = (abs(df_final_test[(df_final_test['y_test'] >= bins2[i])
-										& (df_final_test['y_test'] <= bins2[i + 1])].reg_error)).mean()
-			mean_error.append(mean_err)
-			aux_2 = (bins2[i] + bins2[i + 1]) / 2
-			aux.append(aux_2)
-
-		else:
-			mean_err = (abs(df_final_test[(df_final_test['y_test'] >= bins2[i])
-										& (df_final_test['y_test'] < bins2[i + 1])].reg_error)).mean()
-			mean_error.append(mean_err)
-			aux_2 = (bins2[i] + bins2[i + 1]) / 2
-			aux.append(aux_2)
-
-	fig, ax3 = plt.subplots(figsize=(10, 5))
-
-	ax3.bar(aux, mean_error, color='orange')
-
-	plt.xlabel('Age (Gyr)')
-	plt.ylabel('Mean error (Gyr)')
 	plt.show()
 
 df_results_percent = pd.DataFrame(list(zip(names, perc)), columns =['Name', 'Percentage'])
