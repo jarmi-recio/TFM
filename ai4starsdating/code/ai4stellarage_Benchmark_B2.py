@@ -130,7 +130,6 @@ df_results = pd.DataFrame(list(zip(names, results_train, results_test)), columns
 print(df_results)
 
 
-
 ## display bar plot for the M.A.E of all models
 fig, ax = plt.subplots(figsize=(10, 5))
 
@@ -147,24 +146,6 @@ for s in ['top', 'bottom', 'left', 'right']:
 ax.grid(b=True, color='grey', linestyle='-.', linewidth=0.5, alpha=0.2)
 ax.set_ylabel('M.A.E (Gyr)')
 ax.set_xlabel('Models')
-plt.show()
-
-## display training ages histogram
-num_bins = 15
-fig, ax1 = plt.subplots(figsize=(10,5))
-
-n1, bins1, patches1 = ax1.hist(y_train, num_bins, density=False, color='blue')
-
-ax1.set_xlabel('Training ages (Gyr)')
-ax1.set_ylabel('Number of Stars')
-plt.show()
-
-## display test ages histogram
-fig, ax2 = plt.subplots(figsize=(10,5))
-n2, bins2, patches2 = ax2.hist(y_test, num_bins, density=False, color='blue')
-
-ax2.set_xlabel('Test ages (Gyr)')
-ax2.set_ylabel('Number of Stars')
 plt.show()
 
 # process to add the age limits from no normalized data
@@ -185,7 +166,7 @@ X_test_new = aux.iloc[:,0:7]
 y_test_new = aux['Age'].to_numpy()
 
 perc = list()
-# in each iteration of the loop, the two graphs of each model will be displayed, which show their performance in the estimation
+# in each iteration of the loop, two graphs of each model will be displayed, which show their performance in the estimation
 for name, model in models.items():
 	y_pred_model = models[name].predict(X_test_new)
 	reg_error = y_test_new - y_pred_model
@@ -233,33 +214,6 @@ for name, model in models.items():
 	plt.yticks(np.arange(0, 21, 1))
 	plt.legend()
 	plt.grid(True)
-	plt.show()
-
-	# histogram of mean errors by bin
-
-	aux = []
-	mean_error = []
-	for i in range(len(bins2) - 1):
-		if (i == 14):
-			mean_err = (abs(df_final_test[(df_final_test['y_test'] >= bins2[i])
-										& (df_final_test['y_test'] <= bins2[i + 1])].reg_error)).mean()
-			mean_error.append(mean_err)
-			aux_2 = (bins2[i] + bins2[i + 1]) / 2
-			aux.append(aux_2)
-
-		else:
-			mean_err = (abs(df_final_test[(df_final_test['y_test'] >= bins2[i])
-										& (df_final_test['y_test'] < bins2[i + 1])].reg_error)).mean()
-			mean_error.append(mean_err)
-			aux_2 = (bins2[i] + bins2[i + 1]) / 2
-			aux.append(aux_2)
-
-	fig, ax3 = plt.subplots(figsize=(10, 5))
-
-	ax3.bar(aux, mean_error, color='orange', width = 1)
-
-	plt.xlabel('Age (Gyr)')
-	plt.ylabel('Mean error (Gyr)')
 	plt.show()
 
 df_results_percent = pd.DataFrame(list(zip(names, perc)), columns =['Name', 'Percentage'])
