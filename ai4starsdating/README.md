@@ -52,7 +52,7 @@ The folder `datasets` contains the two main datasets of the project:
 
 ### Code
 
-The scripts used in the development of this project is in the folder `ai4starsdating/code/training_testing`:
+The scripts used in the development of this project are in the folder `ai4starsdating/code/training_testing`:
 
 - `train_test_Benchmark_A.py`:  
   Script to evaluate the different regression models following a classical training/test data splitting scheme. From the data sample distribution `datasets/gyro_tot_v20180801.txt`, we release a training set and a testing set, where 80 % and 20 % of the stars have been randomly included, respectively.
