@@ -52,19 +52,21 @@ The folder `datasets` contains the two main datasets of the project:
 
 ### Code
 
-The folder `code` contains the following scripts:
+The scripts used in the development of this project is in the folder `ai4starsdating/code/training_testing`:
 
-- `ai4stellarage_Benchmark_A.py`:  
+- `train_test_Benchmark_A.py`:  
   Script to evaluate the different regression models following a classical training/test data splitting scheme. From the data sample distribution `datasets/gyro_tot_v20180801.txt`, we release a training set and a testing set, where 80 % and 20 % of the stars have been randomly included, respectively.
 
-- `ai4stellarage_Benchmark_B1.py`:  
+- `train_test_Benchmark_B1.py`:  
   Script to evaluate the generalization capability of models, where we train the approaches on young stars, and evaluate their performance on old stars.  
   
-- `ai4stellarage_Benchmark_B2.py`:  
+- `train_test_Benchmark_B2.py`:  
   Script of a second scenario to evaluate the generalization capability of the models when they are trained only with stars belonging to clusters or only with field stars.
 
-- `ai4stellarage_Benchmark_C.py`:  
-  Script to examine the age estimation performance of all the models on a control data sample `datasets/test_gyro.txt`, composed only of stars not belonging to any cluster, and with a more realistic age distribution.
+- `train_test_Benchmark_C.py`:  
+  Script to examine the age estimation performance of all the models on a control data sample `datasets/test_gyro.txt`, composed only of stars not belonging to any cluster, and with a more realistic age distribution.  
+  
+There are also four scripts in the folder `ai4starsdating/code/testing`, to test your own models. The next chapter explains how to use both usages.
 
 
 ### Usage  
@@ -73,18 +75,25 @@ After cloning or downloading the repo, you can choose between training and testi
 
 #### Training and testing  
   
-To reproduce our results, training and testing our models, you just have to run the following command, taking into account the desire Benchmark:
+To reproduce our results, training and testing our models, you just have to run the following command in the folder `ai4starsdating/code/training_testing`, taking into account the desire Benchmark:
 
 ```bash
-python ai4stellarage_Benchmark_A.py
-python ai4stellarage_Benchmark_B1.py  
-python ai4stellarage_Benchmark_B2.py
-python ai4stellarage_Benchmark_C.py
+python train_test_Benchmark_A.py
+python train_test_Benchmark_B1.py  
+python train_test_Benchmark_B2.py
+python train_test_Benchmark_C.py
 ```
 
 #### Testing with pretrained models
 
+To test your own pretrained models perfomance, it's necessary to put the models in the folder `ai4starsdating/models`, and then you just have to run the following commands in the folder `ai4starsdating/code/testing`:
 
+```bash
+python testing_Benchmark_A.py
+python testing_Benchmark_B1.py  
+python testing_Benchmark_B2.py
+python testing_Benchmark_C.py
+```
 
 ### Results
 
