@@ -36,6 +36,7 @@ def get_dataset():
 	y = np.array(df['Age'])
 	# selection of the data to be used
 	X = np.array(df[['M', 'R', 'Teff','L','Meta','logg','Prot']])
+	
 	return X, y, df
 
 # get a stacking ensemble of models using the best parameters
@@ -52,6 +53,7 @@ def get_best_stacking():
 	# define the stacking ensemble
 	model = StackingRegressor(estimators=level0, final_estimator=level1, cv=2)
 	return model
+
 
 # get a list of models to evaluate
 def get_models():
