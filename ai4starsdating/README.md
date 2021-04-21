@@ -11,7 +11,6 @@ This repo contains data and code accompaning the paper, INCLUIR PAPER. It includ
   * [Usage](#usage)
     * [Training and testing](#training-and-testing)
     * [Testing with pretrained models](#testing-with-pretrained-models)
-  * [Results](#results)
   * [Contact](#contact)
 
 
@@ -92,8 +91,6 @@ python testing_Benchmark_B1.py
 python testing_Benchmark_B2.py
 python testing_Benchmark_C.py
 ```
-
-### Results
 
 
 ### Contact
