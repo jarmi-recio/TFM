@@ -76,7 +76,7 @@ The last one examines the age estimation performance of all the models on a cont
 
 #### Testing with pretrained models
 
-To evaluate your own pretrained models, it's necessary to put these models in the folder `models/` and correct the file name in each of the scripts. After that, you just have to run the following scripts in the folder `ai4starsdating/code/testing/`:
+To evaluate your own pretrained models, it's necessary to put these models in the folder `models/` and correct the file name in each of the scripts. After that, you just have to run the following scripts in the folder `code/testing/`:
 ```bash
 python testing_Benchmark_A.py
 python testing_Benchmark_B1.py
