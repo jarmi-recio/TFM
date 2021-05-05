@@ -70,7 +70,7 @@ for s in ['top', 'bottom', 'left', 'right']:
 ax.grid(b=True, color='grey', linestyle='-.', linewidth=0.5, alpha=0.2)
 ax.set_ylabel('M.A.E (Gyr)')
 ax.set_xlabel('Models')
-plt.savefig('../../pics/testing/Benchmark_A_MAE_hist.pdf')
+plt.savefig('../../results/testing/Benchmark_A_MAE_hist.pdf')
 
 # process to add the age limits from no normalized data
 X_test_df = pd.DataFrame(X_test, columns=['M', 'R', 'Teff', 'L', 'Meta', 'logg', 'Prot'])
