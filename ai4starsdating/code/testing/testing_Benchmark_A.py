@@ -123,7 +123,7 @@ for name, model in models.items():
     plt.xlabel("Age (Gyr)")
     plt.ylabel("Prediction (Gyr)")
     plt.legend(loc='upper left')
-    plt.savefig('../../pics/testing/Benchmark_A_'+name+'_fig1.pdf')
+    plt.savefig('../../results/testing/Benchmark_A_'+name+'_fig1.pdf')
 
     n = np.arange(df_final_test['y_pred_model'].size)
 
@@ -140,7 +140,7 @@ for name, model in models.items():
     plt.yticks(np.arange(0, 15, 1))
     plt.legend()
     plt.grid(True)
-    plt.savefig('../../pics/testing/Benchmark_A_'+name+'_fig2.pdf')
+    plt.savefig('../../results/testing/Benchmark_A_'+name+'_fig2.pdf')
 
 df_results_percent = pd.DataFrame(list(zip(names, perc)), columns=['Name', 'Percentage'])
 print('\n')
