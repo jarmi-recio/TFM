@@ -160,7 +160,7 @@ for s in ['top', 'bottom', 'left', 'right']:
 ax.grid(b=True, color='grey', linestyle='-.', linewidth=0.5, alpha=0.2)
 ax.set_ylabel('M.A.E (Gyr)')
 ax.set_xlabel('Models')
-plt.savefig('../../pics/training_testing/Benchmark_A_MAE_hist.pdf')
+plt.savefig('../../results/training_testing/Benchmark_A_MAE_hist.pdf')
 
 # process to add the age limits from no normalized data
 X_test_df = pd.DataFrame(X_test, columns=['M', 'R', 'Teff','L','Meta','logg','Prot'])
@@ -212,7 +212,7 @@ for name, model in models.items():
 	plt.xlabel("Age (Gyr)")
 	plt.ylabel("Prediction (Gyr)")
 	plt.legend(loc='upper left')
-	plt.savefig('../../pics/training_testing/Benchmark_A_'+name+'_fig1.pdf')
+	plt.savefig('../../results/training_testing/Benchmark_A_'+name+'_fig1.pdf')
 
 	n = np.arange(df_final_test['y_pred_model'].size)
 
@@ -228,7 +228,7 @@ for name, model in models.items():
 	plt.yticks(np.arange(0, 15, 1))
 	plt.legend()
 	plt.grid(True)
-	plt.savefig('../../pics/training_testing/Benchmark_A_'+name+'_fig2.pdf')
+	plt.savefig('../../results/training_testing/Benchmark_A_'+name+'_fig2.pdf')
 
 
 df_results_percent = pd.DataFrame(list(zip(names, perc)), columns =['Name', 'Percentage'])
