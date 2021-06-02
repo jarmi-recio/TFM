@@ -1,0 +1,15 @@
+\chapter{Glosario}
+
+%Lista con los acrónimos
+\begin{acronym}[H2O]
+
+\acro{H2O}[$\mathrm{H_2O}$]{water}
+
+%Para poner más acrónimos
+%\acrodef{etiqueta}[acronimo]{descripción}
+
+\end{acronym}
+
+
+
+

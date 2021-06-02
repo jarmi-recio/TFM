@@ -1,0 +1,34 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama HR mostrando la muestra MS.}}{7}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces $M$ - $P_{\rm rot}$ para las estrellas elegidas.}}{8}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces $M$ - $P_{\rm rot}$ para las estrellas elegidas. La edad se muestra en escala de color.}}{9}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces $Age$ - $P_{\rm rot}$ fpara las estrellas elegidas. Las estrellas asterosísimicas y de clúster se muestran en colores diferentes. También se representa la regresión lineal obtenida usando estos dos grupos.}}{10}{figure.3.4}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitectura de la red neuronal implementada. se han usado 3 capas ocultas, con 50 unidades en cada una seguida de una ReLU. La salida no tiene función de activación, para realizar directamente la estimación de la edad.}}{13}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Rendimiento de los modelos en función del MAE. En esta configuración, las dos mejores aproximaciones son Neural Network (nnet) y Gaussian Process (gp), y por lo tanto, su stacking.}}{16}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Predicción detallada para el modelo de stacking. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{17}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Predicción detallada para el modelo de la Red Neuronal. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{18}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Predicción detallada para el modelo de Gaussian Process. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{19}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Predicción detallada para el modelo de kNN. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{20}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Predicción detallada para el modelo de Random Forest. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{21}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Predicción detallada para el modelo de Support Vector Machine. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{22}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Predicción detallada para el modelo de Decision Tree. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{23}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Predicción detallada para el modelo de Linear Regressor. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{24}{figure.4.10}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Predicción detallada para el modelo de Bayessian Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{25}{figure.4.11}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Rendimiento de los modelos en función del MAE.}}{26}{figure.4.12}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Rendimiento para el mejor modelo del Benchmark B1: Red Neuronal.}}{27}{figure.4.13}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Rendimiento de los modelos en función del MAE.}}{28}{figure.4.14}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Rendimiento para el mejor modelo del Benchmark B2: Bayessian Regression.}}{29}{figure.4.15}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Rendimiento de los modelos en función del MAE.}}{30}{figure.4.16}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Rendimiento para el mejor modelo del Benchmark B2: Gaussian Process. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}}{31}{figure.4.17}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

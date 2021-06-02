@@ -1,0 +1,54 @@
+%**********************************************************
+%GENERA LA PORTADA OFICIAL PARA PROYECTOS FIN DE CARRERA
+%SEGÚN EL FORMATO DE LA UNIVERSIDAD DE ALCALÁ Y DEL DEPAR-
+%TAMENTO DE TEORÍA DE LA SEÑAL Y COMUNICACIONES.
+%**********************************************************
+\setcounter{page}{0}
+
+\begin{center}
+\LARGE \textsc{Universidad de Alcalá}\\
+\vspace{0.5cm}
+
+%Nombre de la escuela-> seleccione el que corresponda.
+\textbf{Escuela Politécnica Superior}\\
+%\textbf{Escuela Técnica Superior de Ingeniería Informática}\\
+
+%Titulación -> escriba su titulación
+La titulación del alumno\\
+\end{center}
+
+\vspace{0.5cm}
+
+%Logotipo de la universidad
+
+\begin{center}
+%Para compilar en latex
+\includegraphics[width=4cm]{Figuras/LogoUAH.eps}
+%Para compilar con pdflatex
+%\includegraphics[width=4cm]{Figuras/LogoUAH.png}
+\end{center}
+
+
+\begin{center}
+\vspace{1cm}
+
+\LARGE Proyecto Fin de Carrera\\
+
+\vspace{0.5cm}
+
+\textbf{\Huge \textsc{{Título del Proyecto fin de carrera}}}\\
+
+\vspace{1.5cm}
+
+\large Autor: Nombre y apellidos\\
+Director: Nombre y apellidos\\
+
+\vspace{1.5cm}
+
+\large Año que corresponda 2007,2008, ...\\
+\end{center}
+
+\newpage
+
+
+%Final de la portada.
