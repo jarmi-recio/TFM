@@ -1,0 +1,11 @@
+% Formato para un capítulo cualquiera
+
+%Título del capítulo
+\chapter{APÉNDICE A.} 
+%Sección primera
+\section{Primera sección.}
+Texto de la primera sección.
+\subsection{Segunda sección.}
+Texto de la segunda sección.
+\subsubsection{Tercera sección.}
+Texto de la tercera sección.

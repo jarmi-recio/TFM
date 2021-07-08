@@ -1,0 +1,93 @@
+This is BibTeX, Version 0.99d (TeX Live 2020)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: tfc.aux
+A level-1 auxiliary file: previo.aux
+A level-1 auxiliary file: dedicatoria.aux
+A level-1 auxiliary file: agradecimientos.aux
+A level-1 auxiliary file: resumen.aux
+A level-1 auxiliary file: resumen-extendido.aux
+A level-1 auxiliary file: introduccion.aux
+The style file: plain.bst
+Database file #1: bibliografia-pfc.bib
+Repeated entry---line 468 of file bibliografia-pfc.bib
+ : @article{Garcia14
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 579 of file bibliografia-pfc.bib
+ : @article{Barnes16
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 708 of file bibliografia-pfc.bib
+ : @article{Meibom11
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 908 of file bibliografia-pfc.bib
+ : @article{Barnes03
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1019 of file bibliografia-pfc.bib
+ : @article{Barnes16
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1038 of file bibliografia-pfc.bib
+ : @article{Soderblom15
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1071 of file bibliografia-pfc.bib
+ : @article{Angus19
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1090 of file bibliografia-pfc.bib
+ : @article{Angus15
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1108 of file bibliografia-pfc.bib
+ : @article{Metcalfe19
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1127 of file bibliografia-pfc.bib
+ : @article{Saders16
+ :                  ,
+I'm skipping whatever remains of this entry
+You've used 60 entries,
+            2118 wiz_defined-function locations,
+            897 strings with 17184 characters,
+and the built_in function-call counts, 24484 in all, are:
+= -- 2195
+> -- 1736
+< -- 2
++ -- 689
+- -- 628
+* -- 2207
+:= -- 4302
+add.period$ -- 181
+call.type$ -- 60
+change.case$ -- 491
+chr.to.int$ -- 0
+cite$ -- 60
+duplicate$ -- 702
+empty$ -- 1495
+format.name$ -- 628
+if$ -- 4795
+int.to.chr$ -- 0
+int.to.str$ -- 60
+missing$ -- 63
+newline$ -- 304
+num.names$ -- 120
+pop$ -- 394
+preamble$ -- 1
+purify$ -- 434
+quote$ -- 0
+skip$ -- 484
+stack$ -- 0
+substring$ -- 1209
+swap$ -- 98
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 234
+warning$ -- 0
+while$ -- 185
+width$ -- 62
+write$ -- 663
+(There were 10 error messages)

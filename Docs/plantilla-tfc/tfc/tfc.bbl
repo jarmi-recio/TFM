@@ -1,0 +1,391 @@
+\begin{thebibliography}{10}
+
+\bibitem{Angus15}
+Ruth {Angus}, Suzanne {Aigrain}, Daniel {Foreman-Mackey}, and Amy {McQuillan}.
+\newblock {Calibrating gyrochronology using Kepler asteroseismic targets}.
+\newblock {\em \mnras}, 450(2):1787--1798, June 2015.
+
+\bibitem{Angus20}
+Ruth {Angus}, Angus {Beane}, Adrian~M. {Price-Whelan}, Elisabeth {Newton},
+  Jason~L. {Curtis}, Travis {Berger}, Jennifer {van Saders}, Rocio {Kiman},
+  Daniel {Foreman-Mackey}, Yuxi~Lucy {Lu}, Lauren {Anderson}, and Jacqueline~K.
+  {Faherty}.
+\newblock {Exploring the Evolution of Stellar Rotation Using Galactic
+  Kinematics}.
+\newblock {\em \aj}, 160(2):90, August 2020.
+
+\bibitem{stardate}
+Ruth Angus, Timothy~D. Morton, and Daniel. Foreman-Mackey.
+\newblock stardate: Combining dating methods for better stellar ages.
+\newblock {\em Journal of Open Source Software}, 41(4):1469, 2019.
+
+\bibitem{Angus19}
+Ruth {Angus}, Timothy~D. {Morton}, Daniel {Foreman-Mackey}, Jennifer {van
+  Saders}, Jason {Curtis}, Stephen~R. {Kane}, Megan {Bedell}, Rocio {Kiman},
+  David~W. {Hogg}, and John {Brewer}.
+\newblock {Toward Precise Stellar Ages: Combining Isochrone Fitting with
+  Empirical Gyrochronology}.
+\newblock {\em \aj}, 158(5):173, November 2019.
+
+\bibitem{Balona17}
+L.~A. {Balona}.
+\newblock {Starspots on A stars}.
+\newblock {\em \mnras}, 467(2):1830--1837, May 2017.
+
+\bibitem{Barnes03}
+Sydney~A. {Barnes}.
+\newblock {On the Rotational Evolution of Solar- and Late-Type Stars, Its
+  Magnetic Origins, and the Possibility of Stellar Gyrochronology}.
+\newblock {\em \apj}, 586(1):464--479, March 2003.
+
+\bibitem{Barnes07}
+Sydney~A. {Barnes}.
+\newblock {Ages for Illustrative Field Stars Using Gyrochronology: Viability,
+  Limitations, and Errors}.
+\newblock {\em \apj}, 669(2):1167--1189, November 2007.
+
+\bibitem{Barnes10}
+Sydney~A. {Barnes}.
+\newblock {A Simple Nonlinear Model for the Rotation of Main-sequence Cool
+  Stars. I. Introduction, Implications for Gyrochronology, and Color-Period
+  Diagrams}.
+\newblock {\em \apj}, 722(1):222--234, October 2010.
+
+\bibitem{Barnes16}
+Sydney~A. {Barnes}, Joerg {Weingrill}, Dario {Fritzewski}, Klaus~G.
+  {Strassmeier}, and Imants {Platais}.
+\newblock {Rotation Periods for Cool Stars in the 4 Gyr old Open Cluster M67,
+  The Solar-Stellar Connection, and the Applicability of Gyrochronology to at
+  least Solar Age}.
+\newblock {\em \apj}, 823(1):16, May 2016.
+
+\bibitem{Belcher76}
+J.~W. {Belcher} and K.~B. {MacGregor}.
+\newblock {Magnetic acceleration of winds from solar-type stars.}
+\newblock {\em \apj}, 210:498--507, December 1976.
+
+\bibitem{Bellini10}
+A.~{Bellini}, L.~R. {Bedin}, B.~{Pichardo}, E.~{Moreno}, C.~{Allen},
+  G.~{Piotto}, and J.~{Anderson}.
+\newblock {Absolute proper motion of the Galactic open cluster M 67}.
+\newblock {\em \aap}, 513:A51, April 2010.
+
+\bibitem{Brandt15}
+Timothy~D. {Brandt} and Chelsea~X. {Huang}.
+\newblock {The Age and Age Spread of the Praesepe and Hyades Clusters: a
+  Consistent, \raisebox{-0.5ex}\textasciitilde800 Myr Picture from Rotating
+  Stellar Models}.
+\newblock {\em \apj}, 807(1):24, July 2015.
+
+\bibitem{Breiman2001}
+L.~Breiman.
+\newblock Random forests.
+\newblock {\em Machine Learning}, 5:5--32, 2001.
+
+\bibitem{Breiman1984}
+L.~Breiman, J.~H. Friedman, R.~A. Olshen, and C.~J. Stone.
+\newblock {\em Classification and Regression Trees}.
+\newblock Wadsworth and Brooks, Monterey, CA, 1984.
+
+\bibitem{Ceillier16}
+T.~{Ceillier}, J.~{van Saders}, R.~A. {Garc{\'\i}a}, T.~S. {Metcalfe},
+  O.~{Creevey}, S.~{Mathis}, S.~{Mathur}, M.~H. {Pinsonneault}, D.~{Salabert},
+  and J.~{Tayar}.
+\newblock {Rotation periods and seismic ages of KOIs - comparison with stars
+  without detected planets from Kepler observations}.
+\newblock {\em \mnras}, 456(1):119--125, February 2016.
+
+\bibitem{LIBSVM}
+Chih-Chung Chang and Chih-Jen Lin.
+\newblock {LIBSVM}: A library for support vector machines.
+\newblock {\em ACM Transactions on Intelligent Systems and Technology},
+  2:27:1--27:27, 2011.
+\newblock Software available at \url{http://www.csie.ntu.edu.tw/~cjlin/libsvm}.
+
+\bibitem{Curtis19}
+Jason~L. {Curtis}, Marcel~A. {Ag{\"u}eros}, Eric~E. {Mamajek}, Jason~T.
+  {Wright}, and Jeffrey~D. {Cummings}.
+\newblock {TESS Reveals that the Nearby Pisces-Eridanus Stellar Stream is only
+  120 Myr Old}.
+\newblock {\em \aj}, 158(2):77, August 2019.
+
+\bibitem{das2018}
+Payel Das and Jason~L Sanders.
+\newblock {MADE: a spectroscopic mass, age, and distance estimator for red
+  giant stars with Bayesian machine learning}.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  484(1):294--304, 10 2018.
+
+\bibitem{Garcia14}
+R.~A. {Garc{\'\i}a}, T.~{Ceillier}, D.~{Salabert}, S.~{Mathur}, J.~L. {van
+  Saders}, M.~{Pinsonneault}, J.~{Ballot}, P.~G. {Beck}, S.~{Bloemen}, T.~L.
+  {Campante}, G.~R. {Davies}, Jr. {do Nascimento}, J.~D., S.~{Mathis}, T.~S.
+  {Metcalfe}, M.~B. {Nielsen}, J.~C. {Su{\'a}rez}, W.~J. {Chaplin},
+  A.~{Jim{\'e}nez}, and C.~{Karoff}.
+\newblock {Rotation and magnetism of Kepler pulsating solar-like stars. Towards
+  asteroseismically calibrated age-rotation relations}.
+\newblock {\em \aap}, 572:A34, December 2014.
+
+\bibitem{Giampapa06}
+Mark~S. {Giampapa}, Jeffrey~C. {Hall}, Richard~R. {Radick}, and Sallie~L.
+  {Baliunas}.
+\newblock {A Survey of Chromospheric Activity in the Solar-Type Stars in the
+  Open Cluster M67}.
+\newblock {\em \apj}, 651(1):444--461, November 2006.
+
+\bibitem{Gonzalez16}
+Guillermo {Gonzalez}.
+\newblock {Variability among stars in the M 67 field from Kepler/K2-Campaign-5
+  light curves}.
+\newblock {\em \mnras}, 459(1):1060--1068, June 2016.
+
+\bibitem{Gordon21}
+Tyler~A. {Gordon}, James R.~A. {Davenport}, Ruth {Angus}, Daniel
+  {Foreman-Mackey}, Eric {Agol}, Kevin~R. {Covey}, Marcel {Ag{\"u}eros}, and
+  David {Kipping}.
+\newblock {Stellar Rotation in the K2 Sample: Evidence for Broken Spindown}.
+\newblock {\em arXiv e-prints}, page arXiv:2101.07886, January 2021.
+
+\bibitem{Janes13}
+Kenneth {Janes}, Sydney~A. {Barnes}, S{\o}ren {Meibom}, and Sadia {Hoq}.
+\newblock {NGC 6811: An Intermediate-age Cluster in the Kepler Field}.
+\newblock {\em \aj}, 145(1):7, January 2013.
+
+\bibitem{Jeffries13}
+R.~D. {Jeffries}, Tim {Naylor}, N.~J. {Mayne}, Cameron P.~M. {Bell}, and S.~P.
+  {Littlefair}.
+\newblock {A lithium depletion boundary age of 22 Myr for NGC 1960}.
+\newblock {\em \mnras}, 434(3):2438--2450, September 2013.
+
+\bibitem{Kawaler88}
+Steven~D. {Kawaler}.
+\newblock {Angular Momentum Loss in Low-Mass Stars}.
+\newblock {\em \apj}, 333:236, October 1988.
+
+\bibitem{Kitchatinov17}
+Leonid {Kitchatinov} and Alexander {Nepomnyashchikh}.
+\newblock {How supercritical are stellar dynamos, or why do old main-sequence
+  dwarfs not obey gyrochronology?}
+\newblock {\em \mnras}, 470(3):3124--3130, September 2017.
+
+\bibitem{Kraft67}
+Robert~P. {Kraft}.
+\newblock {Studies of Stellar Rotation. V. The Dependence of Rotation on Age
+  among Solar-Type Stars}.
+\newblock {\em \apj}, 150:551, November 1967.
+
+\bibitem{LeCun2012}
+Y.~LeCun, L.~Bottou, G.~Orr, and K.-R. M{\"u}ller.
+\newblock {\em Efficient BackProp}, pages 9--48.
+\newblock Springer Berlin Heidelberg, 2012.
+
+\bibitem{Oliveira19}
+Diego {Lorenzo-Oliveira}, Jorge {Mel{\'e}ndez}, Jhon {Yana Galarza}, Geisa
+  {Ponte}, Leonardo~A. {dos Santos}, Lorenzo {Spina}, Megan {Bedell}, Iv{\'a}n
+  {Ram{\'\i}rez}, Jacob~L. {Bean}, and Martin {Asplund}.
+\newblock {Constraining the evolution of stellar rotation using solar twins}.
+\newblock {\em \mnras}, 485(1):L68--L72, May 2019.
+
+\bibitem{MH}
+Eric~E. {Mamajek} and Lynne~A. {Hillenbrand}.
+\newblock {Improved Age Estimation for Solar-Type Dwarfs Using
+  Activity-Rotation Diagnostics}.
+\newblock {\em \apj}, 687(2):1264--1293, November 2008.
+
+\bibitem{Mazeh15}
+Tsevi {Mazeh}, Hagai~B. {Perets}, Amy {McQuillan}, and Eyal~S. {Goldstein}.
+\newblock {Photometric Amplitude Distribution of Stellar Rotation of
+  KOIs{\textemdash}Indication for Spin-Orbit Alignment of Cool Stars and High
+  Obliquity for Hot Stars}.
+\newblock {\em \apj}, 801(1):3, March 2015.
+
+\bibitem{McQuillan13a}
+A.~{McQuillan}, T.~{Mazeh}, and S.~{Aigrain}.
+\newblock {Stellar Rotation Periods of the Kepler Objects of Interest: A Dearth
+  of Close-in Planets around Fast Rotators}.
+\newblock {\em \apjl}, 775(1):L11, September 2013.
+
+\bibitem{McQuillan14}
+A.~{McQuillan}, T.~{Mazeh}, and S.~{Aigrain}.
+\newblock {Rotation Periods of 34,030 Kepler Main-sequence Stars: The Full
+  Autocorrelation Sample}.
+\newblock {\em \apjs}, 211(2):24, April 2014.
+
+\bibitem{Meibom11}
+S{\o}ren {Meibom}, Sydney~A. {Barnes}, David~W. {Latham}, Natalie {Batalha},
+  William~J. {Borucki}, David~G. {Koch}, Gibor {Basri}, Lucianne~M.
+  {Walkowicz}, Kenneth~A. {Janes}, Jon {Jenkins}, Jeffrey {Van Cleve},
+  Michael~R. {Haas}, Stephen~T. {Bryson}, Andrea~K. {Dupree}, Gabor {Furesz},
+  Andrew~H. {Szentgyorgyi}, Lars~A. {Buchhave}, Bruce~D. {Clarke}, Joseph~D.
+  {Twicken}, and Elisa~V. {Quintana}.
+\newblock {The Kepler Cluster Study: Stellar Rotation in NGC 6811}.
+\newblock {\em \apjl}, 733(1):L9, May 2011.
+
+\bibitem{Meibom15}
+S{\o}ren {Meibom}, Sydney~A. {Barnes}, Imants {Platais}, Ronald~L. {Gilliland},
+  David~W. {Latham}, and Robert~D. {Mathieu}.
+\newblock {A spin-down clock for cool stars from observations of a
+  2.5-billion-year-old cluster}.
+\newblock {\em \nat}, 517(7536):589--591, January 2015.
+
+\bibitem{Mestel68}
+L.~{Mestel}.
+\newblock {Magnetic braking by a stellar wind-I}.
+\newblock {\em \mnras}, 138:359, January 1968.
+
+\bibitem{Mestel87}
+L.~{Mestel} and H.~C. {Spruit}.
+\newblock {On magnetic braking of late-type stars}.
+\newblock {\em \mnras}, 226:57--66, May 1987.
+
+\bibitem{Metcalfe19}
+Travis~S. {Metcalfe} and Ricky {Egeland}.
+\newblock {Understanding the Limitations of Gyrochronology for Old Field
+  Stars}.
+\newblock {\em \apj}, 871(1):39, January 2019.
+
+\bibitem{Metcalfe17}
+Travis~S. {Metcalfe} and Jennifer {van Saders}.
+\newblock {Magnetic Evolution and the Disappearance of Sun-Like Activity
+  Cycles}.
+\newblock {\em \solphys}, 292(9):126, September 2017.
+
+\bibitem{Moya18}
+Andy {Moya}, Federico {Zuccarino}, William~J. {Chaplin}, and Guy~R. {Davies}.
+\newblock {Empirical Relations for the Accurate Estimation of Stellar Masses
+  and Radii}.
+\newblock {\em \apjs}, 237(2):21, August 2018.
+
+\bibitem{Nielsen13}
+M.~B. {Nielsen}, L.~{Gizon}, H.~{Schunker}, and C.~{Karoff}.
+\newblock {Rotation periods of 12 000 main-sequence Kepler stars: Dependence on
+  stellar spectral type and comparison with v sin i observations}.
+\newblock {\em \aap}, 557:L10, September 2013.
+
+\bibitem{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, and E.~Duchesnay.
+\newblock Scikit-learn: Machine learning in {P}ython.
+\newblock {\em Journal of Machine Learning Research}, 12:2825--2830, 2011.
+
+\bibitem{Rasmussen2006}
+Carl~Eduard Rasmussen and Christopher~K.I. Williams.
+\newblock {\em Gaussian Processes for Machine Learning}.
+\newblock MIT Press, 2006.
+
+\bibitem{Rebull17}
+L.~M. {Rebull}, J.~R. {Stauffer}, L.~A. {Hillenbrand}, A.~M. {Cody},
+  J.~{Bouvier}, D.~R. {Soderblom}, M.~{Pinsonneault}, and L.~{Hebb}.
+\newblock {Rotation of Late-type Stars in Praesepe with K2}.
+\newblock {\em \apj}, 839(2):92, April 2017.
+
+\bibitem{Reinhold13}
+Timo {Reinhold}, Ansgar {Reiners}, and Gibor {Basri}.
+\newblock {Rotation and differential rotation of active Kepler stars}.
+\newblock {\em \aap}, 560:A4, December 2013.
+
+\bibitem{sgd}
+Herbert Robbins and Sutton Monro.
+\newblock A stochastic approximation method.
+\newblock {\em The Annals of Mathematical Statistics}, 22:400--407, 1951.
+
+\bibitem{sanders2018}
+Jason~L Sanders and Payel Das.
+\newblock {Isochrone ages for $\sim3$ million stars with the second Gaia data
+  release}.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  481(3):4093--4110, 2018.
+
+\bibitem{Schatzman62}
+E.~{Schatzman}.
+\newblock {A theory of the role of magnetic activity during star formation}.
+\newblock {\em Annales d'Astrophysique}, 25:18, February 1962.
+
+\bibitem{Serenelli17}
+Aldo {Serenelli}, Jennifer {Johnson}, Daniel {Huber}, Marc {Pinsonneault},
+  Warrick~H. {Ball}, Jamie {Tayar}, Victor {Silva Aguirre}, Sarbani {Basu},
+  Nicholas {Troup}, Saskia {Hekker}, Thomas {Kallinger}, Dennis {Stello},
+  Guy~R. {Davies}, Mikkel~N. {Lund}, Savita {Mathur}, Benoit {Mosser},
+  Keivan~G. {Stassun}, William~J. {Chaplin}, Yvonne {Elsworth}, Rafael~A.
+  {Garc{\'\i}a}, Rasmus {Handberg}, Jon {Holtzman}, Fred {Hearty}, D.~A.
+  {Garc{\'\i}a-Hern{\'a}ndez}, Patrick {Gaulme}, and Olga {Zamora}.
+\newblock {The First APOKASC Catalog of Kepler Dwarf and Subgiant Stars}.
+\newblock {\em \apjs}, 233(2):23, December 2017.
+
+\bibitem{Silva15}
+V.~{Silva Aguirre}, G.~R. {Davies}, S.~{Basu}, J.~{Christensen-Dalsgaard},
+  O.~{Creevey}, T.~S. {Metcalfe}, T.~R. {Bedding}, L.~{Casagrande},
+  R.~{Handberg}, M.~N. {Lund}, P.~E. {Nissen}, W.~J. {Chaplin}, D.~{Huber},
+  A.~M. {Serenelli}, D.~{Stello}, V.~{Van Eylen}, T.~L. {Campante},
+  Y.~{Elsworth}, R.~L. {Gilliland}, S.~{Hekker}, C.~{Karoff}, S.~D. {Kawaler},
+  H.~{Kjeldsen}, and M.~S. {Lundkvist}.
+\newblock {Ages and fundamental properties of Kepler exoplanet host stars from
+  asteroseismology}.
+\newblock {\em \mnras}, 452(2):2127--2148, September 2015.
+
+\bibitem{Silva17}
+V{\'\i}ctor {Silva Aguirre}, Mikkel~N. {Lund}, H.~M. {Antia}, Warrick~H.
+  {Ball}, Sarbani {Basu}, J{\o}rgen {Christensen-Dalsgaard}, Yveline
+  {Lebreton}, Daniel~R. {Reese}, Kuldeep {Verma}, Luca {Casagrande}, Anders~B.
+  {Justesen}, Jakob~R. {Mosumgaard}, William~J. {Chaplin}, Timothy~R.
+  {Bedding}, Guy~R. {Davies}, Rasmus {Handberg}, G{\"u}nter {Houdek}, Daniel
+  {Huber}, Hans {Kjeldsen}, David~W. {Latham}, Timothy~R. {White}, Hugo~R.
+  {Coelho}, Andrea {Miglio}, and Ben {Rendle}.
+\newblock {Standing on the Shoulders of Dwarfs: the Kepler Asteroseismic LEGACY
+  Sample. II.Radii, Masses, and Ages}.
+\newblock {\em \apj}, 835(2):173, February 2017.
+
+\bibitem{Skumanich72}
+A.~{Skumanich}.
+\newblock {Time Scales for Ca II Emission Decay, Rotational Braking, and
+  Lithium Depletion}.
+\newblock {\em \apj}, 171:565, February 1972.
+
+\bibitem{Soderblom15}
+David {Soderblom}.
+\newblock {Astrophysics: Stellar clocks}.
+\newblock {\em \nat}, 517(7536):557--558, January 2015.
+
+\bibitem{Soderblom10}
+David~R. {Soderblom}.
+\newblock {The Ages of Stars}.
+\newblock {\em \araa}, 48:581--629, September 2010.
+
+\bibitem{Saders16}
+Jennifer~L. {van Saders}, Tugdual {Ceillier}, Travis~S. {Metcalfe}, Victor
+  {Silva Aguirre}, Marc~H. {Pinsonneault}, Rafael~A. {Garc{\'\i}a}, Savita
+  {Mathur}, and Guy~R. {Davies}.
+\newblock {Weakened magnetic braking as the origin of anomalously rapid
+  rotation in old field stars}.
+\newblock {\em \nat}, 529(7585):181--184, January 2016.
+
+\bibitem{Saders13}
+Jennifer~L. {van Saders} and Marc~H. {Pinsonneault}.
+\newblock {Fast Star, Slow Star; Old Star, Young Star: Subgiant Rotation as a
+  Population and Stellar Physics Diagnostic}.
+\newblock {\em \apj}, 776(2):67, October 2013.
+
+\bibitem{Saders19}
+Jennifer~L. {van Saders}, Marc~H. {Pinsonneault}, and Mauro {Barbieri}.
+\newblock {Forward Modeling of the Kepler Stellar Rotation Period Distribution:
+  Interpreting Periods from Mixed and Biased Stellar Populations}.
+\newblock {\em \apj}, 872(2):128, February 2019.
+
+\bibitem{Weber67}
+Edmund~J. {Weber} and Jr. {Davis}, Leverett.
+\newblock {The Angular Momentum of the Solar Wind}.
+\newblock {\em \apj}, 148:217--227, April 1967.
+
+\bibitem{Wolpert1992}
+David~H. Wolpert.
+\newblock Stacked generalization.
+\newblock {\em Neural Networks}, 5(2):241--259, 1992.
+
+\bibitem{Zorec12}
+J.~{Zorec} and F.~{Royer}.
+\newblock {Rotational velocities of A-type stars. IV. Evolution of rotational
+  velocities}.
+\newblock {\em \aap}, 537:A120, January 2012.
+
+\end{thebibliography}

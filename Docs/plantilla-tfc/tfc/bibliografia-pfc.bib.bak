@@ -1,0 +1,30 @@
+% This file was created with JabRef 2.5.
+% Encoding: UTF-8
+
+@BOOK{Latex1,
+  title = {The \LaTeX{} companion},
+  publisher = {Addison-Wesley},
+  year = {2003},
+  author = {Goossens,M. and Mittelbach,F. and Samarin,A.},
+  edition = {18}
+}
+
+@TECHREPORT{Latex2,
+  author = {Oetiker,T. and Partl,H. and Hyna,I. and Schlegl,E.},
+  title = {The Not So Short Introduction to LaTeX2e},
+  year = {2006},
+  note = {Disponible en http://tobi.oetiker.ch/lshort/lshort.pdf}
+}
+
+@MISC{LatexWiki,
+  author = {Wikibooks},
+  title = {\url{http://en.wikibooks.org/wiki/LaTeX/}}
+}
+
+@MISC{bibtex1,
+  author = {Wikipedia},
+  title = {\url{http://en.wikipedia.org/wiki/BibTeX}},
+  owner = {rober},
+  timestamp = {2012.01.13}
+}
+

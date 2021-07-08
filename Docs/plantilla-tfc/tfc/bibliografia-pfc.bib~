@@ -1,0 +1,29 @@
+%********************************
+%Fichero de bibliografia BibTex
+%********************************
+@Misc{Latex1,
+author = {Wikipedia},
+title = {http://en.wikipedia.org/wiki/LaTeX},
+}
+@Book{Latex2,
+author = {Goossens,M. and Mittelbach,F. and Samarin,A.},
+title = {The \LaTeX{} companion},
+publisher = {Addison-Wesley},
+year = {2003},
+edition = {18},
+}
+
+@TechReport{Latex3,
+author = {Oetiker,T. and Partl,H. and Hyna,I. and Schlegl,E.},
+title = {The Not So Short Introduction to LaTeX2e},
+year = {2006},
+note = {Disponible en http://tobi.oetiker.ch/lshort/lshort.pdf},
+}
+
+@Misc{bibtex1,
+author = {Wikipedia},
+title = {http://en.wikipedia.org/wiki/BibTeX},
+}
+
+
+

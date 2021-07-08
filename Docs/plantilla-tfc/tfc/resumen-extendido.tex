@@ -1,0 +1,49 @@
+\chapter{Resumen Extendido}
+
+La edad de las estrellas es una de las propiedades más difíciles de medir ya que no puede observarse de forma directa y a su vez, es algo fundamental para profundizar en otros problemas astrofísicos, como la búsqueda de vida fuera del sistema solar. Entre las técnicas disponibles para abordar esta tarea se encuentra la girocronología, que permite estimar las edades estelares mediante el periodo de rotación de las estrellas.
+
+Las estrellas nacen con una determinada velocidad de rotación y sufren una reducción de esta velocidad por el proceso de frenado magnético. Se sabe que cuanto mayor sea la rotación, mayor será su frenado, y por lo tanto, todas las estrellas tienden a corverger a una velocidad de rotación similar para una edad y masa concreta. Es la girocronología la técnica que explota este hecho.
+
+Esta prometedora técnica presenta una gran ventaja frente a otras, que consiste en la facilidad para obtener entradas de observación a analizar. Aunque, por otro lado, existe una serie de incertidumbres que la convierten en una técnica de estimación de edades estelares poco precisa. Además de presentar limitaciones en cuanto al rango de masa de las estrellas sobre las que se puede aplicar esta técnica.
+
+\vspace{0.5cm}
+
+Teniendo esto en cuenta, se propone explorar el problema de la datación estelar utilizando la girocronología desde la perspectiva de la Inteligencia Artificial. Reemplazando las combinaciones lineales y las técnicas tradicionales que se emplean en la girocronología convencional por una aproximación de regresión de aprendizaje automático.
+
+Hasta el momento, existen pocos trabajos que aborden la datación de estrellas mediante técnicas de Inteligencia Artificial. Por ejemplo, en \cite{sanders2018}, se presenta por primera vez una Red Neuronal Bayesiana aplicada a la estimación de la edad de las estrellas. 
+
+En este trabajo se propone un enfoque diferente al que han seguido diferentes autores en sus estudios, más detallados en la Sección \ref{sec:related_work}, ya que los modelos anteriores abordan el problema desde la perspectiva bayesiana. En cambio, aquí se propone un problema de regresión puro, donde los diferentes modelos estudiados se enfrentan a la estimación de un valor particular para la edad y se evalúan en consecuencia.
+
+\vspace{0.5cm}
+
+La base de datos principal de este trabajo se compone de 1464 estrellas. Este dataset contiene varias características de cada una de las estrellas, tomando especial importancia: la temperatura efectiva $T_\texttt{eff}$, el logaritmo de la gravedad sufercial $log$g, la masa estelar $M$, el radio estelar $R$, la metalicidad ${\rm [Fe/H]}$, el periodo de rotación $P_{\rm rot}$ y la edad a estimar. Estas edades precisas provienen de la astrosismología y de la pertenencia a cúmulos. Las 4 edades prinicpales de los cúmulos son: 0.79, 1, 2.5 y 4.2 Gyrs.
+
+Para seleccionar las estrellas que alimentarán los modelos en la fase de entrenamiento, validación y test, se realiza un filtrado sobre la base de datos comentada, se seleccionan las estrellas FGK (estrellas de clases espectrales medias) y con periodo de rotación inferior a 50 días. El motivo de este filtrado se explica mediante la física que hay detrás de la girocronología, ya que esta se ve limitada en un rango de edad de entre 0.7 y 2 Gyrs y los periodos de rotación superiores a 50 días presentan dificultades a la hora de explicarse con la estructura estelar actual.
+
+Es necesario añadir que esta muestra exhibe dos sesgos importantes: 1) la muestra pertenenciente a la astrosismología está sesgada hacia las estrellas masivas y viejas; y 2) la muestra basada en cúmulos está sesgada hacia edades más jóvenes.
+
+\vspace{0.5cm}
+
+Los modelos que se han alimentado con esta muestra están detallados en la Sección \ref{sec:models} y son: Linear Regressor, Bayesian Regression, Decision Tree Regressor, Random Forest Regressor, Suport Vector Regression, Gaussian Process, kNN, Neural Network y Stacking, siendo este último un método de ensamblado de modelos formado por Neural Network y Gaussian Process en el nivel 0 y por Linear Regressor en el nivel 1. La Red Neuronal está formada por 3 capas ocultas fully-connected con 50 unidades en cada una de ellas.
+
+El estudio de rendimiento de los modelos y su correspondiente comparativa se lleva a cabo mediante tres Benchmarks. En estos se proponen tres escenarios que permiten evaluar diferentes capacidades de los modelos:
+
+\vspace{0.25cm}
+
+\textbf{Problema de datación estelar (Benchmark A)} {} Configuración para evaluar los modelos de regresión bajo un esquema clásico de división de datos en entrenamiento y prueba, siguiendo una distribución de 80/20 respectivamente. En este escenario, los modelos que mejor rendimiento muetran son Neural Network, Gaussian Process y su Satcking, presentando un MAE inferior a 0.46 Gyrs, tal y como se puede apreciar en la Figura \ref{fig:benchA_models}.
+
+\vspace{0.25cm}
+
+\textbf{Capacidad de generalización (Benchmark B)} {} Este Benchmark se compone de dos configuraciones diferentes: 1) Benchmark B1, donde se evalúa la capacidad de los modelos para estimar estrellas cuyo rango está fuera del de las estrellas vistas durante el entrenamiento; y 2) Benchmark B2, en el que se evalúa la capacidad de generalización entrenando los modelos con las estrellas pertenecientes a cúmulos y probando con el resto de estrellas. Los resultados de los modelos para estos dos escenarios muestran peor MAE que para el Benchmark A, concluyendo que todos los modelos presentan dificultades a la hora de generlizar. Para la configuración del Benchmark B1, el modelo que mejor resultado presenta es el de Neural Network, mientras que para el Benchmark B2 es uno de los modelos que peor rendimiento muestra, siendo Bayesian Regression el que mejor resultado devuelve en este escenario. Ver Figura \ref{fig:benchB1} y Figura \ref{fig:benchB2} para visualizar todos los rendimientos.
+
+\vspace{0.25cm}
+
+\textbf{Regresión sobre una muestra de control(Benchmark C)} {}  En este último escenario se evalúan los modelos sobre una muestra de control de 32 estrellas, extraídas del dataset filtrado y desconocidas en todos los entrenamientos realizados. Entre estas 32 estrellas se encuentra el Sol, haciendose énfasis en la estimación de su edad. En esta ocasión, los tres mejores modelos son Gaussian Process, Neural Network y su Stacking. La Figura \ref{fig:benchC} muestra el MAE para cada modelo. En cuanto a la estimación de la edad del Sol, tal y como se puede observar en la Tabla \ref{table:sun_results}, el modelo que más se aproxima a los 4.6 Gyrs es Random Forest Regressor, estimando una edad de 4.76 Gyrs.
+
+\vspace{0.5cm}
+
+Se obtienen tres conclusiones claras tras el estudio: 1) el modelo de Neural Network proporciona buenos resultados en 3 de los 4 escenarios evaluados, pudiendo asignarle el título símbolico de ganador; 2) todos los modelos tienden a subestimar, por lo que se cree que sería interesante tratar de corregir este sesgo en futuras líneas de investigación; y 3) el estudio revela resultados prometedores, obteniendo MAEs inferiores a 0.5 Gyrs, pudiendo considerarse como gran avance en el campo de la datación de estrellas.
+
+
+
+

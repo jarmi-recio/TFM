@@ -1,0 +1,107 @@
+% Formato para un capítulo cualquiera
+
+%Título del capítulo
+\chapter{Introducción} 
+
+\section{¿Cómo escribir tu PFC en \LaTeX{} ?}
+Escribir un PFC es una tarea de gran importancia. La herramienta de edición \LaTeX{} te va a permitir editar tu PFC de una forma elegante, útil y segura. Simplemente dedicando unos minutos a comprender cómo están organizados los ficheros que acabas de descargar, y realizando algunas pruebas con ellos, podrás comenzar a escribir el tuyo.
+
+\subsection{La mejor manera para aprender a programar es programando}
+\LaTeX{} es un lenguaje de programación como tantos otros a los que estás acostumbrado. Puedes encontrar mucha información y manuales en Internet, concretamente te recomiendo las referencias siguientes: \cite{Latex1} y \cite{Latex2}.
+
+Este documento PDF que estás leyendo ha sido generado mediante \LaTeX{} utilizando los ficheros:
+\begin{enumerate}
+\item \textit{tfc.tex} : es el fichero principal, desde él se hacen las llamadas a los demás ficheros, que pueden ser editados de forma independiente. Si abres este fichero con cualquier editor de textos verás que contiene muchas sentencias que ahora desconoces. Puedes observar que el fichero tiene una zona de cabecera donde se incluyen todos los paquetes a utilizar. Luego se define el título del documento y su autor, para, al final, ir añadiendo los capítulos y secciones de tu PFC.
+\item \textit{previo.tex}: genera la hoja de calificación oficial para un PFC de la Universidad de Alcalá.
+\item \textit{dedicatoria.tex}: para que escribas tus dedicatorias.
+\item \textit{agradecimientos.tex}: para que escribas los agradecimientos, que seguro son muchos.
+\item \textit{resumen.tex}: aquí debes escribir un resumen de tu trabajo.
+\item \textit{introduccion.tex}: este es un capítulo modelo, en el que encontrarás los comandos utilizados para generar lo que estás ahora mismo leyendo.
+\item \textit{apendice-a.tex}: un modelo de apéndice, muy utilizado en un PFC cuando queremos incluir en el documento final código fuente, manuales de usuario, \ldots
+\item \textit{bibliografia-pfc.bib} : este es un fichero \textit{.bib} (no lleva la extensión .tex como los anteriores). Es un fichero de bibliografía \textbf{BibTex}. La bibliografía es una parte fundamental de un PFC, y es por ello que debemos poner especial cuidado a la hora de editarla, ya que va a permitir que futuros lectores de tu PFC, que seguro serán muchos, puedan acudir a las referencias cuando no entiendan algo, o cuando pretendan retomar tu trabajo y continuar con él para mejorarlo. Sobre BibTex también existen muchos manuales, pero encontrarás información útil en \cite{bibtex1}.
+\end{enumerate}
+
+Para probar que todo esto funciona sólo tienes que compilar el fichero \textit{tfc.tex}, ¿pero cómo?. Evidentemente necesitas un compilador. Veamos que opciones existen:
+
+\begin{enumerate}
+\item \textbf{\underline{Plataforma Linux (Unix)}}: simplemente necesitas tener instalado el compilador \textit{latex}, que suele estar incluido en un paquete con el mismo nombre. Existe un entorno de trabajo bastante agradable y útil, que es \textit{Kile}, sobre el que podrás editar tus documentos de forma cómoda, gráfica y sencilla. También puedes utilizar la herramienta \textit{Lyx}, que te permite saber cómo va quedando tu documento a medida que escribes, sin necesidad de primero editar el código y luego compilar, es decir, es un software de filosofía WYSIWYM (What You See Is What You Mean).
+\item \textbf{\underline{Otras plataformas}}: para trabajar con \LaTeX{} sobre otros sistemas operativos dispones de gran cantidad de software. Simplemente voy a indicarte algunas herramientas que son de libre distribución:
+\begin{itemize}
+\item Compilador: el único que conozco es \textit{MikTex}, lo puedes descargar de su web oficial.
+\item Editor: puedes utilizar TeXnicCenter o WinShell, ambos de libre distribución.
+\end{itemize}
+\end{enumerate}
+
+Una sugerencia: \textbf{\textit{¿no crees que es un buen momento para trabajar desde Linux?}}. Si no tienes este sistema operativo en tu ordenador, prueba a instalar la distribución \textit{Ubuntu} (http://www.ubuntu.com), es realmente sencillo funcionar con ella, y además puedes descargarla desde la web o incluso pedir un cd de forma totalmente gratuita.
+
+
+Ahora que conoces algunas herramientas, debes probar a compilar el fichero \textit{tfc.tex} hasta que obtengas como resultado este pdf.
+
+\subsection{Algunos detalles más}
+
+Con \LaTeX{} puedes editar tus propias tablas (Tabla \ref{tabla:primera}), e incluso añadir gráficos a tus documentos (Figura \ref{grafico:primero}). A la hora de añadir un gráfico la mejor opción es trabajar con formatos de imagen \textit{.eps}, vectorial preferiblemente, aunque puedes incrustar imágenes en formato bmp, jpg y otros muchos.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|c|}\hline
+\textbf{Medida} & \textbf{Error} & \textbf{Porcentaje} \% \\ \hline
+12 & 23.6 & 22 \\ \hline
+-1 & 13 & 4 \\ \hline
+6 & 3 & 4 \\ \hline
+\end{tabular}
+\caption[El título corto de la tabla.]{El título de la tabla.}
+\label{tabla:primera}
+\end{center}
+\end{table}
+
+\begin{figure}
+\begin{center}
+%Para compilar con latex
+\includegraphics[width=4cm]{Figuras/LogoUAH.eps}\\
+%Para compilar con pdflatex
+%\includegraphics[width=4cm]{Figuras/LogoUAH.png}\\
+\end{center}
+\caption[El título corto de la gráfica.]{El título de la gráfica.}
+\label{grafico:primero}
+\end{figure}
+
+
+\LaTeX{} también te permite editar ecuaciones de forma muy sencilla y realmente elegante, observa.
+\begin{equation}
+I = \! \int_{-\infty}^\infty f(x)\,dx \label{eq:fine}.
+\end{equation}
+
+\begin{equation}
+\label{eq:mdiv}
+m(T) =
+\begin{cases}
+0 & \text{$T > T_c$} \\
+\bigl(1 - [\sinh 2 \beta J]^{-4} \bigr)^{\! 1/8} & \text{$T < T_c$}
+\end{cases}
+\end{equation}
+
+\begin{align}
+\textbf{T} &=
+\begin{pmatrix}
+T_{++} \hfill & T_{+-} \\
+T_{-+} & T_{--} \hfill 
+\end{pmatrix} , \nonumber \\
+& =
+\begin{pmatrix}
+e^{\beta (J + B)} \hfill & e^{-\beta J} \hfill \\
+e^{-\beta J} \hfill & e^{\beta (J - B)} \hfill
+\end{pmatrix}.
+\end{align}
+
+\section{Recomendaciones importantes}
+Antes de enviarme un copia de tu trabajo para revisar, asegúrate de que has realizado las siguientes tareas:
+
+
+
+\section{Para terminar}
+En el fichero \textit{introduccion.tex} encontrarás todo el código que se ha utilizado para generar este capítulo, échale un vistazo y trata de entender todo aquello que está escrito en él. Si consigues generar este documento pdf de nuevo, es que estás preparado para editar tu propio PFC incluyendo los nuevos capítulos que necesites.
+
+\begin{center}
+\begin{large}\textbf{Adelante y buena suerte.}\end{large}
+\end{center}
+
