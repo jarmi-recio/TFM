@@ -4,7 +4,7 @@
 \chapter{Introducción} 
 \label{sec:intro}
  
-Según expresa Soderblom en \cite{Soderblom10}, se pueden medir muchas de las propiedades físicas claves de las estrellas. La masa se puede determinar a partir de la física básica o también se puede inferir a partir de un tipo espectral, particularmente para la secuencia principal. La composición de las estrellas, que no es fácil de determinar pero, se puede seguir un proceso bien comprendido y se conocen sus limitaciones. Sin embargo, la edad, que es el tercer determinante clave del estado físico de una estrella, no se puede medir directamente, solo se puede estimar. Únicamente se tiene la edad precisa y exacta de una estrella, el Sol. Pero esta edad no ha sido revelada por la propia estrella sino que, se consigue limitar gracias a la posibilidad de estudiar en un laboratorio la materia que compone el sistema solar. Estudio que no se puede hacer para ninguna otra estrella.
+Según expresa Soderblom en \cite{Soderblom10}, se pueden medir muchas de las propiedades físicas claves de las estrellas. La masa se puede determinar a partir de la física básica o también se puede inferir a partir de un tipo espectral, particularmente para la secuencia principal. La composición de las estrellas, no es fácil de determinar pero, se puede seguir un proceso bien comprendido y se conocen sus limitaciones. Sin embargo, la edad, que es el tercer determinante clave del estado físico de una estrella, no se puede medir directamente, solo se puede estimar. Únicamente se tiene la edad precisa y exacta de una estrella, el Sol. Pero esta edad no ha sido revelada por la propia estrella sino que, se consigue limitar gracias a la posibilidad de estudiar en un laboratorio la materia que compone el sistema solar. Estudio que no se puede hacer para ninguna otra estrella.
 
 En algunas ocasiones, es posible determinar las edades si se colocan ciertos eventos en la secuencia correcta y se es capaz de comprender la duración relativa de cada una de las fases. Pero, normalmente se necesitan unir observaciones de objetos o sucesos independientes para alcanzar la comprensión de un proceso. Como por ejemplo:
 
@@ -145,7 +145,7 @@ Si se representa la edad frente a su periodo de rotación, se obtiene la Figura 
 \end{figure}
 
 
-\chapter{Modelos y resultados} 
+\chapter{Modelos de Inteligencia Artificial para datación estelar} 
 
 \section{Modelos}
 \label{sec:models}
@@ -1326,7 +1326,7 @@ Benchmark & nnet & lr & dtr & rf & svm & bayes & knn & gp & stacking \\
 \end{table}
 
 
-\chapter{Continual learning}
+\chapter{Meta-learning para estimación de edades estelares}
  
 \section{Introducción}
 
@@ -1388,6 +1388,7 @@ En estas gráficas se puede observar la diferencia de rendimiento que se obtiene
 \end{figure}
 
 \section{MAML para datación estelar}
+\label{sec:maml}
 
 En esta sección, se detalla la aplicación del algoritmo MAML sobre el problema de la estimación de edades estelares. En primer lugar, se analiza la inyección de los datos en el algoritmo, teniendo en cuenta que las características de las estrellas que se emplean para predecir la edad son las mismas que se han utilizado en el Benchmarking principal de este proyecto, las cuales se detallan en la Sección \ref{sec:data}. A continuación, se profundiza en el propio funcionamiento del algoritmo, donde se implementan los procesos comentados en el apartado anterior. Y finalmente, se analizan los resultados obtenidos por el algoritmo comparando diferentes configuraciones para la arquitectura de la red neuronal.
 
@@ -1399,14 +1400,46 @@ Este dataset, tras aplicar los filtros asociados a la física detrás de la giro
 
 La división del conjunto total de estrellas en entrenamiento y prueba tiene una relación 80/20 respectivamente. Además, las edades se ordenan de forma creciente, por lo que, el conjunto de entrenamiento contiene estrellas de hasta 4.2 Gyrs de edad, mientras que el conjunto de prueba comprende edades de entre 4.2 Gyrs y 18.8 Gyrs.
 
-Durante la fase de entrenamiento del modelo, al algoritmo se le inyectan conjuntos de 20 estrellas, o lo que es lo mismo, el tamaño del \emph{batch} es igual a 20. De estas 20 muestras, 10 se emplean en el proceso de actualización de gradiente, es por esto que el experimento se cataloga como \emph{few-shot} con K = 10, es decir, \emph{10-shot}. Para la fase de prueba el tamaño del \emph{batch} es igual a 1, por lo que, en cada iteración del \emph{test} se inyecta una estrella.
+Durante la fase de entrenamiento del modelo, al algoritmo se le inyectan conjuntos de 20 estrellas, o lo que es lo mismo, el tamaño del \emph{batch} es igual a 20, tal y como se ilustra en la Figura \ref{fig:input_data_train}. De estas 20 muestras, 10 se emplean en el proceso de actualización de gradiente, es por esto que el experimento se cataloga como \emph{few-shot} con K = 10, es decir, \emph{10-shot}. Para la fase de prueba el tamaño del \emph{batch} es igual a 1, por lo que, en cada iteración del \emph{test} se inyecta una estrella. En la Figura \ref{fig:input_data_test} se observa este proceso.
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[width=0.8\linewidth]{Figuras/MAML/train_data.pdf}
+\end{center}
+\caption{Esquema de la inyección de datos durante la fase de entrenamiento.}
+ \label{fig:input_data_train}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[width=0.8\linewidth]{Figuras/MAML/test_data.pdf}
+\end{center}
+\caption{Esquema de la inyección de datos durante la fase de prueba.}
+ \label{fig:input_data_test}
+\end{figure}
 
 
 \subsection{Núcleo del algoritmo} 
 
-Según se ha comentado en la sección anterior, el algoritmo procesa \emph{batches} de 20 estrellas durante el proceso de entrenamiento, 10 de estas estrellas pasan a ser directanente \emph{inputs} de la red neuronal del modelo. Mientras que, las 10 estrellas restantes, pasan por un proceso de actualización de gradiente en el que suceden 10 pasos, es decir, se producen 10 actualizaciones del gradiente hasta llegar a la estimación óptima. En cada una de las actualizaciones se produce una corrección de los pesos del modelo y se obtiene una medida de error asociada a la estimación de la edad por parte de la red neuronal con dichos pesos.
+Según se ha comentado en la sección anterior, el algoritmo procesa \emph{batches} de 20 estrellas durante el proceso de entrenamiento, 10 de estas estrellas pasan a ser directanente \emph{inputs} de la red neuronal del modelo. Mientras que, las 10 estrellas restantes, pasan por un proceso de actualización de gradiente en el que suceden 10 pasos, es decir, se producen 10 actualizaciones del gradiente hasta llegar a la estimación óptima. En cada una de las actualizaciones se produce una corrección de los pesos del modelo y se obtiene una medida de error asociada a la estimación de la edad por parte de la red neuronal con dichos pesos. La Figura \ref{fig:core_maml_train} ilustra el funcionamiento descrito.
 
-En el proceso de pruebas se sigue el mismo procedimiento, pero a diferencia de la fase de entrenamiento, el tamaño de \emph{batch} es igual a 1. Esto permite, en cada iteración del \emph{test}, obtener la edad estimada para cada estrella y las perdidas asociadas en cada uno de los 10 pasos de actualización de gradiente. Además, se obtiene la estimación y las pérdidas de la red neuronal sin la corrección de sus pesos, es decir, sin actualización del gradiente.
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[width=0.8\linewidth]{Figuras/MAML/maml_core_train.pdf}
+\end{center}
+\caption{Esquema del funcionamiento interno del modelo durante el proceso de entrenamiento.}
+ \label{fig:core_maml_train}
+\end{figure}
+
+En el proceso de pruebas se sigue el mismo procedimiento, pero a diferencia de la fase de entrenamiento, el tamaño de \emph{batch} es igual a 1. Esto permite, en cada iteración del \emph{test}, obtener la edad estimada para cada estrella y las perdidas asociadas en cada uno de los 10 pasos de actualización de gradiente. Además, se obtiene la estimación y las pérdidas de la red neuronal sin la corrección de sus pesos, es decir, sin actualización del gradiente. La Figura \ref{fig:core_maml_test} ilustra el funcionamiento descrito.
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[width=0.8\linewidth]{Figuras/MAML/maml_core_test.pdf}
+\end{center}
+\caption{Esquema del funcionamiento interno del modelo durante el proceso de prueba.}
+ \label{fig:core_maml_test}
+\end{figure}
 
 
 \subsection{Resultados obtenidos} 
@@ -1429,18 +1462,43 @@ La Figura \ref{fig:mse_nnet} ilustra los resultados obtenidos al comparar las di
 
 Tras analizar estos resultados, se concluye que el modelo que mejores resultados presenta es la red neuronal cuya arquitecura está formada por 3 capas ocultas y 20 unidades en cada una. Desde la primera iteración del gradiente, muestra un MSE menor al de todas las demás arquitecturas.
 
-Por otro lado, la arquitectura que muestra los peores resultados de experimento es la red neuronal formada por una sola capa oculta de 40 unidades. En esta se aprecia una diferencia de aproximadamente 1 unidad de MSE cuando se llega a la última acualización de gradiente.
+Por otro lado, la arquitectura que muestra los peores resultados de experimento es la red neuronal formada por una sola capa oculta de 40 unidades. Se observa un rendimiento considerablemente peor desde la primera hasta la última iteración de actualización de gradiente.
 
-Sin tener en cuenta esta última configuración, las 3 arquitecturas restantes se aproximan enormemente, en las últimas actualizaciones de gradiente, a los resultados obtenidos por el oráculo (MSE = 0).
+Sin tener en cuenta esta última configuración, las 3 arquitecturas restantes se aproximan enormemente, en las últimas actualizaciones de gradiente, a los resultados obtenidos por el oráculo (MSE = 0). En la Tabla \ref{table:mse_maml} se detallan los valores exactos.
+
+\begin{table}[H]
+\centering
+\scalebox{0.6}{
+\begin{tabular}{l|ccccccccccc}  
+\toprule
+Arquitectura & Act. 0 & Act. 1 & Act. 2 & Act. 3 & Act. 4 & Act. 5 & Act. 6 & Act. 7 & Act. 8 & Act. 9 & Act. 10 \\
+\midrule
+\textbf{[40 40]}  & 5.69 & 3.72 & 2.11 & 1.13 & 0.65 & 0.40 & 0.26 &  0.18 &  0.12 &  0.08 & 0.06\\
+\textbf{[20 20]}  & 5.94 & 4.40 & 3.00 & 1.90 & 1.19 & 0.77 & 0.52 & 0.37 & 0.26 &  0.19 & 0.14\\
+\textbf{[20 20 20]}  & 5.75 &  3.27 &  1.42 & 0.63 & 0.32 &  0.18 & 0.10 & 0.06 & 0.03 & 0.02 & 0.01\\
+\textbf{[40]}  & 5.98 & 5.21 & 4.49 & 3.84 & 3.27 & 2.76 & 2.33 & 1.96 & 1.66 & 1.41 & 1.20\\
+\bottomrule
+\end{tabular}
+}%end of scalebox
+\caption{MSE para las diferentes arquitucturas y cada una de las actualizaciones de gradiente.}\label{table:mse_maml}
+\end{table}
 
 
 \chapter{Conclusiones}
 
-En este trabajo se ha presentado un análisis exhaustivo comparando el estado del arte en modelos de regresión de Inteligencia Artificial, entrenados y probados para solucionar el problema de datación estelar. En base a los resultados obtenidos en este estudio, se informa de los siguientes hallazgos sobre el rendimiento y la capacidad de generalización de los modelos de regresión para la estimación de edades estelares.
+\section{Modelos clásicos de IA}
+
+En la primera parte de este trabajo se ha presentado un análisis exhaustivo comparando el estado del arte en modelos en regresión de Inteligencia Artificial, entrenados y probados para solucionar el problema de datación estelar. En base a los resultados obtenidos en este estudio, se informa de los siguientes hallazgos sobre el rendimiento y la capacidad de generalización de los modelos de regresión para la estimación de edades estelares.
 
 En primer lugar, el estudio demuestra que un modelo de datación estelar basado en una Red Neuronal como la desarrollada en este proyecto, proporciona resultados notables en términos de compensación entre generalización y precisión. Los experimentos revelan que el rendimiento del modelo nnet es bueno en los Benchmark A y C, donde se prueba sobre un conjunto de estrellas aleatorias de la base de datos y sobre un conjunto de control, pero también presenta buenos resultados en el Benchmark B1, donde se pone a prueba su capacidad de generalizar sobre estrellas de edades desconocidas. Es un modelo simple, un MLP con 3 capas ocultas, que podría extenderse (Usando capas 1D CNN) posiblemente ofreciendo mejores resultados. Se deja la puerta abierta para futuras investigaciones. Si los profesionales del campo pretenden buscar la solución que proporcione el menor error, el mensaje es: debe utilizarse un modelo de stacking que combine procesos gaussianos y redes neuronales, esta combinación presenta los mejores rendimientos del Benchmark A y los segundos mejores del Benchmark C, además de presentar buenas precisiones en ambos escenarios, aunque no las mejores. Finalmente, se recomienda una regresión bayesiana si los datos de entrenamiento disponibles pertenecen principalmente a cúmulos de estrellas.
-
 En segundo lugar, es importante destacar que \emph{todos} los modelos tienden a subestimar en sus estimaciones, y no solo en el Benchmark B1, donde sería natural debido a que los modelos se entrenan con estrellas jóvenes y desconocen un amplio rango de edades. Por lo tanto, se ve una interesante línea de trabajo futura en relación a la reducción de este sesgo.
-
 Y tercero, el estudio revela resultados prometedores para el problema de datación estelar. Un error de $<0.5$ Gyr se puede considerar como un gran avance en el campo.
+
+\section{Meta-Learning}
+
+En la segunda parte del trabajo, se estudia el algoritmo MAML (Meta-Agnostic Meta-Learning) para resolver el problema de la regresión de las edades estelares. Sobre este problema, se obtienen diferentes resultados asociados a diferentes arquitecturas desarrolladas para el modelo. Los peores resultados van asociados a la arquitectura más siemple probada, con una sola capa oculta y 40 células, muestra un MSE = 1.20 en su última actualización de gradiente. En contraposición, los mejores resultados se puede observar en el modelo que cuenta con 3 capas ocultas de 20 unidades cada una, con un MSE = 0.01. 
+Es importante destacar que las configuraciones más complejas consiguen resultados de MSE muy próximos a cero en la última actualización de gradiente.
+ 
+
+\section{Conclusiones generales}
 

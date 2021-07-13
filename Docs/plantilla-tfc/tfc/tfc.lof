@@ -130,5 +130,9 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Resultados del estudio de regresión sobre las ondas senoidales con K = 5.}}{82}{figure.5.1}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Resultados del estudio de regresión sobre las ondas senoidales con K = 10.}}{82}{figure.5.2}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados del estudio de regresión sobre las ondas senoidales con K = 20.}}{83}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparación del MSE para las distintas configuraciones de la red neuronal}}{85}{figure.5.4}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Esquema de la inyección de datos durante la fase de entrenamiento.}}{84}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Esquema de la inyección de datos durante la fase de prueba.}}{85}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Esquema del funcionamiento interno del modelo durante el proceso de entrenamiento.}}{86}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Esquema del funcionamiento interno del modelo durante el proceso de prueba.}}{87}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Comparación del MSE para las distintas configuraciones de la red neuronal}}{88}{figure.5.8}%
 \addvspace {10\p@ }

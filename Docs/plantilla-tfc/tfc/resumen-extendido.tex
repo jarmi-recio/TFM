@@ -1,6 +1,6 @@
 \chapter{Resumen Extendido}
 
-La edad de las estrellas es una de las propiedades más difíciles de medir ya que no puede observarse de forma directa y a su vez, es algo fundamental para profundizar en otros problemas astrofísicos, como la búsqueda de vida fuera del sistema solar. Entre las técnicas disponibles para abordar esta tarea se encuentra la girocronología, que permite estimar las edades estelares mediante el periodo de rotación de las estrellas.
+La edad de las estrellas es una de las propiedades más difíciles de medir ya que no puede observarse de forma directa, y a su vez, es algo fundamental para profundizar en otros problemas astrofísicos, como la búsqueda de vida fuera del sistema solar. Entre las técnicas disponibles para abordar esta tarea se encuentra la girocronología, que permite estimar las edades estelares mediante el periodo de rotación de las estrellas.
 
 Las estrellas nacen con una determinada velocidad de rotación y sufren una reducción de esta velocidad por el proceso de frenado magnético. Se sabe que cuanto mayor sea la rotación, mayor será su frenado, y por lo tanto, todas las estrellas tienden a corverger a una velocidad de rotación similar para una edad y masa concreta. Es la girocronología la técnica que explota este hecho.
 
@@ -12,7 +12,7 @@ Teniendo esto en cuenta, se propone explorar el problema de la datación estelar
 
 Hasta el momento, existen pocos trabajos que aborden la datación de estrellas mediante técnicas de Inteligencia Artificial. Por ejemplo, en \cite{sanders2018}, se presenta por primera vez una Red Neuronal Bayesiana aplicada a la estimación de la edad de las estrellas. 
 
-En este trabajo se propone un enfoque diferente al que han seguido diferentes autores en sus estudios, más detallados en la Sección \ref{sec:related_work}, ya que los modelos anteriores abordan el problema desde la perspectiva bayesiana. En cambio, aquí se propone un problema de regresión puro, donde los diferentes modelos estudiados se enfrentan a la estimación de un valor particular para la edad y se evalúan en consecuencia.
+En este trabajo se propone un enfoque diferente al que han seguido otros autores en sus estudios, más detallados en la Sección \ref{sec:related_work}, ya que los modelos anteriores abordan el problema desde la perspectiva bayesiana. En cambio, aquí se propone un problema de regresión puro, donde los diferentes modelos estudiados se enfrentan a la estimación de un valor particular para la edad y se evalúan en consecuencia.
 
 \vspace{0.5cm}
 
@@ -44,6 +44,20 @@ El estudio de rendimiento de los modelos y su correspondiente comparativa se lle
 
 Se obtienen tres conclusiones claras tras el estudio: 1) el modelo de Neural Network proporciona buenos resultados en 3 de los 4 escenarios evaluados, pudiendo asignarle el título símbolico de ganador; 2) todos los modelos tienden a subestimar, por lo que se cree que sería interesante tratar de corregir este sesgo en futuras líneas de investigación; y 3) el estudio revela resultados prometedores, obteniendo MAEs inferiores a 0.5 Gyrs, pudiendo considerarse como gran avance en el campo de la datación de estrellas.
 
+\vspace{0.25cm}
 
+Además del \emph{benchmarking} de los modelos clásicos de Inteligencia Artficial, se realiza un estudio sobre la aplicación del algoritmo MAML (\emph{Model-Agnostic Meta-Learning}) para el problema de estimación de edades estelares. Este algoritmo se denomina agnóstico del modelo porque es compatible con cualquier algoritmo entrenado con descenso de gradiente. Y se caracteriza para el metaaprendizaje porque se entrena en varias tareas de aprendizaje con el objetivo de que sea capaz de resolver nuevas tareas con una pequeña cantidad de muestras.
+
+\vspace{0.25cm} 
+
+Este análisis nace del trabajo \cite{finn2017modelagnostic}, donde se emplea el algoritmo MAML para resolver problemas de regresión, clasificación y aprendizaje por refuerzo. Aunque será el estudio en regresión el que se tome como punto de partida para aplicar el algoritmo MAML al problema de estimación de edades estelares.
+
+\vspace{0.25cm} 
+
+Durante la fase de metaentrenamiento, el modelo se entrena para que sea capaz de adaptarse a un número muy elevado de tareas. Esto se consigue mediante la configuración de aprendizaje \emph{K-Shot}, donde el modelo se entrena para que aprenda nuevas tareas usando K muestras de la observación incial y la retroalimentación proporcionada por la función de pérdidas para cada tarea. El ajuste del modelo sigue una regla de aprendizaje basada en gradientes, con el objetivo de aprender rápidamente sobre nuevas tareas extraídas de la distribución total sin llegar al sobreajuste. 
+
+\vspace{0.25cm}
+
+El funcionamiento detallado del algoritmo y la inyección de los datos relativos a las características de las estrellas se explican en la Sección \ref{sec:maml}. Para evaluar los resultados obtenidos de este experimento, se emplea la misma métrica que se utiliza en el trabajo original, el error cuadrático medio. Esta evaluación se realiza sobre distintas arquitecturas que pueden componer la red neuronal principal del modelo. Originalmente, se desarrolla con una red neuronal de 2 capas ocultas y 40 unidades cada una, pero los mejores resultados obtenidos se consiguen con una arquitectura de 3 capas ocultas y 20 unidades cada una, obteniendo un MSE = 0.01 en sus últimas actualizaciones de gradiente.
 
 
