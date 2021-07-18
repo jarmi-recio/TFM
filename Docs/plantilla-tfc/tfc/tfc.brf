@@ -92,7 +92,9 @@
 \backcite {LeCun2012}{{17}{4.1}{equation.4.1.2}}
 \backcite {sgd}{{17}{4.1}{equation.4.1.2}}
 \backcite {Wolpert1992}{{17}{4.1}{figure.4.1}}
-\backcite {scikit-learn}{{22}{4.3.1}{section*.8}}
+\backcite {scikit-learn}{{23}{4.3.1}{section*.8}}
 \backcite {finn2017modelagnostic}{{79}{5.1}{section.5.1}}
 \backcite {finn2017modelagnostic}{{80}{5.3}{section.5.3}}
 \backcite {finn2017modelagnostic}{{83}{5.4.1}{subsection.5.4.1}}
+\backcite {nichol2018firstorder}{{90}{6.2}{section.6.2}}
+\backcite {yao2021metalearning}{{90}{6.2}{section.6.2}}

@@ -14,9 +14,9 @@
 \contentsline {section}{\numberline {4.1}Modelos}{15}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Benchmark}{17}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Resultados}{22}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Configuración experimental}{22}{subsection.4.3.1}%
-\contentsline {paragraph}{Implementación}{22}{section*.8}%
-\contentsline {paragraph}{Métricas de evaluación}{22}{section*.9}%
+\contentsline {subsection}{\numberline {4.3.1}Configuración experimental}{23}{subsection.4.3.1}%
+\contentsline {paragraph}{Implementación}{23}{section*.8}%
+\contentsline {paragraph}{Métricas de evaluación}{23}{section*.9}%
 \contentsline {paragraph}{Gráficas}{23}{section*.10}%
 \contentsline {subsection}{\numberline {4.3.2}Benchmark A: Problema de datación estelar}{23}{subsection.4.3.2}%
 \contentsline {paragraph}{Stacking}{24}{section*.11}%
@@ -69,5 +69,5 @@
 \contentsline {chapter}{\numberline {6}Conclusiones}{89}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Modelos clásicos de IA}{89}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Meta-Learning}{90}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Conclusiones generales}{90}{section.6.3}%
-\contentsline {chapter}{{}Bibliografía}{91}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Conclusiones personales}{90}{section.6.3}%
+\contentsline {chapter}{{}Bibliografía}{93}{section.6.3}%

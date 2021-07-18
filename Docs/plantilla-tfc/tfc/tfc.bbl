@@ -277,6 +277,10 @@ Andy {Moya}, Federico {Zuccarino}, William~J. {Chaplin}, and Guy~R. {Davies}.
   and Radii}.
 \newblock {\em \apjs}, 237(2):21, August 2018.
 
+\bibitem{nichol2018firstorder}
+Alex Nichol, Joshua Achiam, and John Schulman.
+\newblock On first-order meta-learning algorithms, 2018.
+
 \bibitem{Nielsen13}
 M.~B. {Nielsen}, L.~{Gizon}, H.~{Schunker}, and C.~{Karoff}.
 \newblock {Rotation periods of 12 000 main-sequence Kepler stars: Dependence on
@@ -402,6 +406,10 @@ Edmund~J. {Weber} and Jr. {Davis}, Leverett.
 David~H. Wolpert.
 \newblock Stacked generalization.
 \newblock {\em Neural Networks}, 5(2):241--259, 1992.
+
+\bibitem{yao2021metalearning}
+Huaxiu Yao, Linjun Zhang, and Chelsea Finn.
+\newblock Meta-learning with fewer tasks through task interpolation, 2021.
 
 \bibitem{Zorec12}
 J.~{Zorec} and F.~{Royer}.

@@ -49,45 +49,45 @@ Repeated entry---line 1127 of file bibliografia-pfc.bib
  : @article{Saders16
  :                  ,
 I'm skipping whatever remains of this entry
-You've used 63 entries,
+You've used 65 entries,
             2118 wiz_defined-function locations,
-            915 strings with 17915 characters,
-and the built_in function-call counts, 25768 in all, are:
-= -- 2309
-> -- 1820
+            921 strings with 18141 characters,
+and the built_in function-call counts, 26296 in all, are:
+= -- 2353
+> -- 1856
 < -- 4
-+ -- 722
-- -- 658
-* -- 2310
-:= -- 4505
-add.period$ -- 189
-call.type$ -- 63
-change.case$ -- 515
++ -- 736
+- -- 670
+* -- 2340
+:= -- 4593
+add.period$ -- 193
+call.type$ -- 65
+change.case$ -- 527
 chr.to.int$ -- 0
-cite$ -- 63
-duplicate$ -- 748
-empty$ -- 1582
-format.name$ -- 658
-if$ -- 5064
+cite$ -- 65
+duplicate$ -- 762
+empty$ -- 1626
+format.name$ -- 670
+if$ -- 5174
 int.to.chr$ -- 0
-int.to.str$ -- 63
+int.to.str$ -- 65
 missing$ -- 65
-newline$ -- 318
-num.names$ -- 126
-pop$ -- 424
+newline$ -- 326
+num.names$ -- 130
+pop$ -- 446
 preamble$ -- 1
-purify$ -- 455
+purify$ -- 465
 quote$ -- 0
-skip$ -- 524
+skip$ -- 540
 stack$ -- 0
-substring$ -- 1263
-swap$ -- 117
+substring$ -- 1273
+swap$ -- 119
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 246
+type$ -- 254
 warning$ -- 0
-while$ -- 193
-width$ -- 65
-write$ -- 694
+while$ -- 197
+width$ -- 67
+write$ -- 710
 (There were 10 error messages)
