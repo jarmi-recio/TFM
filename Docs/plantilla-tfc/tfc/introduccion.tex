@@ -1423,16 +1423,17 @@ En estas gráficas se puede observar la diferencia de rendimiento que se obtiene
 
 En esta sección, se detalla la aplicación del algoritmo MAML sobre el problema de la estimación de edades estelares. En primer lugar, se analiza la inyección de los datos en el algoritmo, teniendo en cuenta que las características de las estrellas que se emplean para predecir la edad son las mismas que se han utilizado en el Benchmarking principal de este proyecto, las cuales se detallan en la Sección \ref{sec:data}. A continuación, se profundiza en el propio funcionamiento del algoritmo, donde se implementan los procesos comentados en el apartado anterior. Y finalmente, se analizan los resultados obtenidos por el algoritmo comparando diferentes configuraciones para la arquitectura de la red neuronal.
 
-%TODO_ROBER: Continuar revisión aquí.
+
 \subsection{Inyección de los datos} 
 
 Como se ha comentado en la introducción de este apartado, el set de datos elegido para estimar la edad estelar es el mismo que se detalla en la Sección \ref{sec:data}. Este set se compone de de 8 características asociadas a cada una de las estrellas que forman el dataset: temperatura estelar efectiva, logaritmo de la gravedad superficial, masa estelar, radio estelar, contenido de hierro sobre hidrógeno, luminosidad, periodo de rotación y la edad de la estrella.
 
 Este dataset, tras aplicar los filtros asociados a la física detrás de la girocronolgía, cuenta con un número relativamente reducido de muestras en comparación con los experimentos de regresión estudiados en \cite{finn2017modelagnostic}. Por tanto, ya que la el set de datos completo incluye valores de error por exceso y defecto para cada una de las características, se aumenta el tamaño del dataset siguiendo una distribución normal de las características con sus valores de error asociados. Lo que resulta en un conjunto de más de 13000 estrellas con sus correspondientes características.
+%TODO: explica mejor cómo se genera, qué incluye el dataset, etc.
 
 La división del conjunto total de estrellas en entrenamiento y prueba tiene una relación 80/20 respectivamente. Además, las edades se ordenan de forma creciente, por lo que, el conjunto de entrenamiento contiene estrellas de hasta 4.2 Gyrs de edad, mientras que el conjunto de prueba comprende edades de entre 4.2 Gyrs y 18.8 Gyrs.
 
-Durante la fase de entrenamiento del modelo, al algoritmo se le inyectan conjuntos de 20 estrellas, o lo que es lo mismo, el tamaño del \emph{batch} es igual a 20, tal y como se ilustra en la Figura \ref{fig:input_data_train}. De estas 20 muestras, 10 se emplean en el proceso de actualización de gradiente, es por esto que el experimento se cataloga como \emph{few-shot} con K = 10, es decir, \emph{10-shot}. Para la fase de prueba el tamaño del \emph{batch} es igual a 1, por lo que, en cada iteración del \emph{test} se inyecta una estrella. En la Figura \ref{fig:input_data_test} se observa este proceso.
+Durante la fase de entrenamiento del modelo, al algoritmo se le inyectan conjuntos de 20 estrellas, o lo que es lo mismo, el tamaño del \emph{batch} es igual a 20, tal y como se ilustra en la Figura \ref{fig:input_data_train}. De estas 20 muestras, 10 se emplean en el proceso de actualización de gradiente, es por esto que el experimento se cataloga como \emph{few-shot} con K = 10, es decir, \emph{10-shot}. Para la fase de prueba el tamaño del \emph{batch} es igual a 1, por lo que, en cada iteración del \emph{test} se inyecta una estrella. En la Figura \ref{fig:input_data_test} se observa este proceso de forma gráfica.
 
 \begin{figure}[H]
 \begin{center}
@@ -1451,7 +1452,7 @@ Durante la fase de entrenamiento del modelo, al algoritmo se le inyectan conjunt
 \end{figure}
 
 
-\subsection{Núcleo del algoritmo} 
+\subsection{Procese de aprendizaje} 
 
 Según se ha comentado en la sección anterior, el algoritmo procesa \emph{batches} de 20 estrellas durante el proceso de entrenamiento, 10 de estas estrellas pasan a ser directanente \emph{inputs} de la red neuronal del modelo y le proporcionan información del ajuste de pesos a las otras 10 estrellas que participarán en el proceso de actualización de gradiente. Esas 10 estrellas restantes, pasan por un proceso de actualización de gradiente en el que suceden 10 pasos, es decir, se producen 10 actualizaciones del gradiente hasta llegar a la estimación óptima. En cada una de las actualizaciones se produce una corrección de los pesos del modelo y se obtiene una medida de error asociada a la estimación de la edad por parte de la red neuronal con dichos pesos. La Figura \ref{fig:core_maml_train} ilustra el funcionamiento descrito.
 
@@ -1494,7 +1495,8 @@ La Figura \ref{fig:mse_nnet} ilustra los resultados obtenidos al comparar las di
 
 Tras analizar estos resultados, se concluye que el modelo que mejores resultados presenta es la red neuronal cuya arquitecura está formada por 3 capas ocultas y 20 unidades en cada una. Desde la primera iteración del gradiente, muestra un MSE menor al de todas las demás arquitecturas.
 
-Por otro lado, la arquitectura que muestra los peores resultados de experimento es la red neuronal formada por una sola capa oculta de 40 unidades. Se observa un rendimiento considerablemente peor desde la primera hasta la última iteración de actualización de gradiente.
+Por otro lado, la arquitectura que muestra los peores resultados de experimento es la red neuronal formada por una sola capa oculta de 40 unidades. Se observa un rendimiento considerablemente peor %TODO: o mejor!, es mejor para todas no
+desde la primera hasta la última iteración de actualización de gradiente.
 
 Sin tener en cuenta esta última configuración, las 3 arquitecturas restantes se aproximan, en las últimas actualizaciones de gradiente, a los resultados obtenidos por el oráculo (MSE = 0). En la Tabla \ref{table:mse_maml} se detallan los valores exactos.
 
