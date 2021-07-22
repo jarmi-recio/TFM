@@ -153,7 +153,7 @@ Si se representa la edad frente a su periodo de rotación, se obtiene la Figura 
 
 
 \chapter{Modelos de Inteligencia Artificial para datación estelar} 
-
+%TODO: introduce/explica el contenido de todo este capítulo.
 \section{Modelos}
 \label{sec:models}
 
@@ -161,9 +161,9 @@ Si se representa la edad frente a su periodo de rotación, se obtiene la Figura 
 \begin{equation}
 \hat{a}(\vb{w}, \vb{x}) = w_0 + w_1 x_1 + ... + w_D x_D \; ,
 \end{equation}
-donde $\vb{x}$ y $\vb{w}$ codifican el vector de características de entrada y el coeficiente del regresor lineal, respectivamente. Se sigue el enfoque de mínimos cuadrados para el aprendizaje del modelo, resolviendo un problema de forma: $\min_{\vb{w}} || \vb{X} \vb{w} - \vb{a}||_2^2$. $\vb{X}$. $\vb{X}$ es una matriz que contiene todos los vectores de entrenamiento y $\vb{a}$ es el vector de edades. 
+donde $\vb{x}$ y $\vb{w}$ codifican el vector de características de entrada y el coeficiente del regresor lineal, respectivamente. Se sigue el enfoque de mínimos cuadrados para el aprendizaje del modelo, resolviendo un problema de la forma: $\min_{\vb{w}} || \vb{X} \vb{w} - \vb{a}||_2^2$. $\vb{X}$. $\vb{X}$ es una matriz que contiene todos los vectores de entrenamiento y $\vb{a}$ es el vector de edades. 
 
-Durante la fase de aprendizaje del modelo, se lleva a cabo una optimización de su hiperparámetro interno \emph{normalize} a través de un proceso de \emph{grid search} con validación cruzada. De forma predetemrinada se encuentra desactivado, pero al activarlo, los regresores X se normalizan antes de la regresión restando la media y dividiendo por la norma l2.
+Durante la fase de aprendizaje del modelo, se lleva a cabo una optimización de su hiperparámetro interno \emph{normalize} a través de un proceso de \emph{grid search} con validación cruzada. De forma predeterminada se encuentra desactivado, pero al activarlo, los regresores X se normalizan antes de la regresión restando la media y dividiendo por la norma l2.
 
 \vspace{0.5cm}
 
@@ -171,7 +171,6 @@ Durante la fase de aprendizaje del modelo, se lleva a cabo una optimización de 
 \begin{equation}
 p(a|\vb{X},\vb{w},\alpha) = \mathcal{N}(a|\vb{X} \vb{w},\alpha)\; ,
 \end{equation}
-
 donde se asume la edad salida $a$ como una distribución gaussiana sobre $\vb{X}\vb{w}$. $\alpha$ se estima directamente a partir de los datos que se tratan como una variable aleatoria. El parámetro de regularización se ajusta a los datos disponibles, introduciendo sobre los hiperparámetros del modelo, \ie $\vb{w}$, el siguiente gaussiano esférico $p(\vb{w}|\lambda) =
 \mathcal{N}(\vb{w}|0,\lambda^{-1}\mathbf{I}_{D})$.
 
@@ -179,27 +178,38 @@ Para este regresor, se optimiza con validación cruzada el hiperparámetro asoci
 
 \vspace{0.5cm}
 
-\textbf{Decision Tree Regressor} {} Se usa un modelo de árbol de decisión \cite{Breiman1984}. Durante el aprendizaje, el modelo optimiza sus hiperparámetros internos a través de un proceso de \emph{grid search} con validación cruzada. Especificamente, se ajustan: la estrategia par elegir la división en cada nodo del árbol (mejor o aleatorio); el número mínimo de muestras requeridas para estar en un nodo hoja (5, 10, 50, 100); y la función para medir la calidad de la división (error cuadrático medio, error cuadrático medio con la puntuación de mejora de Friedman para posibles divisiones, error medio absoluto con reducción de la desviación de Poisson para encontrar divisiones). 
+\textbf{Decision Tree Regressor} {} Se usa un modelo de árbol de decisión \cite{Breiman1984}. %TODO: da detalles sobre lo que son los árboles de decisión. Tienes información en la propia página de sckit
+Durante el aprendizaje, el modelo optimiza sus hiperparámetros internos a través de un proceso de \emph{grid search} con validación cruzada. Especificamente, se ajustan: la estrategia par elegir la división en cada nodo del árbol (mejor o aleatorio); el número mínimo de muestras requeridas para estar en un nodo hoja (5, 10, 50, 100); y la función para medir la calidad de la división (error cuadrático medio, error cuadrático medio con la puntuación de mejora de Friedman para posibles divisiones, error medio absoluto con reducción de la desviación de Poisson para encontrar divisiones). 
 
 \vspace{0.5cm}
 
-\textbf{Random Forest Regressor} {} Este modelo de regresión se implementa siguiendo el trabajo de Breiman \cite{Breiman2001}, donde los árboles de decisión se contruyen a partir de las muestras de datos extraídas con reemplazo del conjunto de entrenamiento. De nuevo se usa un proceso de \emph{grid search} más validación cruzada para ajustar los siguientes hiperparámetros: número de árboles (5, 10, 50, 100); número mínimo de muestras requeridas para estar en un nodo hoja (5, 10, 50, 100); y la función para medir la calidad de la división (error cuadrático medio o error medio absoluto).
+\textbf{Random Forest Regressor} {} Este modelo de regresión se implementa siguiendo el trabajo de Breiman \cite{Breiman2001}, donde los árboles de decisión se contruyen a partir de las muestras de datos extraídas con reemplazo del conjunto de entrenamiento. %TODO: lo mismo añade detalles sobre random forest
+
+De nuevo se usa un proceso de \emph{grid search} más validación cruzada para ajustar los siguientes hiperparámetros: número de árboles (5, 10, 50, 100); número mínimo de muestras requeridas para estar en un nodo hoja (5, 10, 50, 100); y la función para medir la calidad de la división (error cuadrático medio o error medio absoluto).
+
+\vspace{0.5cm}
+de
+\textbf{Support Vector Regression} {} En el estudio se incluye este modelo de regresión, basado en la implementación de LibSVM para regresión, \cite{LIBSVM}, siguiendo la aproximación $\epsilon$-SVR. %TODO: lo mismo añade detalles
+
+Se emplea el kernel RBF, y se realiza una un \emph{grid search} con validación cruzada para ajustar el parámetro $C$ (1, 10, 100, 1000).
 
 \vspace{0.5cm}
 
-\textbf{Support Vector Regression} {} En el estudio se incluye este modelo de regresión, basado en la implementación LibSVM para regresión, \cite{LIBSVM}, siguiendo la aproximación $\epsilon$-SVR. Se emplea el kernel RBF, y se realiza una un \emph{grid search} con validación cruzada para ajustar el parámetro $C$ (1, 10, 100, 1000).
+\textbf{Gaussian Process} {} Se entrena un regresor de proceso gaussiano \cite{Rasmussen2006}, donde se supone que la media es constante y cero. %TODO: lo mismo añade detalles
+Para la covarianza se usa un kernel que es la suma de los siguientes tres kernels. 
+\begin{enumerate}
+\item ...%TODO: mete cada Kernel en un item, junto a su fórmula y explicación, para que quede más ordenado.
+\end{enumerate}
+RBF, $k(\vb{x}_i, \vb{x}_j) = \text{exp}\left(- \frac{d(\vb{x}_i, \vb{x}_j)^2}{2l^2} \right)$, donde $d(\cdot, \cdot)$ es la distancia euclídea y $l$ es el parámetro de escala de longitud. Producto escalar, $k(\vb{x}_i, \vb{x}_j) = \sigma_0 ^ 2 + \vb{x}_i \cdot \vb{x}_j$. Es un kernel no estacionario que se obtiene de la regresión lineal poniendo a priori los coeficiones de $x_i (i = 1, \ldots, N)$ y  $N(0, \sigma_0^2)$ para el sesgo. Y finalmente, White kernel, $k(x_i, x_j) = noise\_level \text{ if } x_i == x_j \text{ else } 0$. La aplicación clave del White kernel es parte de un kernel suma, donde describe la componente de ruido de la entrada. Ajustar su parámetro se corresponde con estimar el nivel de ruido en ese momento.%TODO: no entiendo la traducción que has hecho de lo que pusimos en el paper. Revisa lo que quieres decir.
 
 \vspace{0.5cm}
 
-\textbf{Gaussian Process} {} Se entrena un regresor de proceso gaussiano \cite{Rasmussen2006}, donde se supone que la media es constante y cero. Para la covarianza se usa un kernel que es la suma de los siguientes tres kernels. RBF, $k(\vb{x}_i, \vb{x}_j) = \text{exp}\left(- \frac{d(\vb{x}_i, \vb{x}_j)^2}{2l^2} \right)$, donde $d(\cdot, \cdot)$ es la distancia euclídea y $l$ es el parámetro de escala de longitud. Producto escalar, $k(\vb{x}_i, \vb{x}_j) = \sigma_0 ^ 2 + \vb{x}_i \cdot \vb{x}_j$. Es un kernel no estacionario que se obtiene de la regresión lineal poniendo a priori los coeficiones de $x_i (i = 1, \ldots, N)$ y  $N(0, \sigma_0^2)$ para el sesgo. Y finalmente, White kernel, $k(x_i, x_j) = noise\_level \text{ if } x_i == x_j \text{ else } 0$. La aplicación clave del White kernel es parte de un kernel suma, donde describe la componente de ruido de la entrada. Ajustar su parámetro se corresponde con estimar el nivel de ruido en ese momento.
+\textbf{k-Nearest Neighbors} {} También se incluye en la comparativa un regresor kNN. %TODO: lo mismo añade detalles
+Básicamente, se ajusta el parámetro k (1, 5, 10, 15, 20, 50) y el tipo de función de ponderación que se usa para escalar la contribución de cada vecino. Se exploran dos tipos de funciones de ponderación: a) uniforme, donde todos los puntos en cada vecindario se ponderan por igual; y b) distancia, que pondera los puntos por la inversa de su distancia a un punto de consulta.
 
 \vspace{0.5cm}
 
-\textbf{k-Nearest Neighbors} {} También se incluye en la comparativa un regresor kNN. Básicamente, se ajusta el parámetro k (1, 5, 10, 15, 20, 50) y el tipo de función de ponderación que se usa para escalar la contribución de cada vecino. Se exploran dos tipos de funciones de ponderación: a) uniforme, donde todos los puntos en cada vecindario se ponderan por igual; y b) distancia, que pondera los puntos por la inversa de su distancia a un punto de consulta.
-
-\vspace{0.5cm}
-
-\textbf{Neural Network} {} La arquitectura implementada se muestra en la figura \ref{fig:neural_network}. Esta consiste en un perceptrón multicapa. El modelo incluye una capa de entrada, un conjunto de 3 capas ocultas \emph{fully-connected} con 50 unidades en cada una, y la capa de salida encargada de la regresión de las edades de las estrellas. Cada unidad oculta va seguida de una función de activación ReLU. Se usa como función de pérdidas el error cuadrático medio, $Loss(\hat{a},a,W) = \frac{1}{2}||\hat{a} - a ||_2^2 + \frac{\alpha}{2} ||W||_2^2$, donde $W$ codifica los pesos de la red, y $\alpha$ es el parámetro de regularización. La retropropagación \cite{LeCun2012} se utiliza para el aprendizaje del modelo con el optimizador SDG~\cite{sgd}. Durante el aprendizaje, se fija $\alpha=0.01$, y se usa una política de tasa de aprendizaje adaptativa, comenzando con un valor $0.1$.
+\textbf{Neural Network} {} La arquitectura implementada se muestra en la figura \ref{fig:neural_network}. Ésta consiste en un perceptrón multicapa. El modelo incluye una capa de entrada, un conjunto de 3 capas ocultas \emph{fully-connected} con 50 unidades en cada una, y la capa de salida encargada de la regresión de las edades de las estrellas. Cada unidad oculta va seguida de una función de activación ReLU. Se usa como función de pérdidas el error cuadrático medio, $Loss(\hat{a},a,W) = \frac{1}{2}||\hat{a} - a ||_2^2 + \frac{\alpha}{2} ||W||_2^2$, donde $W$ codifica los pesos de la red, y $\alpha$ es el parámetro de regularización. La técnica de backpropagation \cite{LeCun2012} se utiliza para el aprendizaje del modelo con el optimizador SDG~\cite{sgd}. Durante el aprendizaje, se fija $\alpha=0.01$, y se usa una política de tasa de aprendizaje adaptativa, comenzando con un valor $0.1$.
 
 \vspace{0.5cm}
 
@@ -211,12 +221,13 @@ Para este regresor, se optimiza con validación cruzada el hiperparámetro asoci
 \label{fig:neural_network}
 \end{figure}
 
-\textbf{Stacking} {} Finalmente, se emplea un método de ensamblado en aprendizaje automático conocido como generalización apilada o stacking \cite{Wolpert1992}. En un problema de regresión como lo es este, las predicciones de cada regresor individual (nivel 0) se apilan y se introducen en un estimador final (nivel 1), que calcula la predicción de la edad. Para este proyecto, en el nivel 0, se integran: Neural Network y Gaussian Process. Para la última capa (nivel 1), se incorpora un Linear Regressor. Durante el entrenamiento, y para generalizar y evitar sobreajuste, el estimador de nivel 1 se entrena con muestras externas (tomadas del conjunto de entrenamiento), siguiendo una metodología de validación cruzada.
+\textbf{Stacking} {} Finalmente, se emplea un método de ensamblado en aprendizaje automático conocido como generalización apilada o stacking \cite{Wolpert1992}.  %TODO: lo mismo añade detalles
+En un problema de regresión como lo es este, las predicciones de cada regresor individual (nivel 0) se apilan y se introducen en un estimador final (nivel 1), que calcula la predicción de la edad. Para este proyecto, en el nivel 0, se integran: Neural Network y Gaussian Process. Para la última capa (nivel 1), se incorpora un Linear Regressor. Durante el entrenamiento, y para generalizar y evitar sobreajuste, el estimador de nivel 1 se entrena con muestras externas (tomadas del conjunto de entrenamiento), siguiendo una metodología de validación cruzada.
 
-\section{Benchmark}
+\section{Escenarios de evaluación}
 \label{sec:benchmark}
 
-La muestra de datos, detallada en la Sección \ref{sec:data}, ofrece más de 600 estrellas, con edades precisas, donde se propone construir los siguientes escenarios de evaluación.
+La base de datos, detallada en la Sección \ref{sec:data}, ofrece más de 600 estrellas, con edades precisas, donde se propone construir los siguientes escenarios de evaluación.
 
 \vspace{0.5cm}
 
@@ -239,7 +250,7 @@ La muestra de datos, detallada en la Sección \ref{sec:data}, ofrece más de 600
 \end{figure}
 
 
-\textbf{Capacidad de generalización (Benchmark B)} {} En primer lugar, se proporciona un estudio de generalización para los modelos, donde se entrena con un enfoque de estrellas \emph{jóvenes}, y se evalúa su rendimiento en estrellas \emph{ancianas}. Este escenario, denominado Benchmark B1, es interesante para evaluar la capacidad de los modelos de Inteligencia Artificial para trabajar con estrellas cuyo rango está fuera del conjunto de entrenamiento. Los rangos de edad de entrenamiento y prueba son $[0.4,4.2]$ y $[4.2,13.8]$ Gyr, respectivamente. En la Figura \ref{fig:benchB1_train} se detalla la distribución de las estrellas en el conjunto de entrenamiento y en la Figura \ref{fig:benchB1_test} la del conjunto de prueba.
+\textbf{Capacidad de generalización (Benchmark B)} {} En primer lugar, se proporciona un estudio de generalización para los modelos, que consiste en realizar el entrenamiento  sobre estrellas \emph{jóvenes}, para posteriormente evalúa su rendimiento en estrellas \emph{ancianas}. Este escenario, denominado Benchmark B1, es interesante para evaluar la capacidad de los modelos de Inteligencia Artificial para trabajar con estrellas cuyo rango está fuera del conjunto de entrenamiento. Los rangos de edad de entrenamiento y prueba son $[0.4,4.2]$ y $[4.2,13.8]$ Gyr, respectivamente. En la Figura \ref{fig:benchB1_train} se detalla la distribución de las estrellas en el conjunto de entrenamiento y en la Figura \ref{fig:benchB1_test} la del conjunto de prueba.
 
 \begin{figure}[H]
 \begin{center}
@@ -257,7 +268,7 @@ La muestra de datos, detallada en la Sección \ref{sec:data}, ofrece más de 600
  \label{fig:benchB1_test}
 \end{figure}
 
-También se propone un segundo escenario para evaluar la capacidad de generalización de los modelos cuando se entrenan solo con estrellas pertenecientes a cúmulos. En la práctica, la girocronología se utiliza para datar estrellas individuales que pueden tener cualquier edad. Las estrellas de los cúmulos suelen estar datadas gracias a su pertenencia a los propios cúmulos. En este Benchmark B2, se propone el entrenamiento de los modelos utilizando únicamente estrellas pertenecientes a cúmulos. El resto de estrellas se incluyen en el conjunto de prueba. En total, este escenario recoge 397 y 240 muestras para entrenamiento y prueba, respectivamente. En la Figura \ref{fig:benchB2_train} se detalla la distribución de las estrellas en el conjunto de entrenamiento y en la Figura \ref{fig:benchB2_test} la del conjunto de prueba.
+También se propone un segundo escenario para evaluar la capacidad de generalización de los modelos cuando se entrenan solo con estrellas pertenecientes a cúmulos. En la práctica, la girocronología se utiliza para datar estrellas individuales que pueden tener cualquier edad. Las estrellas de los cúmulos suelen estar datadas gracias a su pertenencia a los propios cúmulos. En este Benchmark B2, se propone el entrenamiento de los modelos utilizando únicamente estrellas pertenecientes a cúmulos. El resto de estrellas se incluyen en el conjunto de prueba. En total, este escenario recoge 397 y 240 muestras para entrenamiento y prueba, respectivamente. En la Figura \ref{fig:benchB2_train} se detalla la distribución de las estrellas en el conjunto de entrenamiento y en la Figura \ref{fig:benchB2_test} la del conjunto de prueba. %TODO: qué se observa? algo que destacar?
 
 \begin{figure}[H]
 \begin{center}
@@ -275,7 +286,7 @@ También se propone un segundo escenario para evaluar la capacidad de generaliza
  \label{fig:benchB2_test}
 \end{figure}
 
-\textbf{Regresión para datación estelar sobre una muestra de control (Benchmark C)} {} Aquí se propone examinar el rendimiento de todos los modelos sobre una muestra de datos de control compuesta por estrellas que no pertenecen a ningún cúmulo, y con una distribución más realista. Especificamente, en este Benchmark C, se evalúan los modelos entrenados con toda la muestra de datos sobre un conjunto de $32$ estrellas nuevas no pertenecientes a cúmulos, incluyendo al Sol. Este conjunto independiente de control se ha obtenido de las mismas fuentes basadas en astrisismología utilizadas para recopilar la información de la muestra descrita en la Sección \ref{sec:data}. Se han reservado 32 estrellas de estas fuentes, antes de contruir la muestra. El rango de edad de este conjunto va de 1,2 a 10,1 Gyr. Este rango se superpone con el rango de edad utilizado en la muestra de entrenamiento ($[0.4, 13.8]$ Gyr), e incluye algunas edades nuevas no observadas. Se presta especial atención a la precisión de los modelos para la estimación de la edad del Sol (4.6 Gyr). En la Figura \ref{fig:benchC_train} se detalla la distribución de las estrellas en el conjunto de entrenamiento y en la Figura \ref{fig:benchC_test} la del conjunto de prueba.
+\textbf{Regresión para datación estelar sobre una muestra de control (Benchmark C)} {} Aquí se propone examinar el rendimiento de todos los modelos sobre una muestra de datos de control compuesta por estrellas que no pertenecen a ningún cúmulo, y con una distribución de edades más realista/generalista. Especificamente, en este Benchmark C, se evalúan los modelos entrenados con toda la muestra de datos sobre un conjunto de $32$ estrellas nuevas, no pertenecientes a cúmulos, incluyendo el Sol. Este conjunto independiente de control se ha obtenido de las mismas fuentes basadas en astrosismología utilizadas para recopilar la información de la muestra descrita en la Sección \ref{sec:data}. Se han reservado 32 estrellas de estas fuentes, antes de contruir la base de datos. El rango de edad de este conjunto va de 1,2 a 10,1 Gyr. Este rango se superpone con el rango de edad utilizado en la muestra de entrenamiento ($[0.4, 13.8]$ Gyr), e incluye algunas edades nuevas no observadas. Se presta especial atención a la precisión de los modelos para la estimación de la edad del Sol (4.6 Gyr). En la Figura \ref{fig:benchC_train} se detalla la distribución de las estrellas en el conjunto de entrenamiento y en la Figura \ref{fig:benchC_test} la del conjunto de prueba.
 
 \begin{figure}[H]
 \begin{center}
@@ -311,7 +322,7 @@ Antes de abordar cada uno de los \emph{benchmarks}, es necesario introducir brev
 
 \subsection{Benchmark A: Problema de datación estelar}
 
-La Figura \ref{fig:benchA_models} muestra el rendimiento de todos los modelos, permitiendo la comparativa del MAE de cada modelo. En este escenario es interesante de observar que se tienen 2 modelos, más su Stacking, que presentan los mejores resultado, estableciendo un margen de rendimiento con respecto a los demás. Son la Red Neuronal y el Proceso Gaussiano. Su Stacking reduce ligeramente el mejor MAE, de la Red Neuronal, de 0,405 a 0,400.
+La Figura \ref{fig:benchA_models} muestra el rendimiento de todos los modelos, permitiendo la comparativa del MAE de cada modelo. En este escenario es interesante observar que se tienen 2 modelos, más su Stacking, que presentan los mejores resultado, estableciendo un margen de rendimiento con respecto a los demás. Son la Red Neuronal y el Proceso Gaussiano. Su Stacking reduce ligeramente el mejor MAE, de la Red Neuronal, de 0,405 a 0,400.
 
 Analizando los 6 modelos restantes, se observa que, la mayoría de los modelos presentan dificultades en la estimación de la edad de las estrellas más viejas. También es relevante el resultado proporcionado por un modelo tan simple como un kNN (ver Figura \ref{fig:benchA_details_knn_1} y Figura \ref{fig:benchA_details_knn_2}), con un MAE de solo 0.53 Gyr. El éxito de este modelo se explica mediante los cúmulos que forman la base de datos, donde se encuentran muchos elementos concentrados en 2 valores de edad muy específicos, lo que permite que modelos como kNN hagan estimaciones muy precisas sobre las estrellas de prueba con estas edades. Este hecho se corrobora en la Tabla \ref{table:precisions}, donde se observa que la mejor precisión la logra el modelo kNN, seguido por la Red Neuronal. En general, a excepción de lr y bayes, todos los modelos ofrecen un MAE por debajo de 0.7 Gyr, lo que supone un gran avance en el campo de la datación estelar.
 
@@ -325,6 +336,7 @@ Analizando los 6 modelos restantes, se observa que, la mayoría de los modelos p
 
 \paragraph{Stacking} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Stacking, el cual ha presentado el menor MAE en este benchmark, 0.400 Gyr.
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -352,6 +364,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Neural Network} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Neural Network. Segundo mejor modelo con un MAE de 0.405 Gyr.
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -379,6 +392,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Gaussian Process} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Gaussian Process. Tercer mejor modelo con un MAE de 0.453 Gyr.
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -406,6 +420,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{kNN} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo kNN. El cual ha presentado una MAE de 0.532 Gyr.
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -433,6 +448,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Random Forest} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Random Forest. El cual ha presentado una MAE de 0.572 Gyr.
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -460,6 +476,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Support Vector Regression} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Support Vector Regression. El cual ha presentado una MAE de 0.676 Gyr.
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -487,6 +504,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Decision Tree Regression} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Decision Tree Regression. El cual ha presentado una MAE de 0.695 Gyr.
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -513,7 +531,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 \end{figure}
 
 \paragraph{Linear Regressor} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Linear Regressor. El peor modelo de este benchmark junto con Bayesian Regression con un MAE de 0.951 Gyr.
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Linear Regressor. El peor modelo de este benchmark junto con Bayesian Regression con un MAE de 0.951 Gyr. %TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -540,7 +558,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 \end{figure}
 
 \paragraph{Bayesian Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayesian Regression. El peor modelo de este \emph{benchmark} junto con Linear Regressor con un MAE de 0.951 Gyr.
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayesian Regression. El peor modelo de este \emph{benchmark} junto con Linear Regressor con un MAE de 0.951 Gyr.%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -592,7 +610,7 @@ Aquí se analiza la capacidad de generalización de todos los modelos para el pr
 El Benchmark B1 se centra en analizar la precisión de los modelos estimando edades de estrellas más antiguas a las que han visto durante el entrenamiento. Obviamente, el error promedio de lo modelos ha aumentado. El mejor rendimiento se observa en la Red Neuronal, con un MAE de 1,47 Gyr. Las estimaciones detalladas se pueden ver en la Figura \ref{fig:benchB1_best_1} y Figura \ref{fig:benchB1_best_2}, donde se puede observar cómo la Red Neuronal es capaz de generalizar hasta 6 Gyr, asignando estimaciones de edad que en su mayoría se encuentran dentro del margen de confianza. La Tabla \ref{table:precisions} confirma este hecho, donde la Red Neuronal también exhibe la precisión más alta para el Benchmark B1.
 
 \paragraph{Neural Network} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Neural Network, el cual presenta el menor MAE de este \emph{benchmark}, 1.475 Gyr.
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Neural Network, el cual presenta el menor MAE de este \emph{benchmark}, 1.475 Gyr. %TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -620,10 +638,11 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \subsubsection{Benchmark B2} 
 
-La historia es completamente diferente en el Benchmark B2. La Red Neuronal no es capaz de ser la mejor generalizando. Su error asciende hasta 1,85 Gyr, siendo superada por lr, rf, svm, knn, gp y bayes. Este último resulta ser el mejor modelo en este escenario, con un MAE de 1,48 Gyr. De la Figura \ref{fig:benchB2_best_1} y la Figura \ref{fig:benchB2_best_2} se llega a la conclusión de que un regresor bayesiano es capaz de proporcionar edades precisas en el rango de 1 Gyr a 5 Gyr, es decir, el rango cubierto por la muestra de entrenamiento en este caso. En términos de precisión, la Tabla \ref{table:precisions} revela que svm en regresión es el modelo ganador, seguido de cerca por gp y lr. El modelo bayesiano, aunque tiene el MAE más bajo, presenta una precisión del 29.71 \%.
+La historia es completamente diferente en el Benchmark B2. La Red Neuronal no es capaz de ser la mejor generalizando. Su error asciende hasta 1,85 Gyr, siendo superada por lr, rf, svm, knn, gp y bayes. %TODO: mejor poner los nombres.
+Este último resulta ser el mejor modelo en este escenario, con un MAE de 1.48 Gyr. De la Figura \ref{fig:benchB2_best_1} y la Figura \ref{fig:benchB2_best_2} se llega a la conclusión de que un regresor bayesiano es capaz de proporcionar edades precisas en el rango de 1 Gyr a 5 Gyr, es decir, el rango cubierto por la muestra de entrenamiento en este caso. En términos de precisión, la Tabla \ref{table:precisions} revela que el modelo SVR es el modelo ganador, seguido de cerca por el Proceso Gaussiano y el regresor linear. El modelo bayesiano, aunque tiene el MAE más bajo, presenta una precisión del 29.71 \%.
 
 \paragraph{Bayessian Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayessian Regression, el cual presenta el menor MAE de este \emph{benchmark}, 1.484 Gyr.
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayessian Regression, el cual presenta el menor MAE de este \emph{benchmark}, 1.484 Gyr. %TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -655,7 +674,7 @@ Finalmente, en ambos escenarios se observa que todos los modelos tienden a subes
 En los siguientes párrafos se muestran las figuras correspondientes al rendimiento obtenido del resto de modelos para Benchmark B1 y B2.
 
 \paragraph{kNN} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo kNN. El cual ha presentado una MAE de 1.605 Gyr.
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo kNN. El cual ha presentado una MAE de 1.605 Gyr. %TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 %Benchmark B1
 \begin{figure}[H]
@@ -683,7 +702,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 \end{figure}
 
 \paragraph{Random Forest} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Random Forest. El cual ha presentado una MAE de 1.709 Gyr.
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Random Forest. El cual ha presentado una MAE de 1.709 Gyr.%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -711,7 +730,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Support Vector Regression} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Support Vector Regression. El cual ha presentado una MAE de 1.724 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_svm_1.pdf}
@@ -738,7 +757,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Decision Tree Regression} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Decision Tree Regression. El cual ha presentado una MAE de 1.621 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_dtr_1.pdf}
@@ -765,7 +784,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Linear Regressor} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Linear Regressor. El cual ha presentado una MAE de 1.923 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_lr_1.pdf}
@@ -792,7 +811,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Bayesian Regression} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayesian Regression. El cual ha presentado una MAE de 1.943 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_bayes_1.pdf}
@@ -819,7 +838,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Gaussian Process} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Gaussian Process. El cual ha presentado una MAE de 1.670 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_gp_1.pdf}
@@ -847,7 +866,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 %Benchmark B2
 \paragraph{kNN} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo kNN. El cual ha presentado una MAE de 1.841 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_knn_1.pdf}
@@ -874,7 +893,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Random Forest} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Random Forest. El cual ha presentado una MAE de 1.852 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_rf_1.pdf}
@@ -901,7 +920,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Support Vector Regression} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Support Vector Regression. El cual ha presentado una MAE de 1.507 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_svm_1.pdf}
@@ -928,7 +947,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Decision Tree Regression} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Decision Tree Regression. El cual ha presentado una MAE de 1.901 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_dtr_1.pdf}
@@ -955,7 +974,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Linear Regressor} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Linear Regressor. El cual ha presentado una MAE de 1.561 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_lr_1.pdf}
@@ -982,7 +1001,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Neural Network} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Neural Network. El cual ha presentado una MAE de 1.853 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_nnet_1.pdf}
@@ -1009,7 +1028,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \paragraph{Gaussian Process} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Gaussian Process. El cual ha presentado una MAE de 1.624 Gyr.
-
+%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 \begin{figure}[H]
 \begin{center}
  \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_gp_1.pdf}
@@ -1037,7 +1056,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \subsection{Benchmark C: Rendimiento sobre la muestra de control}
 
-Se muestra el MAE y la precisión de cada método para el \emph{benchmark} de control en la Figura \ref{fig:benchC} y en la Tabla \ref{table:precisions}, respectivamente. En esta ocasión, los tres mejores métodos son gp, nnet y su Stacking. Entre estos tres, descata el proceso gaussiano. En la Figura \ref{fig:benchC_best_1} y Figura \ref{fig:benchC_best_2} se pueden inspeccionar las predicciones de las edades estelares usando este método frente a las edades de referencia para las estrellas de ese set. gp es el modelo con mayor precisión: $40.62\%$ de las predicciones caen dentro del margen de confianza del conjunto de datos. Para el Sol, gp predice una edad de 3,88 Gys frente a una edad aceptada de 4,6 Gyr, subestimándola. De hecho, el modelo tiende a subestimar ligeramente la mayoría de las edades. Se observa este comportamiento en todos lo modelos salvo en kNN y dtr. 
+Se muestra el MAE y la precisión de cada método para el \emph{benchmark} de control en la Figura \ref{fig:benchC} y en la Tabla \ref{table:precisions}, respectivamente. En esta ocasión, los tres mejores métodos son el Proceso Gaussiano, la Red Neuronal y su Stacking. Entre estos tres, descata el Proceso Gaussiano. En la Figura \ref{fig:benchC_best_1} y Figura \ref{fig:benchC_best_2} se pueden inspeccionar las predicciones de las edades estelares usando este método frente a las edades de referencia para las estrellas de ese set. Proceso Gaussiano es el modelo con mayor precisión: $40.62\%$ de las predicciones caen dentro del margen de confianza del conjunto de datos. Para el Sol, Proceso Gaussiano predice una edad de 3,88 Gys frente a una edad aceptada de 4,6 Gyr, subestimándola. De hecho, el modelo tiende a subestimar ligeramente la mayoría de las edades. Se observa este comportamiento en todos lo modelos salvo en kNN y dtr. 
 
 \begin{figure}[H]
 \begin{center}
@@ -1064,7 +1083,7 @@ Sol (4.6 Gyr)  & 4.02 & 3.92 & 4.49 & 4.76 & 3.81 & 3.91 & 4.49 & 3.88 & 4.02\\
 }%end of scalebox
 \caption{Edad estimada para el Sol en Gyr. El método más preciso es rf. }\label{table:sun_results}
 \end{table}
-
+%TODO: Jarmi, yo creo que es mejor que esta y las otras gráficas las metas todas juntas en una gráfica grande o en un par de ellos, en filas de 3, una fila por modelo, y luego comentas. Haz lo mismo para los anteriores benchmarks, que así quedará más bonito el PDF.
 \paragraph{Gaussian Process} 
 A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Gaussian Process. El mejor modelo en este \emph{benchmark}, con un MAE de 0.837 Gyr.
 
@@ -1311,9 +1330,10 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \subsection{Conclusiones de la comparativa}
 
-Comparando los resultados de los Benchmark A (Figura \ref{fig:benchA_models}) y C (Figura \ref{fig:benchC}), se puede concluir que: a) los modelos ganadores son comunes (nnet, gp y stacking); b) kNN y dtr sufren una degración considerable de su rendimiento, ya que dependen en gran medida de la distribución de datos utilizada durante su entrenamiento; y c) bayes y lr son similares, mostrando un incremento similar en sus correspondientes MAEs, pero al mismo tiempo ofreciendo cierta estabilidad entre escenarios.
+Comparando los resultados de los Benchmark A (Figura \ref{fig:benchA_models}) y C (Figura \ref{fig:benchC}), se puede concluir que: %TODO: pon todo esto en items dentro de un entorno enumerate
+a) los modelos ganadores son comunes (nnet, gp y stacking); b) kNN y dtr sufren una degración considerable de su rendimiento, ya que dependen en gran medida de la distribución de datos utilizada durante su entrenamiento; y c) bayes y lr son similares, mostrando un incremento similar en sus correspondientes MAEs, pero al mismo tiempo ofreciendo cierta estabilidad entre escenarios.
 
-Al observar la Tabla \ref{table:precisions} después de conocer el rendimiento de todos los modelos, además de lo comentado en cada uno de los benchmarks, se llega a la conclusión de que: a) salvo para el Benchmark B2, nnet presenta una precisión alta en comparación con el resto de modelos y b) salvo para el Benchmark B2, lr y bayes presentan una precisión muy inferior a la conseguida por el modelo de mejor rendimiento.
+Al observar la Tabla \ref{table:precisions} después de conocer el rendimiento de todos los modelos, además de lo comentado en cada uno de los benchmarks, se llega a la conclusión de que: a) salvo para el Benchmark B2, nnet presenta una precisión alta en comparación con el resto de modelos, y b), salvo para el Benchmark B2, lr y bayes presentan una precisión muy inferior a la conseguida por el modelo de mejor rendimiento.
 
 \begin{table}[H]
 \centering
