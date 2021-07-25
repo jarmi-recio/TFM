@@ -6,8 +6,8 @@
  
 Según expresa Soderblom en \cite{Soderblom10}, se pueden medir muchas de las propiedades físicas claves de las estrellas. La masa se puede determinar a partir de la física básica, o también se puede inferir a partir de su tipo espectral, particularmente para la secuencia principal. La composición de las estrellas, no es fácil de determinar pero, se puede seguir un proceso bien comprendido en el que se conocen sus limitaciones. Sin embargo, la edad, que es el tercer determinante clave del estado físico de una estrella, no se puede medir directamente, solo se puede estimar. Únicamente se tiene la edad precisa y exacta de una estrella, el Sol. Pero esta edad no ha sido revelada por la propia estrella, sino que, se consigue estimar gracias a la posibilidad de estudiar en un laboratorio la materia que compone el sistema solar, estudio que no se puede hacer para ninguna otra estrella.
 
-En algunas ocasiones, es posible determinar las edades si se colocan ciertos eventos en la secuencia correcta y se es capaz de comprender la duración relativa de cada una de las fases. Pero, normalmente se necesita unir observaciones de objetos o sucesos independientes para alcanzar la comprensión de un proceso. Como por ejemplo:
-%TODO: no entiendo como encajan el párrafo anterior y esta enumeración de items. ¿Son aplicaciones?
+En algunas ocasiones, es posible determinar las edades si se colocan ciertos eventos en la secuencia correcta y se es capaz de comprender la duración relativa de cada una de las fases. Pero, normalmente se necesita unir observaciones de objetos o sucesos independientes para alcanzar la comprensión de un proceso. A continuación, se añade una serie de ejemplos que remarcan la utilidad de conocer la edad de ciertos objetos y su colocación temporal respecto al resto de sucesos:
+%TODO_DONE: no entiendo como encajan el párrafo anterior y esta enumeración de items. ¿Son aplicaciones?
 \begin{itemize}
 \item La formación y evolución de los discos protoplanetarios parece ocurrir en los primeros 100 Myr de la vida de una estrella, y los discos de escombros se forman más tarde. En la actualidad, apenas se puede limitar esta escala temporal con los métodos disponibles, y para comprender la física de los procesos implicados, es necesario observar las diferencias en los procesos de formación y conocer la escala temporal entre ellos, además del de las estrellas implicadas.
 \item Se han descubierto muchos planetas gigantes gaseosos alrededor de estrellas de tipo solar cercanas. Para obtener una mejor comprensión de, por ejemplo, la dinámica de tales sistemas y la migración hacia el interior de los planetas, se requieren edades precisas.
@@ -20,8 +20,8 @@ La comprensión completa de una gran variedad de fenómenos astrofísicos signif
 
 Partiendo de que la edad es la propiedad más difícil de obtener, ya que es la única que no se puede observar \emph{directamente} en nigún caso y debe inferirse utilizando diversos métodos, Soderblom presentó dos estudios que describen la mayoría de estas técnicas \cite{Soderblom15, Soderblom10}.
 
-Dentro del grupo de aproximaciones para la datación estelar, una de las técnicas más prometedoras es la girocronología o datación de estrellas mediante su periodo de rotación. Las estrellas nacen con un rango de velocidades de rotación por diferentes razones físicas, ver \cite{Barnes03}. En este trabajo, Barnes introduce la rotación como la característica observable más fundamental de las estrellas, además de ser una de las que más precisión admiten en su medición. El trabajo de Barnes se enfoca en la interpretación de datos relativos al periodo rotacional. Las observaciones de las estrellas de cúmulos abiertos sugieren que las estrellas en rotación se encuentran principalmente en dos secuencias. Estas secuencias y el número de estrellas que las componen, evolucionan sistemáticamente con la edad de los cúmulos, lo que permite construir isócronas rotacionales crudas que desenbocan en la girocronología estelar.
-%TODO: isócronoas rotaciones crudas? toma ya, cudiado con lo que pones, porque hay que explicarlo, yo no entraría en tantos detalles
+Dentro del grupo de aproximaciones para la datación estelar, una de las técnicas más prometedoras es la girocronología o datación de estrellas mediante su periodo de rotación. Las estrellas nacen con un rango de velocidades de rotación por diferentes razones físicas, ver \cite{Barnes03}. En este trabajo, Barnes introduce la rotación como la característica observable más fundamental de las estrellas, además de ser una de las que más precisión admiten en su medición. El trabajo de Barnes se enfoca en la interpretación de datos relativos al periodo rotacional. Las observaciones de las estrellas de cúmulos abiertos sugieren que las estrellas en rotación se encuentran principalmente en dos secuencias. Estas secuencias y el número de estrellas que las componen, evolucionan sistemáticamente con la edad de los cúmulos.
+%TODO_DONE: isócronoas rotaciones crudas? toma ya, cudiado con lo que pones, porque hay que explicarlo, yo no entraría en tantos detalles
 
 Para entender mejor el estudio de Barnes, es necesario explicar que las isócronas son curvas en el diagrama de Hertzsprung-Russell (HR) que representan una población de estrellas de la misma edad. El diagrama de Hertzsprung-Russell, por definición, es un gráfico de dispersión de estrellas que representa la magnitud absoluta de una estrella en luz visible frente a su tipo espectral.
 
@@ -31,7 +31,7 @@ En \cite{Angus19}, por ejemplo, se demuestra que la combinación de la girocrono
 
 
 %\section{Motivación}
-%TODO: esto no es la motivación, es un resumen del trabajo, por lo que quito la sección.
+%TODO_DONE: esto no es la motivación, es un resumen del trabajo, por lo que quito la sección.
 
 Sin embargo, debido a la dificultad para recolectar muestras de datos que sean lo suficientemente grandes para alimentar modelos de aprendizaje automático y que sean lo suficientemente precisas, no se ha intentado abordar el problema de la estimación de la edad de las estrellas como un ejercicio de regresión utilizando técnicas de Inteligencia Artificial. En este trabajo, se explora esta novedosa perspectiva, y las principales contribuciones son las siguientes.
 
@@ -39,9 +39,11 @@ En primer lugar, se ha recopilado un conjunto de datos empleados para determinar
 
 En segundo lugar, se presenta por primera vez un estudio comparativo de modelos de regresión de Inteligencia Artificial de última generación utilizando el conjunto de datos comentado (para conocer en detalle los casos que forman el estudio comparativo, consultar la Sección \ref{sec:benchmark}). Se incluye en el análisis un conjunto heterogéneo y completo de enfoques, que cubren: kNN clásico y regresión lineal o bayesiana; modelos combinados (bosque aleatorio, staking); proceso gaussiano; y redes neuronales. Se proponen hasta tres \emph{benchmarks} diferentes, donde se comparan todos estos modelos para entender su precisión, robustez y capacidad de generalización.
 
-Finalmente, en la Sección \ref{sec:results}, se revelan los resultados de los experimentos llevados a cabo, donde algunos modelos logran un MAE de $<0.5$ Gyr en estimación de edades estelares, lo que puede considerarse un avance significativo en el campo. Además, para fomentar una mayor investigación sobre el problema, se publica la muestra de datos, los códigos para reproducir los experimentos y todos los protocolos de evaluación diseñados. 
+En tercer lugar, se estudia el algoritmo MAML (Model Agnostic Meta Learning) para tratar de solucionar el problema de la estimación de edades estelares. Este algoritmo se denomina agnóstico del modelo, siendo compatible con cualquier modelo entrenado con descenso de gradiente, y se basa en el metaaprendizaje para conseguir la resolución de nuevas tareas usando un número muy reducido de muestras. Este algoritmo permitirá el uso de conjuntos de datos muy reducidos provenientes de futuros estudios y futuras misiones que aporten información de nuevas estrellas. El análisis detallado del algoritmo y su aplicación se encuentra en la Sección \ref{sec:metalearning}.
 
-%TODO: te falta contextualizar en la introducción la parte de meta-learning, tal y como has hecho con las anteriores técnicas.
+Finalmente, en la Sección \ref{sec:results}, se revelan los resultados de los experimentos llevados a cabo con los modelos clásicos, donde algunos modelos logran un MAE de $<0.5$ Gyr en estimación de edades estelares, lo que puede considerarse un avance significativo en el campo. Además, para fomentar una mayor investigación sobre el problema, se publica la muestra de datos, los códigos para reproducir los experimentos y todos los protocolos de evaluación diseñados. Por otro lado, en la Subsección \ref{sub:maml_result} se detallan los resultados obtenidos con el algoritmo MAML. Aquí se puede observar un valor de error cuadrático medio muy próximo a 0 para las configuraciones más complejas de la red neuronal principal del modelo.
+
+%TODO_DONE: te falta contextualizar en la introducción la parte de meta-learning, tal y como has hecho con las anteriores técnicas.
  
 
 \chapter{Trabajos relacionados} 
@@ -58,7 +60,7 @@ Para profundizar sobre las últimas conclusiones obtenidas en relación a los pe
 
 
 \section{Modelos de IA para datación estelar}
-Se pueden encontrar pocos trabajos que aborden el problema de la estimación de edades estelares mediante Inteligencia Artificial \cite{stardate}, \cite{Angus19}, \cite{das2018} y \cite{sanders2018}. Sander y Das presentan en \cite{sanders2018} un catálogo con distancias, masas y edades de 3 millones de estrellas de la segunda publicación de datos de Gaia. %TODO: Añade referencia a Gaia
+Se pueden encontrar pocos trabajos que aborden el problema de la estimación de edades estelares mediante Inteligencia Artificial \cite{stardate}, \cite{Angus19}, \cite{das2018} y \cite{sanders2018}. Sander y Das presentan en \cite{sanders2018} un catálogo con distancias, masas y edades de 3 millones de estrellas de la segunda publicación de datos de Gaia \cite{Gaia2018}. %TODO_DONE: Añade referencia a Gaia
 Las edades se estiman siguiendo un ajuste bayesiano a la estructura estelar y los modelos de evolución, para caracterizar sus funciones de densidad de probabilidad. Angus y otros \cite{stardate}, \cite{Angus19} proponen una combinación de las relaciones lineales para girocronología con isócronas ajustadas bajo un marco de estimación bayesiano. Su enfoque utiliza un proceso de cadena de Markov Monte Carlo para inferir las edades. Es en \cite{sanders2018} donde se encuentra por primera vez una Red Neuronal Bayesiana aplicada al problema de estimación de la edad. Técnicamente, Sander y Das \cite{sanders2018} entrenan un perceptrón multicapa, con una sola capa oculta de 10 neuronas, para generar distribuciones posteriores predictivas para la masa, edad y distancia de las estrellas. De esta manera, su modelo puede reemplazar la dependencia de la técnica de las isócronas. 
 
 Las diferencias de todos estos trabajos con las desarrolladas en este proyecto son las siguientes. Todos los modelos anteriores abordan el problema desde una perspectiva bayesiana, centrándose en las predicciones de distribuciones posteriores de las edades. En cambio, aquí se propone un problema de regresión puro, donde los modelos se enfrentan a la estimación de un valor particular para la edad y se evalúan en consecuencia. Además, por este motivo, la comparación directa con estos trabajos anteriores no es tarea fácil.
@@ -69,8 +71,7 @@ Además de los trabajos mencionados, como prueba de lo prometedor que supone la 
 \chapter{Base de datos}
 \label{sec:data}
 En este capítulo detallamos la base de datos con edades estelares que va a ser utilizada para validar los modelos de IA para estimación de edad estelar.
-En concreto se trata de una muestra de 1464 estrellas con edades precisas procedentes de la astrosismología o la pertenencia a cúmulos. La muestra astrosísmica consta de 312 entradas para las cuales se han inferido observables estelares fundamentales precisos (temperatura efectiva, logaritmo de la gravedad superficial, masa, radio, contenido estelar de hierro sobre hidrógeno) a partir de una combinación de observaciones fotométricas, espectrostópicas???%TODO es correcto
-y astrosismología. La contribución más significativa proviene de \cite{Serenelli17}, con 224 entradas. Otras se obtuvieron de \cite{Ceillier16},\cite{Garcia14},\cite{Silva15} y \cite{Silva17}.
+En concreto se trata de una muestra de 1464 estrellas con edades precisas procedentes de la astrosismología o la pertenencia a cúmulos. La muestra astrosísmica consta de 312 entradas para las cuales se han inferido observables estelares fundamentales precisos (temperatura efectiva, logaritmo de la gravedad superficial, masa, radio, contenido estelar de hierro sobre hidrógeno) a partir de una combinación de observaciones fotométricas, espectrostópicas y astrosismología. La contribución más significativa proviene de \cite{Serenelli17}, con 224 entradas. Otras se obtuvieron de \cite{Ceillier16},\cite{Garcia14},\cite{Silva15} y \cite{Silva17}. %TODO_DONE es correcto
 
 \begin{table}[H]
 \centering
@@ -152,8 +153,11 @@ Si se representa la edad frente a su periodo de rotación, se obtiene la Figura 
 \end{figure}
 
 
-\chapter{Modelos de Inteligencia Artificial para datación estelar} 
-%TODO: introduce/explica el contenido de todo este capítulo.
+\chapter{Modelos de Inteligencia Artificial para datación estelar}
+\label{chap:AI_4_date} 
+%TODO_DONE: introduce/explica el contenido de todo este capítulo.
+Este apartado contiene, en primer lugar, la descripción de los modelos clásicos de IA que forman parte del análisis comparativo, detallando cuales son los hiperparámetros que se optimizan para llegar a los resultados obtenidos. En segundo lugar, se detallan los 3 \emph{benchmarks} que se plantean para evaluar el rendimiento de todos los modelos, incluyendo gráficas que ilustran las edades que componen los conjuntos de entrenamiento y prueba. Por último, se detallan los resultados obtenidos en cada uno de los 3 \emph{benchmarks}, adjuntando diferentes gráficas que ilustran el rendimiento de todos los modelos en los escenarios de interpolación, control y el escenario base.
+
 \section{Modelos}
 \label{sec:models}
 
@@ -178,34 +182,36 @@ Para este regresor, se optimiza con validación cruzada el hiperparámetro asoci
 
 \vspace{0.5cm}
 
-\textbf{Decision Tree Regressor} {} Se usa un modelo de árbol de decisión \cite{Breiman1984}. %TODO: da detalles sobre lo que son los árboles de decisión. Tienes información en la propia página de sckit
+\textbf{Decision Tree Regressor} {} Se usa un modelo de árbol de decisión \cite{Breiman1984}. %TODO_DONE: da detalles sobre lo que son los árboles de decisión. Tienes información en la propia página de sckit
+Los árboles de decisión son un método de aprendizaje no paramétrico cuyo objetivo es crear un modelo capaz de predecir una variable objetivo siguiendo reglas de decisión simples inferidas de las características de los datos. Destacan por ser un método fácil de entender e implementar, pero, también por convertirse en modelos demasiado complejos con dificultad para generalizar.
 Durante el aprendizaje, el modelo optimiza sus hiperparámetros internos a través de un proceso de \emph{grid search} con validación cruzada. Especificamente, se ajustan: la estrategia par elegir la división en cada nodo del árbol (mejor o aleatorio); el número mínimo de muestras requeridas para estar en un nodo hoja (5, 10, 50, 100); y la función para medir la calidad de la división (error cuadrático medio, error cuadrático medio con la puntuación de mejora de Friedman para posibles divisiones, error medio absoluto con reducción de la desviación de Poisson para encontrar divisiones). 
 
 \vspace{0.5cm}
 
-\textbf{Random Forest Regressor} {} Este modelo de regresión se implementa siguiendo el trabajo de Breiman \cite{Breiman2001}, donde los árboles de decisión se contruyen a partir de las muestras de datos extraídas con reemplazo del conjunto de entrenamiento. %TODO: lo mismo añade detalles sobre random forest
-
+\textbf{Random Forest Regressor} {} Este modelo de regresión se implementa siguiendo el trabajo de Breiman \cite{Breiman2001}, donde los árboles de decisión se contruyen a partir de las muestras de datos extraídas con reemplazo del conjunto de entrenamiento. Los árboles de decisión individuales suelen tender al sobreajuste. Los bosques aleatorios lograr reducir la varianza del modelo al combinar diversos árboles, aunque suele ser a costa de un ligero sesgo. La aleatoriedad inyectada en los bosques produce árboles de decisión con errores de predicción desacoplados. Al tomarse el promedio de las predicciones, algunos errores pueden anularse. %TODO_DONE: lo mismo añade detalles sobre random forest
 De nuevo se usa un proceso de \emph{grid search} más validación cruzada para ajustar los siguientes hiperparámetros: número de árboles (5, 10, 50, 100); número mínimo de muestras requeridas para estar en un nodo hoja (5, 10, 50, 100); y la función para medir la calidad de la división (error cuadrático medio o error medio absoluto).
 
 \vspace{0.5cm}
 de
-\textbf{Support Vector Regression} {} En el estudio se incluye este modelo de regresión, basado en la implementación de LibSVM para regresión, \cite{LIBSVM}, siguiendo la aproximación $\epsilon$-SVR. %TODO: lo mismo añade detalles
-
+\textbf{Support Vector Regression} {} Las máquinas de vectores soporte son un modelo que representa los puntos de la muestra en el espacio, separando una clase de otra mediante hiperplanos, tratando de mantener la máxima distancia posible con las muestras. El objetivo de este modelo consiste en encontrar el hiperplano que separe ambas clases de forma óptima. Una de las grandes ventajas de este modelo es que presenta una alta efectividad en espacios de gran dimensión, además, permite permite especificar diferentes funciones de kernel para la función de decisión. En el estudio se incluye este modelo de regresión, basado en la implementación de LibSVM para regresión, \cite{LIBSVM}, siguiendo la aproximación $\epsilon$-SVR. %TODO_DONE: lo mismo añade detalles
 Se emplea el kernel RBF, y se realiza una un \emph{grid search} con validación cruzada para ajustar el parámetro $C$ (1, 10, 100, 1000).
 
 \vspace{0.5cm}
 
-\textbf{Gaussian Process} {} Se entrena un regresor de proceso gaussiano \cite{Rasmussen2006}, donde se supone que la media es constante y cero. %TODO: lo mismo añade detalles
-Para la covarianza se usa un kernel que es la suma de los siguientes tres kernels. 
-\begin{enumerate}
-\item ...%TODO: mete cada Kernel en un item, junto a su fórmula y explicación, para que quede más ordenado.
-\end{enumerate}
-RBF, $k(\vb{x}_i, \vb{x}_j) = \text{exp}\left(- \frac{d(\vb{x}_i, \vb{x}_j)^2}{2l^2} \right)$, donde $d(\cdot, \cdot)$ es la distancia euclídea y $l$ es el parámetro de escala de longitud. Producto escalar, $k(\vb{x}_i, \vb{x}_j) = \sigma_0 ^ 2 + \vb{x}_i \cdot \vb{x}_j$. Es un kernel no estacionario que se obtiene de la regresión lineal poniendo a priori los coeficiones de $x_i (i = 1, \ldots, N)$ y  $N(0, \sigma_0^2)$ para el sesgo. Y finalmente, White kernel, $k(x_i, x_j) = noise\_level \text{ if } x_i == x_j \text{ else } 0$. La aplicación clave del White kernel es parte de un kernel suma, donde describe la componente de ruido de la entrada. Ajustar su parámetro se corresponde con estimar el nivel de ruido en ese momento.%TODO: no entiendo la traducción que has hecho de lo que pusimos en el paper. Revisa lo que quieres decir.
+\textbf{Gaussian Process} {} Se entrena un regresor de proceso gaussiano \cite{Rasmussen2006}, donde se supone que la media es constante y cero. Los procesos gaussianos son un método genérico de aprendizaje supervisado. Algunas de sus ventajas principales se basan en que su predicción es probabilística, lo que le permite calcular intervalos de confianza y reajustar la predicción en base a estos. Además, al igual que las máquinas de vectores soporte, también permite especificar diferentes kernels. Este método también presenta algunas desventajas, como su pérdida de eficiencia en espacios de gran dimensión.  %TODO_DONE: lo mismo añade detalles
+Se usa un kernel que es la suma de los siguientes tres kernels:
+%TODO_DONE: mete cada Kernel en un item, junto a su fórmula y explicación, para que quede más ordenado.
+\begin{itemize}
+\item RBF: $k(\vb{x}_i, \vb{x}_j) = \text{exp}\left(- \frac{d(\vb{x}_i, \vb{x}_j)^2}{2l^2} \right)$, donde $d(\cdot, \cdot)$ es la distancia euclídea y $l$ es el parámetro de escala de longitud. Este es un kernel estacionario, las siglas RBF provienen de \emph{Radial-basis function} aunque también se conoce como kernel exponencial al cuadrado.
+\item Producto escalar: $k(\vb{x}_i, \vb{x}_j) = \sigma_0 ^ 2 + \vb{x}_i \cdot \vb{x}_j$. Es un kernel no estacionario que se obtiene de la regresión lineal usando $N(0, 1)$ sobre los coeficientes de $x_i (i = 1, \ldots, N)$ y $N(0, \sigma_0^2)$ para el sesgo.
+\item White kernel: $k(x_i, x_j) = noise\_level \text{ if } x_i == x_j \text{ else } 0$. La aplicación clave del White kernel es formar parte de un kernel suma donde se explica el ruido de la señal como independiente e idénticamente distribuido siguiendo una función normal.
+\end{itemize}
+%TODO_DONE: no entiendo la traducción que has hecho de lo que pusimos en el paper. Revisa lo que quieres decir.
 
 \vspace{0.5cm}
 
-\textbf{k-Nearest Neighbors} {} También se incluye en la comparativa un regresor kNN. %TODO: lo mismo añade detalles
-Básicamente, se ajusta el parámetro k (1, 5, 10, 15, 20, 50) y el tipo de función de ponderación que se usa para escalar la contribución de cada vecino. Se exploran dos tipos de funciones de ponderación: a) uniforme, donde todos los puntos en cada vecindario se ponderan por igual; y b) distancia, que pondera los puntos por la inversa de su distancia a un punto de consulta.
+\textbf{k-Nearest Neighbors} {} También se incluye en la comparativa un regresor kNN. El principio de este modelo consiste en encontrar el número predefinido de muestras de entrenamiento más cercanas en distancia al nuevo punto y predecir la etiqueta a partir de ellas. A pesar de su simplicidad, este modelo ha tenido éxito en gran cantidad de problemas de clasificación y regresión.  %TODO_DONE: lo mismo añade detalles
+Para este problema, se ajusta el parámetro k (1, 5, 10, 15, 20, 50) y el tipo de función de ponderación que se usa para escalar la contribución de cada vecino. Se exploran dos tipos de funciones de ponderación: a) uniforme, donde todos los puntos en cada vecindario se ponderan por igual; y b) distancia, que pondera los puntos por la inversa de su distancia a un punto de consulta.
 
 \vspace{0.5cm}
 
@@ -221,8 +227,8 @@ Básicamente, se ajusta el parámetro k (1, 5, 10, 15, 20, 50) y el tipo de func
 \label{fig:neural_network}
 \end{figure}
 
-\textbf{Stacking} {} Finalmente, se emplea un método de ensamblado en aprendizaje automático conocido como generalización apilada o stacking \cite{Wolpert1992}.  %TODO: lo mismo añade detalles
-En un problema de regresión como lo es este, las predicciones de cada regresor individual (nivel 0) se apilan y se introducen en un estimador final (nivel 1), que calcula la predicción de la edad. Para este proyecto, en el nivel 0, se integran: Neural Network y Gaussian Process. Para la última capa (nivel 1), se incorpora un Linear Regressor. Durante el entrenamiento, y para generalizar y evitar sobreajuste, el estimador de nivel 1 se entrena con muestras externas (tomadas del conjunto de entrenamiento), siguiendo una metodología de validación cruzada.
+\textbf{Stacking} {} Finalmente, se emplea un método de ensamblado en aprendizaje automático conocido como generalización apilada o stacking \cite{Wolpert1992}. El modelo consiste en apilar la salida de los estimadores individuales y usar un regresor para calcular la predicción final. Esto permite tener en cuenta el potencial de cada estimador individual, utilizando su salida como entrada de un estimador final.  %TODO_DONE: lo mismo añade detalles
+Por tanto, las predicciones de cada regresor individual (nivel 0) se apilan y se introducen en un estimador final (nivel 1), que calcula la predicción de la edad. Para este proyecto, en el nivel 0, se integran: Neural Network y Gaussian Process. Para la última capa (nivel 1), se incorpora un Linear Regressor. Durante el entrenamiento, y para generalizar y evitar sobreajuste, el estimador de nivel 1 se entrena con muestras externas (tomadas del conjunto de entrenamiento), siguiendo una metodología de validación cruzada.
 
 \section{Escenarios de evaluación}
 \label{sec:benchmark}
@@ -268,7 +274,10 @@ La base de datos, detallada en la Sección \ref{sec:data}, ofrece más de 600 es
  \label{fig:benchB1_test}
 \end{figure}
 
-También se propone un segundo escenario para evaluar la capacidad de generalización de los modelos cuando se entrenan solo con estrellas pertenecientes a cúmulos. En la práctica, la girocronología se utiliza para datar estrellas individuales que pueden tener cualquier edad. Las estrellas de los cúmulos suelen estar datadas gracias a su pertenencia a los propios cúmulos. En este Benchmark B2, se propone el entrenamiento de los modelos utilizando únicamente estrellas pertenecientes a cúmulos. El resto de estrellas se incluyen en el conjunto de prueba. En total, este escenario recoge 397 y 240 muestras para entrenamiento y prueba, respectivamente. En la Figura \ref{fig:benchB2_train} se detalla la distribución de las estrellas en el conjunto de entrenamiento y en la Figura \ref{fig:benchB2_test} la del conjunto de prueba. %TODO: qué se observa? algo que destacar?
+También se propone un segundo escenario para evaluar la capacidad de generalización de los modelos cuando se entrenan solo con estrellas pertenecientes a cúmulos. En la práctica, la girocronología se utiliza para datar estrellas individuales que pueden tener cualquier edad. Las estrellas de los cúmulos suelen estar datadas gracias a su pertenencia a los propios cúmulos. En este Benchmark B2, se propone el entrenamiento de los modelos utilizando únicamente estrellas pertenecientes a cúmulos. El resto de estrellas se incluyen en el conjunto de prueba. En total, este escenario recoge 397 y 240 muestras para entrenamiento y prueba, respectivamente.
+
+En la Figura \ref{fig:benchB2_train} se detalla la distribución de las estrellas que forman el conjunto de entrenamiento, aquí se observa la concentración de estas en las 4 edades principales de cada uno de los cúmulos (0.79, 1, 2.5 y 4.2 Gyr).
+Por otro lado, la Figura \ref{fig:benchB2_test} detalla la distribución del conjunto de prueba. En esta gráfica se observa una mayor dispersión sobre el rango total de edades, aunque sigue apareciendo una mayor concentración de estrellas en la edad de 2.4 Gyr. %TODO_DONE_DONE: qué se observa? algo que destacar?
 
 \begin{figure}[H]
 \begin{center}
@@ -318,7 +327,7 @@ Para poder realizar una comparación entre modelos, se han creado todos en Pytho
 La métrica de evaluación principal utilizada es el error medio absoluto, $MAE = \frac{\sum_{i=1}^{N}|a_i-\hat{a}_i|}{N}$, donde $a_i$ y $\hat{a}_i$, son la edad proporcionada por el conjunto de datos y la edad estimada por un modelo de regresión, respectivamente. Dado que el conjunto de datos proporciona información sobre la precisión de la edad de cada estrella, en forma de límites de error, también se propone utilizar como métrica de evaluación de la precisión el porcentaje de predicciones de la edad de las estrellas que se encuentran dentro del intervalo de confianza proporcionado por el propio conjunto de datos.
 
 \paragraph{Gráficas}
-Antes de abordar cada uno de los \emph{benchmarks}, es necesario introducir brevemente las gráficas que permiten profundizar en el renidmiento de los modelos. En primer lugar, se muestra un gráfico de barras que recoge un resumen con el MAE de cada uno de los modelos. A continuación y para cada uno de los modelos, se observan 3 gráficas diferentes. La primera de las gráficas permite observar las estimaciones que caen dentro del margen de error. La segunda gráfica muestra detalladamente la predicción, incluyendo el error obtenido para cada uno de los casos. La tercera gráfica muestra un histograma que recoge el MAE en función de la edad de las estrellas del conjunto de prueba.
+Antes de abordar cada uno de los \emph{benchmarks}, es necesario introducir brevemente las gráficas que permiten profundizar en el rendimiento de los modelos. En primer lugar, se muestra un gráfico de barras que recoge un resumen con el MAE de cada uno de los modelos. A continuación y para cada uno de los modelos, se observan 3 gráficas diferentes. La primera de las gráficas permite observar las estimaciones que caen dentro del margen de error. La segunda gráfica muestra detalladamente la predicción, incluyendo el error obtenido para cada uno de los casos. La tercera gráfica muestra un histograma que recoge el MAE en función de la edad de las estrellas del conjunto de prueba.
 
 \subsection{Benchmark A: Problema de datación estelar}
 
@@ -335,8 +344,8 @@ Analizando los 6 modelos restantes, se observa que, la mayoría de los modelos p
 \end{figure}
 
 \paragraph{Stacking} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Stacking, el cual ha presentado el menor MAE en este benchmark, 0.400 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Stacking, el cual ha presentado el menor MAE en este benchmark, 0.400 Gyr. En la Figura \ref{fig:benchA_details_stacking_1} se observa que se tienen estimaciones dentro del margen de confianza para todo el espectro de edades, aunque, también se observa una acumulación de fallos en la estimación de las edades cercanas a 0.7 y 4.2 Gyr. En la Figura \ref{fig:benchA_details_stacking_2} se aprecia que los errores más pronunciados se dan para edades inferiores a 1, concretamente, las edades pertenecientes al cúmulo de 0.7 Gyr. Además, en la Figura \ref{fig:benchA_details_stacking_3} se observa una diferencia del error medio entre edades de 0.45 Gyr, lo que supone una diferencia relativamente alta.
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -362,227 +371,146 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
  \label{fig:benchA_details_stacking_3}
 \end{figure}
 
+En la Figura \ref{fig:benchA_details_1} se adjuntan las gráficas que detallan el rendimiento de los modelos Neural Network, Gaussian Process, kNN y Random Forest. En sus correspondientes gráficas se puede apreciar:
+
 \paragraph{Neural Network} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Neural Network. Segundo mejor modelo con un MAE de 0.405 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_nnet_1.pdf}
-\end{center}
-\caption{Benchmark A: Rendimiento para el modelo Neural Network.}
- \label{fig:benchA_details_nnet_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_nnet_2.pdf}
-\end{center}
-\caption{Benchmark A: Predicción detallada para el modelo de Neural Network. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchA_details_nnet_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_nnet_3.pdf}
-\end{center}
-\caption{Benchmark A: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchA_details_nnet_3}
-\end{figure}
+La red neuronal es el segundo mejor modelo, después del stacking, con un MAE de 0.405 Gyr. Al igual que con el modelo del Stacking, en las gráficas de la red neuronal se aprecia cierta dificultad para colocar todas las estrellas los cúmulos de 0.7 y 4.2 Gyr dentro del margen de confianza. Por otro lado, el error medio entre edades varia desde 0.2 a 0.8 Gyr, aumentando la diferencia del modelo de Stacking.
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Gaussian Process} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Gaussian Process. Tercer mejor modelo con un MAE de 0.453 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_gp_1.pdf}
-\end{center}
-\caption{Benchmark A: Rendimiento para el modelo Gaussian Process.}
- \label{fig:benchA_details_gp_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_gp_2.pdf}
-\end{center}
-\caption{Benchmark A: Predicción detallada para el modelo de Gaussian Process. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchA_details_gp_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_gp_3.pdf}
-\end{center}
-\caption{Benchmark A: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchA_details_gp_3}
-\end{figure}
+El tercer mejor modelo es el Proceso Gaussiano, con un MAE de 0.453 Gyr. A diferencia de los dos modelos anteriores, aquí se empiezan a observar dificultades para estimar edades entre 0.4 y 4.2 Gyr, obteniendo un mayor número de puntos fuera del margen de confianza. Además, la segunda gráfica, relativa al error para cada edad, muestra errores de valor constante pero con mayor presencia a lo largo de todo el conjunto de edades. También destaca, en la tercera figura, la similitud que muestra el error medio para edades de hasta 7 Gyr, que es 4 veces menor que el error medio para las edades de más de 10 Gyr.
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{kNN} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo kNN. El cual ha presentado una MAE de 0.532 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_knn_1.pdf}
-\end{center}
-\caption{Benchmark A: Rendimiento para el modelo kNN.}
- \label{fig:benchA_details_knn_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_knn_2.pdf}
-\end{center}
-\caption{Benchmark A: Predicción detallada para el modelo de kNN. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchA_details_knn_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_knn_3.pdf}
-\end{center}
-\caption{Benchmark A: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchA_details_knn_3}
-\end{figure}
+Las gráficas del modelo kNN, el cual ha presentado una MAE de 0.532 Gyr, muestran una mayor dispersión de las estrellas estimadas, incluyendo menos estrellas dentro del intervalo de confianza. Por primera vez se observa una mala estimación para las edades más altas. Además, la figura de errores, muestra picos más pronunciados que los vistos hasta el momento, lo que indica una degradación en el rendimiento de los resultados obtenidos.
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Random Forest} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Random Forest. El cual ha presentado una MAE de 0.572 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
+El último modelo de este bloque es el de Random Forest, con un MAE de 0.572 Gyr. En este caso se observa una dispersión relativamente controlada, respecto a lo visto anteriormente, pero se siguen presentando dificultades para estimas las edades de 0.7, 1 y 4.2 Gyr. En la segunda figura se observan errores de valor constante para todo el espectro de edades, aunque, el mayor error medio se sigue teniendo en las edades superiores a 10 Gyr.
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_rf_1.pdf}
-\end{center}
-\caption{Benchmark A: Rendimiento para el modelo Random Forest.}
- \label{fig:benchA_details_rf_1}
-\end{figure}
+%Benchmark A
+\begin{figure*}[h]
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[nnet]{\label{fig:benchA_details_nnet_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_nnet_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_nnet_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_nnet_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_nnet_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_nnet_3.pdf}}
+\end{minipage}\par\medskip
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[gp]{\label{fig:benchA_details_gp_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_gp_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_gp_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_gp_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_gp_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_gp_3.pdf}}
+\end{minipage}\par\medskip
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[knn]{\label{fig:benchA_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_knn_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_knn_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_knn_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_knn_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_knn_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[rf]{\label{fig:benchA_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_rf_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_rf_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_rf_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_rf_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_rf_3.pdf}}
+\end{minipage}
+\caption{Benchmark A. Predicción detallada de los modelos nnet, gp, kNN y rf.}
+\label{fig:benchA_details_1}
+\end{figure*}
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_rf_2.pdf}
-\end{center}
-\caption{Benchmark A: Predicción detallada para el modelo de Random Forest. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchA_details_rf_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_rf_3.pdf}
-\end{center}
-\caption{Benchmark A: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchA_details_rf_3}
-\end{figure}
+En la Figura \ref{fig:benchA_details_1} se adjuntan las gráficas que detallan el rendimiento de los modelos Support Vector Regression, Decision Tree Regressor, Linear Regressor y Bayesian Regression. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Support Vector Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Support Vector Regression. El cual ha presentado una MAE de 0.676 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_svm_1.pdf}
-\end{center}
-\caption{Benchmark A: Rendimiento para el modelo Support Vector Regression.}
- \label{fig:benchA_details_svm_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_svm_2.pdf}
-\end{center}
-\caption{Benchmark A: Predicción detallada para el modelo de Support Vector Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchA_details_svm_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_svm_3.pdf}
-\end{center}
-\caption{Benchmark A: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchA_details_svm_3}
-\end{figure}
+El modelo Support Vector Regression ha presentado un MAE de 0.676 Gyr. Se siguen presentando dificultades para estimar correctamente todas las estrellas de los cúmulos de 0.7, y sobre todo, 4.2 Gyr.También se aprecia cierta correlación entre la edad y el error medio obtenido en las estimaciones. 
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Decision Tree Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Decision Tree Regression. El cual ha presentado una MAE de 0.695 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_dtr_1.pdf}
-\end{center}
-\caption{Benchmark A: Rendimiento para el modelo Decision Tree Regression.}
- \label{fig:benchA_details_dtr_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_dtr_2.pdf}
-\end{center}
-\caption{Benchmark A: Predicción detallada para el modelo de Decision Tree Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchA_details_dtr_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_dtr_3.pdf}
-\end{center}
-\caption{Benchmark A: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchA_details_dtr_3}
-\end{figure}
+Para el modelo Decision Tree Regression,con un MAE de 0.695 Gyr, se visualiza una nube de estimaciones muy dispersa, proporcionando pocas estrellas dentro del intervalo de confianza. Además de presentar problemas en la estimación de los cúmulos, muestra dificultades en la estimación de las edades medias, algo que no se había producido con demasiada intensidad en los modelos anteriores.
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Linear Regressor} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Linear Regressor. El peor modelo de este benchmark junto con Bayesian Regression con un MAE de 0.951 Gyr. %TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_lr_1.pdf}
-\end{center}
-\caption{Benchmark A: Rendimiento para el modelo Linear Regressor.}
- \label{fig:benchA_details_lr_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_lr_2.pdf}
-\end{center}
-\caption{Benchmark A: Predicción detallada para el modelo de Linear Regressor. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchA_details_lr_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_lr_3.pdf}
-\end{center}
-\caption{Benchmark A: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchA_details_lr_3}
-\end{figure}
+El modelo Linear Regressor, con un MAE de 0.951 Gyr, sigue mostrando problemas de estimación para las estrellas pertenecientes a los cúmulos. Además, la figura relativa al error muestra un error constante para todo el espectro de edad, saliéndose continuamente del margen de error asociado a las estrellas. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Bayesian Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayesian Regression. El peor modelo de este \emph{benchmark} junto con Linear Regressor con un MAE de 0.951 Gyr.%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
+Por último, el modelo Bayesian Regression. Este muestra los peores resultados junto con el modelo Linear Regressor, ambos con un MAE de 0.951 Gyr. Tal y como se ha visto en el modelo anterior, las figuras muestran un error constante para todas las edades del conjunto de prueba. No se encuentran picos de error excesivamente elevados, pero la constante presencia de errores de estimación lo convierten en el peor modelo de este \emph{benchmark}. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_bayes_1.pdf}
-\end{center}
-\caption{Benchmark A: Rendimiento para el modelo Bayesian Regression.}
- \label{fig:benchA_details_bayes_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_bayes_2.pdf}
-\end{center}
-\caption{Benchmark A: Predicción detallada para el modelo de Bayesian Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchA_details_bayes_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_A_bayes_3.pdf}
-\end{center}
-\caption{Benchmark A: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchA_details_bayes_3}
-\end{figure}
+\begin{figure*}[h]
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[svm]{\label{fig:benchA_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_svm_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_svm_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_svm_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_svm_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_svm_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[dtr]{\label{fig:benchA_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_dtr_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_dtr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_dtr_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_dtr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_dtr_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[lr]{\label{fig:benchA_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_lr_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_lr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_lr_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_lr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_lr_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[bayes]{\label{fig:benchA_details_bayes_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_bayes_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_bayes_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_bayes_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchA_details_bayes_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_bayes_3.pdf}}
+\end{minipage}
+\caption{Benchmark A. Predicción detallada de los modelos svm, dtr, lr y bayes.}
+\label{fig:benchA_details_2}
+\end{figure*}
 
 
 \subsection{Benchmark B: Escenario de generalización}
@@ -610,7 +538,7 @@ Aquí se analiza la capacidad de generalización de todos los modelos para el pr
 El Benchmark B1 se centra en analizar la precisión de los modelos estimando edades de estrellas más antiguas a las que han visto durante el entrenamiento. Obviamente, el error promedio de lo modelos ha aumentado. El mejor rendimiento se observa en la Red Neuronal, con un MAE de 1,47 Gyr. Las estimaciones detalladas se pueden ver en la Figura \ref{fig:benchB1_best_1} y Figura \ref{fig:benchB1_best_2}, donde se puede observar cómo la Red Neuronal es capaz de generalizar hasta 6 Gyr, asignando estimaciones de edad que en su mayoría se encuentran dentro del margen de confianza. La Tabla \ref{table:precisions} confirma este hecho, donde la Red Neuronal también exhibe la precisión más alta para el Benchmark B1.
 
 \paragraph{Neural Network} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Neural Network, el cual presenta el menor MAE de este \emph{benchmark}, 1.475 Gyr. %TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Neural Network, el cual presenta el menor MAE de este \emph{benchmark}, 1.475 Gyr. En la Figura \ref{fig:benchB1_best_1} se ve claramente que el modelo tiende a subestimar las edades estelares, consiguiendo únicamente incluir dentro del margen de error las edades más bajar. Esto es lógico ya que a partir de 4.2 Gyr son todo edades desconocidas para el modelo. En la Figura \ref{fig:benchB1_best_3} se aprecia el aumento del error medio con el aumento de la edad a estimar. En la Figura \ref{fig:benchB1_best_2} se aprecia como la predicción sigue la tendencia de una línea recta que oscila sobre el mayor valor que formaba parte del conjunto de entrenamiento. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -638,11 +566,11 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 
 \subsubsection{Benchmark B2} 
 
-La historia es completamente diferente en el Benchmark B2. La Red Neuronal no es capaz de ser la mejor generalizando. Su error asciende hasta 1,85 Gyr, siendo superada por lr, rf, svm, knn, gp y bayes. %TODO: mejor poner los nombres.
+La historia es completamente diferente en el Benchmark B2. La Red Neuronal no es capaz de ser la mejor generalizando. Su error asciende hasta 1,85 Gyr, siendo superada por Linear Regressor, Random Forest, Support Vector Regression, k-Nearest Neighbors, Gaussian Process y Bayesian Regression. %TODO_DONE: mejor poner los nombres.
 Este último resulta ser el mejor modelo en este escenario, con un MAE de 1.48 Gyr. De la Figura \ref{fig:benchB2_best_1} y la Figura \ref{fig:benchB2_best_2} se llega a la conclusión de que un regresor bayesiano es capaz de proporcionar edades precisas en el rango de 1 Gyr a 5 Gyr, es decir, el rango cubierto por la muestra de entrenamiento en este caso. En términos de precisión, la Tabla \ref{table:precisions} revela que el modelo SVR es el modelo ganador, seguido de cerca por el Proceso Gaussiano y el regresor linear. El modelo bayesiano, aunque tiene el MAE más bajo, presenta una precisión del 29.71 \%.
 
-\paragraph{Bayessian Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayessian Regression, el cual presenta el menor MAE de este \emph{benchmark}, 1.484 Gyr. %TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
+\paragraph{Bayesian Regression} 
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayesian Regression, el cual presenta el menor MAE de este \emph{benchmark}, 1.484 Gyr. Las figuras vuelven a mostrar que el modelo tiende a subestimar, algo normal si se tiene en cuenta que la edad más alta conocida en el entrenamiento es 4.2 Gyr. De la Figura \ref{fig:benchB2_best_1} se observa que la mayoría de las estimaciones caen fuera del margen de error asociado a las estrellas. En la Figura \ref{fig:benchB2_best_2} se observa que el estimador tiene con facilidad a edades cercanas a 4.2 y no alcanza valores superiores a 6 Gyr. En la línea de todo lo comentado, la Figura \ref{fig:benchB2_best_3} muestra que el error medio aumenta según aumentan las edades estelares a estimar. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure}[H]
 \begin{center}
@@ -668,390 +596,250 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
  \label{fig:benchB2_best_3}
 \end{figure}
 
-
-Finalmente, en ambos escenarios se observa que todos los modelos tienden a subestimar las edades, aunque ese efecto es más pronunciado en el segundo \emph{benchmark}. Esto no es algo sorprendente, ya que en ambos casos las edades superiores a 4.2 Gyr no están cubiertas por las muestras de entrenamiento.
-
-En los siguientes párrafos se muestran las figuras correspondientes al rendimiento obtenido del resto de modelos para Benchmark B1 y B2.
+%Benchmark B1
+A continuación, se detalla el resto de modelos del Benchmark B1, en la Figura \ref{fig:benchB1_details_1} se adjuntan las gráficas correspondientes al rendimiento de los modelos kNN, Random Forest, Support Vector Regression y Decision Tree Regression. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{kNN} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo kNN. El cual ha presentado una MAE de 1.605 Gyr. %TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-
-%Benchmark B1
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_knn_1.pdf}
-\end{center}
-\caption{Benchmark B1: Rendimiento para el modelo kNN.}
- \label{fig:benchB1_details_knn_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_knn_2.pdf}
-\end{center}
-\caption{Benchmark B1: Predicción detallada para el modelo de kNN. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB1_details_knn_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_knn_3.pdf}
-\end{center}
-\caption{Benchmark B1: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB1_details_knn_3}
-\end{figure}
+El modelo kNN presenta un MAE de 1.605 Gyr. En las figuras se observa que solo se realizan estimaciones dentro del margen de error para edades inferiores a 5 Gyr. Además, la segunda figura muestra que el modelo es incapaz de generar estimaciones por encima de 4.2 Gyr, la edad máxima que conoce del conjunto de entrenamiento.  %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Random Forest} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Random Forest. El cual ha presentado una MAE de 1.709 Gyr.%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_rf_1.pdf}
-\end{center}
-\caption{Benchmark B1: Rendimiento para el modelo Random Forest.}
- \label{fig:benchB1_details_rf_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_rf_2.pdf}
-\end{center}
-\caption{Benchmark B1: Predicción detallada para el modelo de Random Forest. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB1_details_rf_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_rf_3.pdf}
-\end{center}
-\caption{Benchmark B1: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB1_details_rf_3}
-\end{figure}
+En el modelo Random Forest, con un MAE de 1.709 Gyr, se observa un rendimiento similar al visto en el modelo anterior. No consigue generar edades superiores a 4.2 Gyr y se observa un aumento del error medio en estimación según aumenta la edad a estimar. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Support Vector Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Support Vector Regression. El cual ha presentado una MAE de 1.724 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_svm_1.pdf}
-\end{center}
-\caption{Benchmark B1: Rendimiento para el modelo Support Vector Regression.}
- \label{fig:benchB1_details_svm_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_svm_2.pdf}
-\end{center}
-\caption{Benchmark B1: Predicción detallada para el modelo de Support Vector Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB1_details_svm_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_svm_3.pdf}
-\end{center}
-\caption{Benchmark B1: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB1_details_svm_3}
-\end{figure}
+El modelo Support Vector Regression, con un MAE de 1.724 Gyr, presenta diferencias respecto a los dos modelos anteriores. Este modelo sí es capaz de generar edades superiores a los 4.2 Gyr. Aún así, se mantiene el problema de subestimación y solo se consiguen estimaciones dentro del margen de error para edades inferiores a 7 Gyr. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Decision Tree Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Decision Tree Regression. El cual ha presentado una MAE de 1.621 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_dtr_1.pdf}
-\end{center}
-\caption{Benchmark B1: Rendimiento para el modelo Decision Tree Regression.}
- \label{fig:benchB1_details_dtr_1}
-\end{figure}
+El modelo Decision Tree Regression ha presentado un MAE de 1.621 Gyr. La primera figura ilustra los problemas que tiene el modelo para generar edades superiores a 4.2 Gyr. De hecho, parece que el modelo solo conoce estrellas de 4.2 y 3.2 Gyr, pues, tiende a esos valores durante todo el espectro de edades. Tal y como se ha visto hasta el momento, el error medio de estimación aumenta con la edad real a estimar. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_dtr_2.pdf}
-\end{center}
-\caption{Benchmark B1: Predicción detallada para el modelo de Decision Tree Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB1_details_dtr_2}
-\end{figure}
+\begin{figure*}[h]
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[knn]{\label{fig:benchB1_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_knn_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_knn_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_knn_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_knn_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_knn_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[rf]{\label{fig:benchB1_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_rf_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_rf_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_rf_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_rf_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_rf_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[svm]{\label{fig:benchB1_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_svm_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_svm_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_svm_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_svm_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_svm_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[dtr]{\label{fig:benchB1_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_dtr_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_dtr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_dtr_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_dtr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_dtr_3.pdf}}
+\end{minipage}
+\caption{Benchmark B1. Predicción detallada de los modelos knn, rf, svm y dtr.}
+\label{fig:benchB1_details_1}
+\end{figure*}
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_dtr_3.pdf}
-\end{center}
-\caption{Benchmark B1: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB1_details_dtr_3}
-\end{figure}
+En la Figura \ref{fig:benchB1_details_2} se adjuntan las gráficas que detallan el rendimiento de los modelos Linear Regressor, Bayesian Regression y Gaussian Process para el Benchmark B1. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Linear Regressor} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Linear Regressor. El cual ha presentado una MAE de 1.923 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_lr_1.pdf}
-\end{center}
-\caption{Benchmark B1: Rendimiento para el modelo Linear Regressor.}
- \label{fig:benchB1_details_lr_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_lr_2.pdf}
-\end{center}
-\caption{Benchmark B1: Predicción detallada para el modelo de Linear Regressor. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB1_details_lr_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_lr_3.pdf}
-\end{center}
-\caption{Benchmark B1: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB1_details_lr_3}
-\end{figure}
+El modelo Linear Regressor muestra el segundo peor rendimiento de este \emph{benchmark} con un MAE de 1.923 Gyr. La primera figura muestra los problemas que tiene el modelo para estimar todo el espectro de edades, incluidas las estrellas de 4.2 Gyr que ya conoce y para las que estima edades entre 1 y 5 Gyr. El modelo consigue generar edades de hasta 6 Gyr, pero no consigue introducir demasiadas estimaciones dentro de los márgenes de error. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Bayesian Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayesian Regression. El cual ha presentado una MAE de 1.943 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_bayes_1.pdf}
-\end{center}
-\caption{Benchmark B1: Rendimiento para el modelo Bayesian Regression.}
- \label{fig:benchB1_details_bayes_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_bayes_2.pdf}
-\end{center}
-\caption{Benchmark B1: Predicción detallada para el modelo de Bayesian Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB1_details_bayes_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_bayes_3.pdf}
-\end{center}
-\caption{Benchmark B1: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB1_details_bayes_3}
-\end{figure}
+El modelo Bayesian Regression ha presentado los peores resultados del \emph{benchmark} con un MAE de 1.943 Gyr. En la primera figura se observa algo similar al modelos Linear Regressor, pues, presenta problemas para estimar las estrellas de 4.2 Gyr, edad que conoce del conjunto de entrenamiento. Además, se sigue observando la subestimación para el resto de edades. La segunda figura muestra en detalle el error constante que mantiene el modelo para todo el espectro de edades, consiguiendo pocas estimaciones dentro del margen de error. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Gaussian Process} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Gaussian Process. El cual ha presentado una MAE de 1.670 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_gp_1.pdf}
-\end{center}
-\caption{Benchmark B1: Rendimiento para el modelo Gaussian Process.}
- \label{fig:benchB1_details_gp_1}
-\end{figure}
+Por último, el modelo Gaussian Process, con un MAE de 1.670 Gyr. Aquí se siguen observando para estimar la edad de 4.2 Gyr, pero no se llega al nivel de los dos modelos anteriores. Este modelo sigue la tendencia de todos los que hemos visto hasta el momento, no es capaz de estimar edades superiores a 4.2 Gyr aunque consigue introducir alguna estimación dentro del margen de error. Evidentemente, el error medio aumenta con las edades reales a estimar. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_gp_2.pdf}
-\end{center}
-\caption{Benchmark B1: Predicción detallada para el modelo de Gaussian Process. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB1_details_gp_2}
-\end{figure}
+\begin{figure*}[h]
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[lr]{\label{fig:benchB1_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_lr_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_lr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_lr_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_lr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_lr_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[bayes]{\label{fig:benchB1_details_bayes_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_bayes_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_bayes_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_bayes_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_bayes_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_bayes_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[gp]{\label{fig:benchB1_details_gp_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_gp_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_gp_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_gp_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB1_details_gp_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_gp_3.pdf}}
+\end{minipage}
+\caption{Benchmark B1. Predicción detallada de los modelos lr, bayes y gp.}
+\label{fig:benchB1_details_2}
+\end{figure*}
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B1_gp_3.pdf}
-\end{center}
-\caption{Benchmark B1: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB1_details_gp_3}
-\end{figure}
 
 %Benchmark B2
+A continuación, se detalla el resto de modelos del Benchmark B2, en la Figura \ref{fig:benchB2_details_1} se adjuntan las gráficas correspondientes al rendimiento de los modelos kNN, Random Forest, Support Vector Regression y Decision Tree Regression. En sus correspondientes gráficas se puede apreciar:
+
 \paragraph{kNN} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo kNN. El cual ha presentado una MAE de 1.841 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_knn_1.pdf}
-\end{center}
-\caption{Benchmark B2: Rendimiento para el modelo kNN.}
- \label{fig:benchB2_details_knn_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_knn_2.pdf}
-\end{center}
-\caption{Benchmark B2: Predicción detallada para el modelo de kNN. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB2_details_knn_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_knn_3.pdf}
-\end{center}
-\caption{Benchmark B2: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB2_details_knn_3}
-\end{figure}
+El modelo kNN ha presentado un MAE de 1.841 Gyr. En la primera imagen se observan con mucha claridad los problemas que muestra el regresor lineal para estimar edades que no sean las de los cúmulos. La segunda figura confirma que solo se estiman valores de 0.79, 1, 2.5 y 4.2 Gyr. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Random Forest} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Random Forest. El cual ha presentado una MAE de 1.852 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_rf_1.pdf}
-\end{center}
-\caption{Benchmark B2: Rendimiento para el modelo Random Forest.}
- \label{fig:benchB2_details_rf_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_rf_2.pdf}
-\end{center}
-\caption{Benchmark B2: Predicción detallada para el modelo de Random Forest. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB2_details_rf_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_rf_3.pdf}
-\end{center}
-\caption{Benchmark B2: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB2_details_rf_3}
-\end{figure}
+El modelo Random Forest, con un MAE de 1.852 Gyr, muestra un rendimiento similar al kNN. En este caso la nube de puntos de la primera figura representa una serie de estimaciones menos ajustadas a las edades de los cúmulos, aunque se sigue apreciando gran población de estimaciones en esas edades. Como parece lógico, al aumentar la edad real a estimar, aumenta el error medio de la estimación. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Support Vector Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Support Vector Regression. El cual ha presentado una MAE de 1.507 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_svm_1.pdf}
-\end{center}
-\caption{Benchmark B2: Rendimiento para el modelo Support Vector Regression.}
- \label{fig:benchB2_details_svm_1}
-\end{figure}
+El modelo Support Vector Regression, con un MAE de 1.507 Gyr, muestra una nube de estimaciones que tiende a buscar la edad de las estrellas que no conoce, mostrando un rendimiento más natural que los dos anteriores. Aunque se consiguen estimaciones cercanas a los 6 Gyr, el modelo muestra dificultad para meter en el margen de error las estimaciones de estrellas de más de 4 Gyr. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_svm_2.pdf}
-\end{center}
-\caption{Benchmark B2: Predicción detallada para el modelo de Support Vector Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB2_details_svm_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_svm_3.pdf}
-\end{center}
-\caption{Benchmark B2: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB2_details_svm_3}
-\end{figure}
 
 \paragraph{Decision Tree Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Decision Tree Regression. El cual ha presentado una MAE de 1.901 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_dtr_1.pdf}
-\end{center}
-\caption{Benchmark B2: Rendimiento para el modelo Decision Tree Regression.}
- \label{fig:benchB2_details_dtr_1}
-\end{figure}
+El modelo Decision Tree Regression, con un MAE de 1.901 Gyr, muestra un comportamiento similar al kNN, en que se ve con claridad si tendencia a estimar la edad de los cúmulos para todas las estrellas del conjunto de test. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_dtr_2.pdf}
-\end{center}
-\caption{Benchmark B2: Predicción detallada para el modelo de Decision Tree Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB2_details_dtr_2}
-\end{figure}
+\begin{figure*}[h]
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[knn]{\label{fig:benchB2_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_knn_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_knn_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_knn_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_knn_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_knn_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[rf]{\label{fig:benchB2_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_rf_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_rf_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_rf_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_rf_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_rf_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[svm]{\label{fig:benchB2_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_svm_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_svm_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_svm_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_svm_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_svm_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[dtr]{\label{fig:benchB2_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_dtr_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_dtr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_dtr_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_dtr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_dtr_3.pdf}}
+\end{minipage}
+\caption{Benchmark B2. Predicción detallada de los modelos knn, rf, svm y dtr.}
+\label{fig:benchB2_details_1}
+\end{figure*}
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_dtr_3.pdf}
-\end{center}
-\caption{Benchmark B2: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB2_details_dtr_3}
-\end{figure}
+En la Figura \ref{fig:benchB2_details_2} se adjuntan las gráficas que detallan el rendimiento de los modelos Linear Regressor, Neural Network y Gaussian Process para el Benchmark B2. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Linear Regressor} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Linear Regressor. El cual ha presentado una MAE de 1.561 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_lr_1.pdf}
-\end{center}
-\caption{Benchmark B2: Rendimiento para el modelo Linear Regressor.}
- \label{fig:benchB2_details_lr_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_lr_2.pdf}
-\end{center}
-\caption{Benchmark B2: Predicción detallada para el modelo de Linear Regressor. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB2_details_lr_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_lr_3.pdf}
-\end{center}
-\caption{Benchmark B2: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB2_details_lr_3}
-\end{figure}
+El modelo Linear Regressor, con un MAE de 1.561 Gyr, muestra un rendimiento similar a la máquina de vectores soporte. Te tiene una gran nube de estimaciones que caen dentro del margen de error para estrellas de hasta 4 Gyr, pero, para edades mayores presenta problemas en la estimación. La segunda figura muestra que se produce un error contante en la estimación de todo el espectro de edades.
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Neural Network} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Neural Network. El cual ha presentado una MAE de 1.853 Gyr.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_nnet_1.pdf}
-\end{center}
-\caption{Benchmark B2: Rendimiento para el modelo Neural Network.}
- \label{fig:benchB2_details_nnet_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_nnet_2.pdf}
-\end{center}
-\caption{Benchmark B2: Predicción detallada para el modelo de Neural Network. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB2_details_nnet_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_nnet_3.pdf}
-\end{center}
-\caption{Benchmark B2: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB2_details_nnet_3}
-\end{figure}
+La red neuronal, a diferencia del resto de escenarios, es uno de los modelos que peor rendimiento presenta junto con Decision Tree Regression, mostrando un MAE de 1.853 Gyr. En la primera figura se observa que las estimaciones de todas las edades van de 0.7 a 4.2 Gyr, siendo estas las edades inferior y superior de los cúmulos.
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \paragraph{Gaussian Process} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Gaussian Process. El cual ha presentado una MAE de 1.624 Gyr.
+El último modelo de este \emph{benchmark} es Gaussian Process, el cual ha presentado un MAE de 1.624 Gyr. En la primera figura se puede observar un comportamiento ya conocido, pues, hasta las estrellas de 4 Gyr, consigue estimaciones aproximadas. Pero, cuando la edad a estimar pasa de 4 Gyr, se vuelve a demostrar la incapacidad para extrapolar y la tendencia a subestimar edades.
 %TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_gp_1.pdf}
-\end{center}
-\caption{Benchmark B2: Rendimiento para el modelo Gaussian Process.}
- \label{fig:benchB2_details_gp_1}
-\end{figure}
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_gp_2.pdf}
-\end{center}
-\caption{Benchmark B2: Predicción detallada para el modelo de Gaussian Process. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}
- \label{fig:benchB2_details_gp_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_B2_gp_3.pdf}
-\end{center}
-\caption{Benchmark B2: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchB2_details_gp_3}
-\end{figure}
+\begin{figure*}[h]
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[lr]{\label{fig:benchB2_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_lr_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_lr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_lr_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_lr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_lr_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[nnet]{\label{fig:benchB2_details_nnet_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_nnet_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_nnet_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_nnet_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_nnet_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_nnet_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[gp]{\label{fig:benchB2_details_gp_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_gp_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_gp_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_gp_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchB2_details_gp_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_gp_3.pdf}}
+\end{minipage}
+\caption{Benchmark B1. Predicción detallada de los modelos lr, bayes y gp.}
+\label{fig:benchB2_details_2}
+\end{figure*}
 
 
 \subsection{Benchmark C: Rendimiento sobre la muestra de control}
@@ -1083,9 +871,9 @@ Sol (4.6 Gyr)  & 4.02 & 3.92 & 4.49 & 4.76 & 3.81 & 3.91 & 4.49 & 3.88 & 4.02\\
 }%end of scalebox
 \caption{Edad estimada para el Sol en Gyr. El método más preciso es rf. }\label{table:sun_results}
 \end{table}
-%TODO: Jarmi, yo creo que es mejor que esta y las otras gráficas las metas todas juntas en una gráfica grande o en un par de ellos, en filas de 3, una fila por modelo, y luego comentas. Haz lo mismo para los anteriores benchmarks, que así quedará más bonito el PDF.
+%TODO_DONE: Jarmi, yo creo que es mejor que esta y las otras gráficas las metas todas juntas en una gráfica grande o en un par de ellos, en filas de 3, una fila por modelo, y luego comentas. Haz lo mismo para los anteriores benchmarks, que así quedará más bonito el PDF.
 \paragraph{Gaussian Process} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Gaussian Process. El mejor modelo en este \emph{benchmark}, con un MAE de 0.837 Gyr.
+A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Gaussian Process. El mejor modelo en este \emph{benchmark}, con un MAE de 0.837 Gyr. En las dos primeras figuras se puede observar la precisión de las estimaciones, ya que, se podría decir que oscilan en torno a las edades reales. El modelo encuentra dificultad en estimar edades cercanas a los 7 Gyr, así como la edad del Sol que no se encuentra en el margen de error permitido.
 
 \begin{figure}[H]
 \begin{center}
@@ -1111,227 +899,151 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
  \label{fig:benchC_best_3}
 \end{figure}
 
+A continuación, se detalla el resto de modelos del Benchmark C, en la Figura \ref{fig:benchC_details_1} se adjuntan las gráficas correspondientes al rendimiento de los modelos Stacking, Neural Network, kNN y Random Forest. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Stacking} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Stacking. El cual ha presentado un MAE de 0.991 Gyr.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_stacking_1.pdf}
-\end{center}
-\caption{Benchmark C: Rendimiento para el modelo Stacking. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_stacking_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_stacking_2.pdf}
-\end{center}
-\caption{Benchmark C: Predicción detallada para el modelo de Stacking. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo). El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_stacking_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_stacking_3.pdf}
-\end{center}
-\caption{Benchmark C: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchC_details_stacking_3}
-\end{figure}
+El modelo Stacking ha presentado un MAE de 0.991 Gyr. En la primera gráfica se vuelve a observa cierta dificultad para estimar estrellas cercanas a los 7 Gyr, y además, se aprecia mayor problema en la estimación de las estrellas más jóvenes. Este modelo sigue sin estimar el Sol dentro del margen de error. En este caso, se obtiene mayor error medio en la estimación de las estrellas más viejas.
 
 \paragraph{Neural Network} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Neural Network. El cual ha presentado un MAE de 1.098 Gyr.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_nnet_1.pdf}
-\end{center}
-\caption{Benchmark C: Rendimiento para el modelo Neural Network. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_nnet_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_nnet_2.pdf}
-\end{center}
-\caption{Benchmark C: Predicción detallada para el modelo de la Neural Network. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo). El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_nnet_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_nnet_3.pdf}
-\end{center}
-\caption{Benchmark C: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchC_details_nnet_3}
-\end{figure}
+La red neuronal, con un MAE de 1.098 Gyr, muestra un rendimiento similar al de los modelos anteriores. Presenta problemas en la estimación de las estrellas mayores de 7 Gyr y no consigue estimar la edad del Sol dentro del margen de error. Las dos primeras gráficas ilustran cierta subestimación en las estimaciones de todo el espectro de edades.
 
 \paragraph{kNN} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo kNN. El cual ha presentado un MAE de 1.734 Gyr.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_knn_1.pdf}
-\end{center}
-\caption{Benchmark C: Rendimiento para el modelo kNN. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_knn_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_knn_2.pdf}
-\end{center}
-\caption{Benchmark C: Predicción detallada para el modelo de kNN. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo). El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_knn_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_knn_3.pdf}
-\end{center}
-\caption{Benchmark C: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchC_details_knn_3}
-\end{figure}
+El modelo kNN, con un MAE de 1.734 Gyr, presenta, a simple vista, mayor dispersión en la nube de edades estimadas. En las dos primeras figuras se observan edades superiores a 10 y 12 Gyr para estrellas de 7 Gyr. Por otro lado, se tiene una mejor estimación de la edad del Sol que con los modelos anteriores.
 
 \paragraph{Random Forest} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Random Forest. El cual ha presentado un MAE de 1.006 Gyr.
+El modelo Random Forest, con un MAE de 1.006 Gyr, también presenta una buena estimación de la edad del Sol. Además, las dos primeras figuras muestran la oscilación de las estimaciones en torno a las edades reales, aunque la mayoría no lo suficientemente buenas como para entrar en el margen de error.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_rf_1.pdf}
-\end{center}
-\caption{Benchmark C: Rendimiento para el modelo Random Forest. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_rf_1}
-\end{figure}
+\begin{figure*}[h]
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[stacking]{\label{fig:benchC_details_stacking_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_stacking_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_stacking_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_stacking_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_stacking_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_stacking_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[nnet]{\label{fig:benchC_details_nnet_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_nnet_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_nnet_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_nnet_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_nnet_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_nnet_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[knn]{\label{fig:benchC_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_knn_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_knn_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_knn_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_knn_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_knn_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[rf]{\label{fig:benchC_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_rf_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_rf_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_rf_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_rf_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_rf_3.pdf}}
+\end{minipage}
+\caption{Benchmark C. Predicción detallada de los modelos stacking, nnet, knn y rf.}
+\label{fig:benchC_details_1}
+\end{figure*}
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_rf_2.pdf}
-\end{center}
-\caption{Benchmark C: Predicción detallada para el modelo de Random Forest. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo). El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_rf_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_rf_3.pdf}
-\end{center}
-\caption{Benchmark C: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchC_details_rf_3}
-\end{figure}
+En la Figura \ref{fig:benchC_details_2} se adjuntan las gráficas que detallan el rendimiento de los modelos Support Vector Regression, Decision Tree Regression, Linear Regressor y Bayesian Regression para el Benchmark C. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Support Vector Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Support Vector Regression. El cual ha presentado un MAE de 1.278 Gyr.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_svm_1.pdf}
-\end{center}
-\caption{Benchmark C: Rendimiento para el modelo Support Vector Regression. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_svm_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_svm_2.pdf}
-\end{center}
-\caption{Benchmark C: Predicción detallada para el modelo de Support Vector Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo). El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_svm_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_svm_3.pdf}
-\end{center}
-\caption{Benchmark C: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchC_details_svm_3}
-\end{figure}
+El modelo de máquina de vectores soporte ha presentado un MAE de 1.278 Gyr. Las dos primeras figuras ilustran la tendencia del modelo para subestimar las edades de las estrellas a partir de los 3 Gyr. Además, en la tercera gráfica, se observa mayor error medio para la estimación de las estrellas más viejas.
 
 \paragraph{Decision Tree Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Decision Tree Regression. El cual ha presentado un MAE de 2.113 Gyr.
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_dtr_1.pdf}
-\end{center}
-\caption{Benchmark C: Rendimiento para el modelo Decision Tree Regression. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_dtr_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_dtr_2.pdf}
-\end{center}
-\caption{Benchmark C: Predicción detallada para el modelo de Decision Tree Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo). El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_dtr_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_dtr_3.pdf}
-\end{center}
-\caption{Benchmark C: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchC_details_dtr_3}
-\end{figure}
+El modelo Decision Tree Regression, con un MAE de 2.113 Gyr, muestra el peor rendimiento del \emph{benchmark}. Las dos primeras figuras muestran que la mayoría de las estimaciones están muy lejos de entrar dentro del margen de error asociado a las edades. Por contra, la estimación de la edad del Sol es una de las pocas edades que sí se encuentra dentro del margen de error.
 
 \paragraph{Linear Regressor} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Linear Regressor. El cual ha presentado un MAE de 1.297 Gyr.
+El modelo Linear Regressor ha presentado un MAE de 1.297 Gyr. Sus dos primeras gráficas muestran subestimación en las estimaciones a partir de los 3 Gyr. Además, la mayor parte de estimaciones se encuentran fuera del margen de error, incluida la edad del Sol. La figura tres muestra un aumento del error medio con el aumento de edad a estimar.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_lr_1.pdf}
-\end{center}
-\caption{Benchmark C: Rendimiento para el modelo Linear Regressor. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_lr_1}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_lr_2.pdf}
-\end{center}
-\caption{Benchmark C: Predicción detallada para el modelo de Linear Regressor. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo). El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_lr_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_lr_3.pdf}
-\end{center}
-\caption{Benchmark C: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchC_details_lr_3}
-\end{figure}
 
 \paragraph{Bayesian Regression} 
-A continuación, se muestran las 3 gráficas que detallan el rendimiento del modelo Bayesian Regression. El cual ha presentado un MAE de 1.297 Gyr.
+Por último, se tiene el modelo Bayesian Regression, el cual ha presentado un MAE de 1.297 Gyr. Su comportamiento es similar al del modelo de regresión lineal, tomando un valor similar y una estimación de edades muy parecida.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_bayes_1.pdf}
-\end{center}
-\caption{Benchmark C: Rendimiento para el modelo Bayesian Regression. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_bayes_1}
-\end{figure}
+\begin{figure*}[h]
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[svm]{\label{fig:benchC_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_svm_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_svm_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_svm_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_svm_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_svm_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[dtr]{\label{fig:benchC_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_dtr_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_dtr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_dtr_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_dtr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_dtr_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[lr]{\label{fig:benchC_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_lr_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_lr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_lr_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_lr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_lr_3.pdf}}
+\end{minipage}
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat[bayes]{\label{fig:benchC_details_bayes_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_bayes_1.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_bayes_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_bayes_2.pdf}}
+\end{minipage}%
+\begin{minipage}{.33\linewidth}
+\centering
+\subfloat{\label{fig:benchC_details_bayes_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_bayes_3.pdf}}
+\end{minipage}
+\caption{Benchmark C. Predicción detallada de los modelos svm, dtr, lr y bayes.}
+\label{fig:benchC_details_2}
+\end{figure*}
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_bayes_2.pdf}
-\end{center}
-\caption{Benchmark C: Predicción detallada para el modelo de Bayesian Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo). El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}
- \label{fig:benchC_details_bayes_2}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/Experimentos/B_C_bayes_3.pdf}
-\end{center}
-\caption{Benchmark C: MAE en función del rango de edad del conjunto de prueba.}
- \label{fig:benchC_details_bayes_3}
-\end{figure}
 
 \subsection{Conclusiones de la comparativa}
 
-Comparando los resultados de los Benchmark A (Figura \ref{fig:benchA_models}) y C (Figura \ref{fig:benchC}), se puede concluir que: %TODO: pon todo esto en items dentro de un entorno enumerate
-a) los modelos ganadores son comunes (nnet, gp y stacking); b) kNN y dtr sufren una degración considerable de su rendimiento, ya que dependen en gran medida de la distribución de datos utilizada durante su entrenamiento; y c) bayes y lr son similares, mostrando un incremento similar en sus correspondientes MAEs, pero al mismo tiempo ofreciendo cierta estabilidad entre escenarios.
+Comparando los resultados de los Benchmark A (Figura \ref{fig:benchA_models}) y C (Figura \ref{fig:benchC}), se puede concluir que: %TODO_DONE: pon todo esto en items dentro de un entorno enumerate
+\begin{enumerate}
+\item Los modelos ganadores son comunes Neural Network, Gaussian Process y su Stacking.
+\item k-Nearest Neighbors y Decision Tree Regression sufren una degradación considerable de su rendimiento, ya que dependen en gran medida de la distribución de datos utilizada durante su entrenamiento.
+\item Bayesian Regression y Linear Regressor son similares, mostrando un incremento similar en sus correspondientes MAEs, pero al mismo tiempo ofreciendo cierta estabilidad entre escenarios.
+\end{enumerate}
+
 
 Al observar la Tabla \ref{table:precisions} después de conocer el rendimiento de todos los modelos, además de lo comentado en cada uno de los benchmarks, se llega a la conclusión de que: a) salvo para el Benchmark B2, nnet presenta una precisión alta en comparación con el resto de modelos, y b), salvo para el Benchmark B2, lr y bayes presentan una precisión muy inferior a la conseguida por el modelo de mejor rendimiento.
 
@@ -1354,7 +1066,7 @@ Benchmark & nnet & lr & dtr & rf & svm & bayes & knn & gp & stacking \\
 
 
 \chapter{Meta-learning para estimación de edades estelares}
- 
+
 \section{Introducción}
 
 En este trabajo, además de realizar un estudio comparativo sobre los modelos tradicionales de Inteligencia Artificial para regresión de edades estelares, proponemos abordar por primera vez, el aplicar técnicas de meta-learning a este problema. El meta-learning se define como el proceso de aprender a aprender con pocas muestras, o explicado de un modo mas técnico, sería el modo de entrenamiento de un modelo en varias tareas de aprendizaje, de modo que el modelo sea capaz de resolver nuevas tareas utilizando una pequeña cantidad de muestras. 
@@ -1366,6 +1078,7 @@ Para llevar a cabo este estudio, se parte de \cite{finn2017modelagnostic}, donde
 La contribución principal de este trabajo fin de master reside en un algoritmo de modelado simple e independiente de las tareas para el meta-learning sobre datación estelar, capaz de conseguir un aprendizaje rápido en una nueva tarea a través de una pequeña cantidad de actualizaciones de gradiente. Es decir, vamos a emplear y evaluar el rendimiento de MAML en un escenario de meta-learning para la regresión de la edad de las estrellas. 
 
 \section{Model-Agnostic Meta-Learning Algorithm}
+\label{sec:metalearning}
 En esta sección comenzamos describiendo los detalles de MAML \cite{finn2017modelagnostic}. Durante el meta-learning, el modelo se entrena para poder adaptarse a un número grande o infinito de tareas. A continuación, se presenta una aproximación genérica de una tarea, permitiendo abordar una variedad de problemas de aprendizaje, desde la clasificación hasta el aprendizaje por refuerzo.
 
 Cada tarea consiste en una función de pérdidas, una distribución de las observaciones iniciales, una distribución de transición y una longitud de episodio. El modelo genera muestras con la longitud del episodio y la función de pérdidas proporciona retroalimentación específica para cada tarea.
@@ -1375,7 +1088,18 @@ Durante el metaentrenamiento, se muestrea una tarea proveniente de la distribuci
 
 Para el desarrollo del algoritmo se presenta un enfoque explícito para el problema. Ya que el modelo se ajustará utilizando una regla de aprendizaje basada en gradientes, el objetivo es hacer aprender a un modelo de tal manera que esta regla de aprendizaje basada en gradientes pueda hacer un avance rápido en nuevas tareas extraídas de la distribución total sin sobreajuste. Por tanto, el objetivo es encontrar los parámetros del modelo que sean sensibles a los cambios de las tareas, de modo que pequeños cambios en los parámetros producirán grandes mejoras en la función de pérdidas de cualquiera tarea. 
 
-%TODO: creo que sería buena idea meter el algoritmo que aparece en el paper de MAMl. Sería copiar el algoritmo 1 que aparece en el artículo y ahbalr un poco de él.
+La Figura \ref{fig:algorithm_maml} detalla paso a paso del algoritmo MAML. Inicialmente se requiere la distribución de tareas a la que se quiere adaptar el modelo, además del tamaños de los pasos de actualización de hiperparámetros.
+Entrando en detalle en cada paso del algoritmo, en primer lugar, se inicializa de forma aleatoria el vector de parámetros con el que se parametriza el modelo. El bucle principal del algoritmo comienza con un muestreo de tareas sobre la distribución inicial. Para cada una de estas tareas se evalúa la función de pérdidas respecto a las K muestras seleccionadas. A continuación, se realiza la adaptación de parámetros mediante el descenso de gradiente. Una vez se ha finalizado con el conjunto de tareas, se actualiza el vector de parámetros que parametriza el modelo.
+
+\begin{figure}[H]
+\begin{center}
+ \includegraphics[width=0.8\linewidth]{Figuras/MAML/maml_alg.pdf}
+\end{center}
+\caption{Paso a paso del algoritmo del Model-Agnostic Meta-Learning.}
+ \label{fig:algorithm_maml}
+\end{figure}
+
+%TODO_DONE: creo que sería buena idea meter el algoritmo que aparece en el paper de MAMl. Sería copiar el algoritmo 1 que aparece en el artículo y ahbalr un poco de él.
 
 \section{MAML en regresión}
 
@@ -1385,8 +1109,12 @@ En su trabajo se presenta una evaluación experimental con el objetivo de respon
 
 Los investigadores proponen tres escenarios de aplicación para tratar de responder a estas preguntas: 1) un problema simple de regresión donde se ilustran los principios básicos del algoritmo MAML, 2) un problema de reconocimiento de imágenes sobre los datasets Omniglot y MiniImagenet y 3) un problema de aprendizaje por refuerzo en el que se construyen varios conjuntos de tareas basadas en entornos de control continuo.
 
-Conociendo los 3 escenarios expuestos en esta investigación y con el fin de abordar el problema de regresión de datación de estrellas, se toma como referencia el escenario de regresión simple. En este escenario, cada tarea implica una regresión de la entrada a la salida de una onda sinusoidal, donde la amplitud y la fase de la sinusoide varían en cada tareas. La función de pérdidas se corresponde con el error cuadrático medio entre la predicción y el valor real. El modelo regresor se basa en una red neuronal con 2 capas ocultas de tamaño 40 cada una, con función de activación ReLU. Para el entrenamiento del MAML, se utiliza un valor de actualización de gradiente igual a 10 con un tamaño fijo de \emph{step} de 0.01 y se emplea Adam como metaoptimzador.
-%TODO: falta por explicar en un párrafo cómo se generan los datos de los senos.
+Conociendo los 3 escenarios expuestos en esta investigación y con el fin de abordar el problema de regresión de datación de estrellas, se toma como referencia el escenario de regresión simple. En este escenario, cada tarea implica una regresión de la entrada a la salida de una onda sinusoidal, donde la amplitud y la fase de la sinusoide varían en cada tareas.
+
+Para la generación de los senos se necesitan conocer los valores que pueden tomar la amplitud y la fase de los senos. Una vez definido esto, se parte de un vector equiespaciado con tantas muestras como puntos se quiere que tenga el seno. Sobre este vector se aplica la función seno con su correspondiente valor de fase y se multiplica por un valor amplitud. Así se obtienen tantos vectores senos como vectores se han definido para el tamaño de \emph{batch}.%TODO_DONE: falta por explicar en un párrafo cómo se generan los datos de los senos.
+
+La función de pérdidas se corresponde con el error cuadrático medio entre la predicción y el valor real. El modelo regresor se basa en una red neuronal con 2 capas ocultas de tamaño 40 cada una, con función de activación ReLU. Para el entrenamiento del MAML, se utiliza un valor de actualización de gradiente igual a 10 con un tamaño fijo de \emph{step} de 0.01 y se emplea Adam como metaoptimzador.
+
 
 Para evaluar su rendimiento, se ajusta un solo modelo con un número variable las muestras empleadas para el correspondiente \emph{K-shot} y se compara con dos \emph{baselines}: 1) preentrenando sobre todas las tareas, y 2), usando un oráculo que reciba la amplitud y fase real de cada sinusoide.
 
@@ -1428,8 +1156,7 @@ En esta sección, se detalla la aplicación del algoritmo MAML sobre el problema
 
 Como se ha comentado en la introducción de este apartado, el set de datos elegido para estimar la edad estelar es el mismo que se detalla en la Sección \ref{sec:data}. Este set se compone de de 8 características asociadas a cada una de las estrellas que forman el dataset: temperatura estelar efectiva, logaritmo de la gravedad superficial, masa estelar, radio estelar, contenido de hierro sobre hidrógeno, luminosidad, periodo de rotación y la edad de la estrella.
 
-Este dataset, tras aplicar los filtros asociados a la física detrás de la girocronolgía, cuenta con un número relativamente reducido de muestras en comparación con los experimentos de regresión estudiados en \cite{finn2017modelagnostic}. Por tanto, ya que la el set de datos completo incluye valores de error por exceso y defecto para cada una de las características, se aumenta el tamaño del dataset siguiendo una distribución normal de las características con sus valores de error asociados. Lo que resulta en un conjunto de más de 13000 estrellas con sus correspondientes características.
-%TODO: explica mejor cómo se genera, qué incluye el dataset, etc.
+Este dataset es idéntico al que se ha detallado en la Sección \ref{sec:data}, ya que se parte de un conjunto de datos inicial sobre el que es necesario aplicar una serie de filtros asociados a la física detrás de la girocronolgía. Tras es filtrado, el conjunto de datos cuenta con un número relativamente reducido de muestras en comparación con los experimentos de regresión estudiados en \cite{finn2017modelagnostic}. Por tanto, ya que la el conjunto de datos completo incluye valores de error por exceso y defecto para cada una de las características, se aumenta el tamaño del dataset siguiendo una distribución normal de las características con sus valores de error asociados. Lo que resulta en un conjunto de más de 13000 estrellas con sus correspondientes características. %TODO: explica mejor cómo se genera, qué incluye el dataset, etc.
 
 La división del conjunto total de estrellas en entrenamiento y prueba tiene una relación 80/20 respectivamente. Además, las edades se ordenan de forma creciente, por lo que, el conjunto de entrenamiento contiene estrellas de hasta 4.2 Gyrs de edad, mientras que el conjunto de prueba comprende edades de entre 4.2 Gyrs y 18.8 Gyrs.
 
@@ -1454,7 +1181,7 @@ Durante la fase de entrenamiento del modelo, al algoritmo se le inyectan conjunt
 
 \subsection{Procese de aprendizaje} 
 
-Según se ha comentado en la sección anterior, el algoritmo procesa \emph{batches} de 20 estrellas durante el proceso de entrenamiento, 10 de estas estrellas pasan a ser directanente \emph{inputs} de la red neuronal del modelo y le proporcionan información del ajuste de pesos a las otras 10 estrellas que participarán en el proceso de actualización de gradiente. Esas 10 estrellas restantes, pasan por un proceso de actualización de gradiente en el que suceden 10 pasos, es decir, se producen 10 actualizaciones del gradiente hasta llegar a la estimación óptima. En cada una de las actualizaciones se produce una corrección de los pesos del modelo y se obtiene una medida de error asociada a la estimación de la edad por parte de la red neuronal con dichos pesos. La Figura \ref{fig:core_maml_train} ilustra el funcionamiento descrito.
+Según se ha comentado en la sección anterior, el algoritmo procesa \emph{batches} de 20 estrellas durante el proceso de entrenamiento, 10 de estas estrellas pasan a ser directamente \emph{inputs} de la red neuronal del modelo y le proporcionan información del ajuste de pesos a las otras 10 estrellas que participarán en el proceso de actualización de gradiente. Esas 10 estrellas restantes, pasan por un proceso de actualización de gradiente en el que suceden 10 pasos, es decir, se producen 10 actualizaciones del gradiente hasta llegar a la estimación óptima. En cada una de las actualizaciones se produce una corrección de los pesos del modelo y se obtiene una medida de error asociada a la estimación de la edad por parte de la red neuronal con dichos pesos. La Figura \ref{fig:core_maml_train} ilustra el funcionamiento descrito.
 
 \begin{figure}[H]
 \begin{center}
@@ -1476,7 +1203,7 @@ En el proceso de pruebas se sigue el mismo procedimiento, pero a diferencia de l
 
 
 \subsection{Resultados obtenidos} 
-
+\label{sub:maml_result}
 Para evaluar los resultados obtenidos en este experimento, se trabaja con la misma métrica que se utiliza en el artículo original, el error cuadrático medio. Esta medida se obtiene aplicando la función de pérdidas (MSE) sobre la estimación del modelo y la edad real de la estrella. 
 
 Al finalizar la fase de prueba, se obtiene un vector con 11 posiciones para cada estrella del conjunto de \emph{test}, la primera posición del vector se corresponde con el error obtenido sin descenso de gradiente y las 10 posiciones restantes con el error en cada una de las actualizaciones de gradiente.
@@ -1493,7 +1220,7 @@ La Figura \ref{fig:mse_nnet} ilustra los resultados obtenidos al comparar las di
  \label{fig:mse_nnet}
 \end{figure}
 
-Tras analizar estos resultados, se concluye que el modelo que mejores resultados presenta es la red neuronal cuya arquitecura está formada por 3 capas ocultas y 20 unidades en cada una. Desde la primera iteración del gradiente, muestra un MSE menor al de todas las demás arquitecturas.
+Tras analizar estos resultados, se concluye que el modelo que mejores resultados presenta es la red neuronal cuya arquitectura está formada por 3 capas ocultas y 20 unidades en cada una. Desde la primera iteración del gradiente, muestra un MSE menor al de todas las demás arquitecturas.
 
 Por otro lado, la arquitectura que muestra los peores resultados de experimento es la red neuronal formada por una sola capa oculta de 40 unidades. Se observa un rendimiento considerablemente peor %TODO: o mejor!, es mejor para todas no
 desde la primera hasta la última iteración de actualización de gradiente.
@@ -1528,26 +1255,28 @@ En primer lugar, el estudio demuestra que un modelo de datación estelar basado 
 
 En segundo lugar, es importante destacar que \emph{todos} los modelos tienden a subestimar en sus estimaciones, y no solo en el Benchmark B1, donde sería natural debido a que los modelos se entrenan con estrellas jóvenes y desconocen un amplio rango de edades. Por lo tanto, se ve una interesante línea de trabajo futura en relación a la reducción de este sesgo.
 
-Y tercero, el estudio revela resultados prometedores para el problema de datación estelar. Un error de $<0.5$ Gyr se puede considerar como un gran avance en el campo.
+En tercer lugar, el estudio revela resultados prometedores para el problema de datación estelar. Un error de $<0.5$ Gyr se puede considerar como un gran avance en el campo.
 
-%TODO: pon un párrafo aquí que diga que has publicado un trabajo con todo esto, dando todos los detalles.
+Por último, destacar que este trabajo ha servido de apoyo para la publicación de un artículo para el \emph{1st Workshop on AI for Space}. El artículo \citep{AI4STARTS} , titulado \emph{AI for dating stars: a benchmarking study for gyrochronology}, se basa en la aplicación de modelos regresivos de aprendizaje automático para reemplazar las combinaciones lineales que se utilizan en el campo de la estimación de edades estelares. Los modelos de IA empleados y la forma de compararlos siguen el guión expuesto en el Capítulo \ref{chap:AI_4_date} donde se realiza un \emph{benchmarking} de los escenarios vistos en la Sección \ref{sec:benchmark} con los modelos detallados en la Sección \ref{sec:models}. Las conclusiones a las que se llegan en el artículo son idénticas a las obtenidas en este proyecto.
+
+%TODO_DONE: pon un párrafo aquí que diga que has publicado un trabajo con todo esto, dando todos los detalles.
 
 \section{Meta-Learning aplicado al problema de la estimación de la edad de las estrellas}
 
-En la segunda parte del trabajo, se estudia el algoritmo MAML (Meta-Agnostic Meta-Learning) para resolver el problema de la regresión de las edades estelares en un planteamiento típico de meta-learning, o aprender a aprender con pocas muestras. Sobre este problema, se obtienen diferentes resultados asociados a diferentes arquitecturas desarrolladas para el modelo. Los peores resultados van asociados a la arquitectura más siemple probada, con una sola capa oculta y 40 células,  que muestra un MSE = 1.20 en su última actualización de gradiente. En contraposición, los mejores resultados se puede observar en el modelo que cuenta con 3 capas ocultas de 20 unidades cada una, con un MSE = 0.01. 
+En la segunda parte del trabajo, se estudia el algoritmo MAML (Meta-Agnostic Meta-Learning) para resolver el problema de la regresión de las edades estelares en un planteamiento típico de meta-learning, o aprender a aprender con pocas muestras. Sobre este problema, se obtienen diferentes resultados asociados a diferentes arquitecturas desarrolladas para el modelo. Los peores resultados van asociados a la arquitectura más simple probada, con una sola capa oculta y 40 células,  que muestra un MSE = 1.20 en su última actualización de gradiente. En contraposición, los mejores resultados se puede observar en el modelo que cuenta con 3 capas ocultas de 20 unidades cada una, con un MSE = 0.01. 
 Es importante destacar que las configuraciones más complejas consiguen resultados de MSE muy próximos a cero en la última actualización de gradiente.
 En cualquier caso, lo más relevante es que es la primera vez que se prueba una aproximación basada en meta-learning para abordar el problema de la datación estelar, y los resultados obtenidos son muy prometedores.
 
-Respecto a la comparación de estos resultados con los obtenidos en el \emph{benchmarking} anterior, resulta inviable realizar una comparación directa debido a la métrica empleada para la función de pérdidas. Durante el primer experimento con los modelo clásicos se ha empleado el error medio absoluto, mientras que en este análisis se utiliza el error cuadrático medio. Es por esto que, como pórximos pasos, sería interesante realizar un estudio sobre otros modelo y algoritmos que ofrezcan resultados comparables.
+Respecto a la comparación de estos resultados con los obtenidos en el \emph{benchmarking} anterior, resulta inviable realizar una comparación directa debido a la métrica empleada para la función de pérdidas. Durante el primer experimento con los modelo clásicos se ha empleado el error medio absoluto, mientras que en este análisis se utiliza el error cuadrático medio. Es por esto que, como próximos pasos, sería interesante realizar un estudio sobre otros modelo y algoritmos que ofrezcan resultados comparables.
 
 Tras lo comentado, se establecen como próximos pasos a seguir el análisis de otros algoritmos enfocados en el aprendizaje del modelo mediante un número reducido de muestras. Reptile \cite{nichol2018firstorder} es uno de estos algoritmos, matemáticamente es similar al algoritmo MAML estudiado en este proyecto ya que muestrea recursivamente una tarea, realizando un descenso de gradiente y actualizando los parámetros iniciales. Aún así, resultaría interesante una comparación de los rendimientos de ambos algoritmos. Otro estudio a tener en cuenta es el desarrollado en \cite{yao2021metalearning}, en este caso el algoritmo se denomina MLTI (Meta-Learning Task Interpolation). En este análisis se generan tareas adicionales tras muestrear aleatoriamente un par de tareas e interpolar características y sus correspondientes etiquetas.
  
 
 \section{Conclusiones personales}
 
-Como reflexión personal, considero que el desarrollo de este proyecto me ha permitido adquirir conocimientos generales y específicos sobre el mundo de la inteligencia artificial y la datación de estrellas. Hasta el momento en el que empecé el TFM, no sabía absolutamente nada de las técnicas de datación estelar ni de su importancia para la evolución del ser humano y de la ciencia. Gracias a la transferencia de conocimiento por parte de Andrés y Roberto en estos campos, he podido aprender lo requerido para enfrentarme a este proyecto. Esto me ha permitido alcanzar dos importantes hitos para: 1) obtener unos resultados lo suficientemente satisfactorios como para poder catalogarse como prometedores dentro del ámbito de la datación estelar y 2) aportar mi granito de arena en la elaboración de un artículo basado, en parte, en este TFM y publicado para el \emph{1st Workshop on AI for Space} %TODO: añadir enlace a la web, y citar nuestro trabajo en la bibliogrfía.. 
+Como reflexión personal, considero que el desarrollo de este proyecto me ha permitido adquirir conocimientos generales y específicos sobre el mundo de la inteligencia artificial y la datación de estrellas. Hasta el momento en el que empecé el TFM, no sabía absolutamente nada de las técnicas de datación estelar ni de su importancia para la evolución del ser humano y de la ciencia. Gracias a la transferencia de conocimiento por parte de Andrés y Roberto en estos campos, he podido aprender lo requerido para enfrentarme a este proyecto. Esto me ha permitido alcanzar dos importantes hitos para: 1) obtener unos resultados lo suficientemente satisfactorios como para poder catalogarse como prometedores dentro del ámbito de la datación estelar y 2) aportar mi granito de arena en la elaboración de un artículo basado, en parte, en este TFM y publicado para el \emph{1st Workshop on AI for Space}. El artículo está publicado en \url{https://gram.web.uah.es/data/publications/ai4space-cvpr21w-moya.pdf}.  %TODO_DONE: añadir enlace a la web, y citar nuestro trabajo en la bibliogrfía.. 
 
-Por otro lado, este proyecto también me ha ayudado a conocer un poco mejor la dinámica que podría seguirse en un proyceto de investigación. Acostumbrado al mundo de la empresa privada en el que todo se hace deprisa y con una calidad cuestionable, el tener que dedicarle horas a leer artículos y probar líneas de código distintas me permite adquirir nuevas competencias.
+Por otro lado, este proyecto también me ha ayudado a conocer un poco mejor la dinámica que podría seguirse en un proyecto de investigación. Acostumbrado al mundo de la empresa privada en el que todo se hace deprisa y con una calidad cuestionable, el tener que dedicarle horas a leer artículos y probar líneas de código distintas me permite adquirir nuevas competencias.
 
 %También considero que el papel de la figura de Director de TFM es crucial para obtener resultados satisfactorios, y es por eso que le agradezco a Roberto toda la ayuda y la orientación aportada para llegar a buen puerto en estre trabajo.
 %TODO: Gracias a ti Jarmi. Esto lo dejamos fuera de la memoria, pues para eso está la sección de agradecimientos.

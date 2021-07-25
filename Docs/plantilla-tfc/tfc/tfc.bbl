@@ -87,6 +87,12 @@ L.~Breiman, J.~H. Friedman, R.~A. Olshen, and C.~J. Stone.
 \newblock {\em Classification and Regression Trees}.
 \newblock Wadsworth and Brooks, Monterey, CA, 1984.
 
+\bibitem{Gaia2018}
+A.~G.~A. Brown, A.~Vallenari, T.~Prusti, J.~H.~J. de~Bruijne, C.~Babusiaux,
+  C.~A.~L. Bailer-Jones, M.~Biermann, D.~W. Evans, L.~Eyer, and et~al.
+\newblock Gaia data release 2.
+\newblock {\em Astronomy & Astrophysics}, 616:A1, Aug 2018.
+
 \bibitem{Ceillier16}
 T.~{Ceillier}, J.~{van Saders}, R.~A. {Garc{\'\i}a}, T.~S. {Metcalfe},
   O.~{Creevey}, S.~{Mathis}, S.~{Mathur}, M.~H. {Pinsonneault}, D.~{Salabert},
@@ -276,6 +282,10 @@ Andy {Moya}, Federico {Zuccarino}, William~J. {Chaplin}, and Guy~R. {Davies}.
 \newblock {Empirical Relations for the Accurate Estimation of Stellar Masses
   and Radii}.
 \newblock {\em \apjs}, 237(2):21, August 2018.
+
+\bibitem{AI4STARTS}
+López-Sastre~Roberto Moya~Andrés and Recio-Martínez Jarmi.
+\newblock Ai for dating stars: a benchmarking study for gyrochronology, 2021.
 
 \bibitem{nichol2018firstorder}
 Alex Nichol, Joshua Achiam, and John Schulman.

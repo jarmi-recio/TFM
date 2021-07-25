@@ -1,73 +1,72 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{Agradecimientos}{\es@scroman {v}}{chapter*.1}%
-\contentsline {chapter}{Resumen}{\es@scroman {xix}}{chapter*.5}%
-\contentsline {chapter}{Abstract}{\es@scroman {xxi}}{chapter*.6}%
-\contentsline {chapter}{Resumen Extendido}{\es@scroman {xxiii}}{chapter*.7}%
+\contentsline {chapter}{Resumen}{\es@scroman {xvii}}{chapter*.5}%
+\contentsline {chapter}{Abstract}{\es@scroman {xix}}{chapter*.6}%
+\contentsline {chapter}{Resumen Extendido}{\es@scroman {xxi}}{chapter*.7}%
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Motivación}{3}{section.1.1}%
 \contentsline {chapter}{\numberline {2}Trabajos relacionados}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Girocronología}{5}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Modelos de IA para datación estelar}{6}{section.2.2}%
 \contentsline {chapter}{\numberline {3}Base de datos}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Entendiendo la muestra}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Entendiendo la bas de datos}{11}{section.3.1}%
 \contentsline {chapter}{\numberline {4}Modelos de Inteligencia Artificial para datación estelar}{15}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Modelos}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Benchmark}{17}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Resultados}{22}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Configuración experimental}{23}{subsection.4.3.1}%
-\contentsline {paragraph}{Implementación}{23}{section*.8}%
-\contentsline {paragraph}{Métricas de evaluación}{23}{section*.9}%
-\contentsline {paragraph}{Gráficas}{23}{section*.10}%
-\contentsline {subsection}{\numberline {4.3.2}Benchmark A: Problema de datación estelar}{23}{subsection.4.3.2}%
-\contentsline {paragraph}{Stacking}{24}{section*.11}%
-\contentsline {paragraph}{Neural Network}{25}{section*.12}%
+\contentsline {section}{\numberline {4.2}Escenarios de evaluación}{18}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Resultados}{23}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Configuración experimental}{24}{subsection.4.3.1}%
+\contentsline {paragraph}{Implementación}{24}{section*.8}%
+\contentsline {paragraph}{Métricas de evaluación}{24}{section*.9}%
+\contentsline {paragraph}{Gráficas}{24}{section*.10}%
+\contentsline {subsection}{\numberline {4.3.2}Benchmark A: Problema de datación estelar}{24}{subsection.4.3.2}%
+\contentsline {paragraph}{Stacking}{25}{section*.11}%
+\contentsline {paragraph}{Neural Network}{27}{section*.12}%
 \contentsline {paragraph}{Gaussian Process}{27}{section*.13}%
-\contentsline {paragraph}{kNN}{28}{section*.14}%
-\contentsline {paragraph}{Random Forest}{30}{section*.15}%
-\contentsline {paragraph}{Support Vector Regression}{31}{section*.16}%
-\contentsline {paragraph}{Decision Tree Regression}{33}{section*.17}%
-\contentsline {paragraph}{Linear Regressor}{34}{section*.18}%
-\contentsline {paragraph}{Bayesian Regression}{36}{section*.19}%
-\contentsline {subsection}{\numberline {4.3.3}Benchmark B: Escenario de generalización}{37}{subsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.3.1}Benchmark B1}{38}{subsubsection.4.3.3.1}%
-\contentsline {paragraph}{Neural Network}{39}{section*.20}%
-\contentsline {subsubsection}{\numberline {4.3.3.2}Benchmark B2}{40}{subsubsection.4.3.3.2}%
-\contentsline {paragraph}{Bayessian Regression}{40}{section*.21}%
-\contentsline {paragraph}{kNN}{42}{section*.22}%
-\contentsline {paragraph}{Random Forest}{43}{section*.23}%
-\contentsline {paragraph}{Support Vector Regression}{45}{section*.24}%
-\contentsline {paragraph}{Decision Tree Regression}{46}{section*.25}%
-\contentsline {paragraph}{Linear Regressor}{48}{section*.26}%
-\contentsline {paragraph}{Bayesian Regression}{49}{section*.27}%
-\contentsline {paragraph}{Gaussian Process}{51}{section*.28}%
-\contentsline {paragraph}{kNN}{52}{section*.29}%
-\contentsline {paragraph}{Random Forest}{54}{section*.30}%
-\contentsline {paragraph}{Support Vector Regression}{55}{section*.31}%
-\contentsline {paragraph}{Decision Tree Regression}{57}{section*.32}%
-\contentsline {paragraph}{Linear Regressor}{58}{section*.33}%
-\contentsline {paragraph}{Neural Network}{60}{section*.34}%
-\contentsline {paragraph}{Gaussian Process}{61}{section*.35}%
-\contentsline {subsection}{\numberline {4.3.4}Benchmark C: Rendimiento sobre la muestra de control}{63}{subsection.4.3.4}%
-\contentsline {paragraph}{Gaussian Process}{64}{section*.36}%
-\contentsline {paragraph}{Stacking}{66}{section*.37}%
-\contentsline {paragraph}{Neural Network}{67}{section*.38}%
-\contentsline {paragraph}{kNN}{69}{section*.39}%
-\contentsline {paragraph}{Random Forest}{70}{section*.40}%
-\contentsline {paragraph}{Support Vector Regression}{72}{section*.41}%
-\contentsline {paragraph}{Decision Tree Regression}{73}{section*.42}%
-\contentsline {paragraph}{Linear Regressor}{75}{section*.43}%
-\contentsline {paragraph}{Bayesian Regression}{76}{section*.44}%
-\contentsline {subsection}{\numberline {4.3.5}Conclusiones de la comparativa}{78}{subsection.4.3.5}%
-\contentsline {chapter}{\numberline {5}Meta-learning para estimación de edades estelares}{79}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Introducción}{79}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Model-Agnostic Meta-Learning Algorithm}{80}{section.5.2}%
-\contentsline {section}{\numberline {5.3}MAML en regresión}{80}{section.5.3}%
-\contentsline {section}{\numberline {5.4}MAML para datación estelar}{83}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Inyección de los datos}{83}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Núcleo del algoritmo}{85}{subsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.4.3}Resultados obtenidos}{87}{subsection.5.4.3}%
-\contentsline {chapter}{\numberline {6}Conclusiones}{89}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Modelos clásicos de IA}{89}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Meta-Learning}{90}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Conclusiones personales}{90}{section.6.3}%
-\contentsline {chapter}{{}Bibliografía}{93}{section.6.3}%
+\contentsline {paragraph}{kNN}{27}{section*.14}%
+\contentsline {paragraph}{Random Forest}{28}{section*.15}%
+\contentsline {paragraph}{Support Vector Regression}{28}{section*.16}%
+\contentsline {paragraph}{Decision Tree Regression}{28}{section*.17}%
+\contentsline {paragraph}{Linear Regressor}{29}{section*.18}%
+\contentsline {paragraph}{Bayesian Regression}{29}{section*.19}%
+\contentsline {subsection}{\numberline {4.3.3}Benchmark B: Escenario de generalización}{30}{subsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.3.1}Benchmark B1}{30}{subsubsection.4.3.3.1}%
+\contentsline {paragraph}{Neural Network}{31}{section*.20}%
+\contentsline {subsubsection}{\numberline {4.3.3.2}Benchmark B2}{32}{subsubsection.4.3.3.2}%
+\contentsline {paragraph}{Bayesian Regression}{33}{section*.21}%
+\contentsline {paragraph}{kNN}{34}{section*.22}%
+\contentsline {paragraph}{Random Forest}{35}{section*.23}%
+\contentsline {paragraph}{Support Vector Regression}{35}{section*.24}%
+\contentsline {paragraph}{Decision Tree Regression}{35}{section*.25}%
+\contentsline {paragraph}{Linear Regressor}{36}{section*.26}%
+\contentsline {paragraph}{Bayesian Regression}{36}{section*.27}%
+\contentsline {paragraph}{Gaussian Process}{36}{section*.28}%
+\contentsline {paragraph}{kNN}{36}{section*.29}%
+\contentsline {paragraph}{Random Forest}{36}{section*.30}%
+\contentsline {paragraph}{Support Vector Regression}{37}{section*.31}%
+\contentsline {paragraph}{Decision Tree Regression}{37}{section*.32}%
+\contentsline {paragraph}{Linear Regressor}{37}{section*.33}%
+\contentsline {paragraph}{Neural Network}{37}{section*.34}%
+\contentsline {paragraph}{Gaussian Process}{38}{section*.35}%
+\contentsline {subsection}{\numberline {4.3.4}Benchmark C: Rendimiento sobre la muestra de control}{38}{subsection.4.3.4}%
+\contentsline {paragraph}{Gaussian Process}{40}{section*.36}%
+\contentsline {paragraph}{Stacking}{41}{section*.37}%
+\contentsline {paragraph}{Neural Network}{42}{section*.38}%
+\contentsline {paragraph}{kNN}{42}{section*.39}%
+\contentsline {paragraph}{Random Forest}{42}{section*.40}%
+\contentsline {paragraph}{Support Vector Regression}{42}{section*.41}%
+\contentsline {paragraph}{Decision Tree Regression}{42}{section*.42}%
+\contentsline {paragraph}{Linear Regressor}{42}{section*.43}%
+\contentsline {paragraph}{Bayesian Regression}{42}{section*.44}%
+\contentsline {subsection}{\numberline {4.3.5}Conclusiones de la comparativa}{43}{subsection.4.3.5}%
+\contentsline {chapter}{\numberline {5}Meta-learning para estimación de edades estelares}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introducción}{45}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Model-Agnostic Meta-Learning Algorithm}{46}{section.5.2}%
+\contentsline {section}{\numberline {5.3}MAML en regresión}{47}{section.5.3}%
+\contentsline {section}{\numberline {5.4}MAML para datación estelar}{50}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Inyección de los datos}{50}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Procese de aprendizaje}{52}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Resultados obtenidos}{54}{subsection.5.4.3}%
+\contentsline {chapter}{\numberline {6}Conclusiones}{57}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Modelos clásicos de IA para datación de estrellas}{57}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Meta-Learning aplicado al problema de la estimación de la edad de las estrellas}{58}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Conclusiones personales}{59}{section.6.3}%
+\contentsline {chapter}{{}Bibliografía}{61}{section.6.3}%

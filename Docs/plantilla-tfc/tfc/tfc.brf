@@ -1,5 +1,6 @@
-\backcite {sanders2018}{{\es@scroman {xxiii}}{(document)}{Doc-Start}}
+\backcite {sanders2018}{{\es@scroman {xxi}}{(document)}{Doc-Start}}
 \backcite {finn2017modelagnostic}{{\es@scroman {xxv}}{(document)}{Doc-Start}}
+\backcite {finn2017modelagnostic}{{\es@scroman {xxvi}}{(document)}{Doc-Start}}
 \backcite {Soderblom10}{{1}{1}{chapter.1}}
 \backcite {Soderblom15}{{2}{1}{chapter.1}}
 \backcite {Soderblom10}{{2}{1}{chapter.1}}
@@ -16,9 +17,9 @@
 \backcite {Angus20}{{2}{1}{chapter.1}}
 \backcite {Angus19}{{2}{1}{chapter.1}}
 \backcite {Angus19}{{3}{1}{chapter.1}}
-\backcite {Angus15}{{3}{1.1}{section.1.1}}
-\backcite {Metcalfe19}{{3}{1.1}{section.1.1}}
-\backcite {Saders16}{{3}{1.1}{section.1.1}}
+\backcite {Angus15}{{3}{1}{chapter.1}}
+\backcite {Metcalfe19}{{3}{1}{chapter.1}}
+\backcite {Saders16}{{3}{1}{chapter.1}}
 \backcite {Barnes03}{{5}{2.1}{section.2.1}}
 \backcite {Barnes07}{{5}{2.1}{section.2.1}}
 \backcite {MH}{{5}{2.1}{section.2.1}}
@@ -43,8 +44,10 @@
 \backcite {das2018}{{6}{2.2}{section.2.2}}
 \backcite {sanders2018}{{6}{2.2}{section.2.2}}
 \backcite {sanders2018}{{6}{2.2}{section.2.2}}
+\backcite {Gaia2018}{{6}{2.2}{section.2.2}}
 \backcite {stardate}{{6}{2.2}{section.2.2}}
 \backcite {Angus19}{{6}{2.2}{section.2.2}}
+\backcite {sanders2018}{{6}{2.2}{section.2.2}}
 \backcite {sanders2018}{{6}{2.2}{section.2.2}}
 \backcite {2020AAS...23633104M}{{6}{2.2}{section.2.2}}
 \backcite {Jadhav_2021}{{7}{2.2}{section.2.2}}
@@ -66,13 +69,13 @@
 \backcite {Ceillier16}{{9}{3}{table.3.1}}
 \backcite {Nielsen13}{{9}{3}{table.3.1}}
 \backcite {Reinhold13}{{9}{3}{table.3.1}}
-\backcite {Barnes16}{{9}{3}{table.3.1}}
-\backcite {Gonzalez16}{{9}{3}{table.3.1}}
-\backcite {Meibom11}{{9}{3}{table.3.1}}
-\backcite {Meibom15}{{9}{3}{table.3.1}}
-\backcite {Rebull17}{{9}{3}{table.3.1}}
-\backcite {Barnes16}{{9}{3}{table.3.1}}
-\backcite {Gonzalez16}{{9}{3}{table.3.1}}
+\backcite {Barnes16}{{10}{3}{table.3.1}}
+\backcite {Gonzalez16}{{10}{3}{table.3.1}}
+\backcite {Meibom11}{{10}{3}{table.3.1}}
+\backcite {Meibom15}{{10}{3}{table.3.1}}
+\backcite {Rebull17}{{10}{3}{table.3.1}}
+\backcite {Barnes16}{{10}{3}{table.3.1}}
+\backcite {Gonzalez16}{{10}{3}{table.3.1}}
 \backcite {Barnes16}{{10}{3}{table.3.1}}
 \backcite {Gonzalez16}{{10}{3}{table.3.1}}
 \backcite {Barnes16}{{10}{3}{table.3.1}}
@@ -87,14 +90,17 @@
 \backcite {Moya18}{{10}{3}{table.3.1}}
 \backcite {Breiman1984}{{16}{4.1}{equation.4.1.2}}
 \backcite {Breiman2001}{{16}{4.1}{equation.4.1.2}}
-\backcite {LIBSVM}{{16}{4.1}{equation.4.1.2}}
-\backcite {Rasmussen2006}{{16}{4.1}{equation.4.1.2}}
+\backcite {LIBSVM}{{17}{4.1}{equation.4.1.2}}
+\backcite {Rasmussen2006}{{17}{4.1}{equation.4.1.2}}
 \backcite {LeCun2012}{{17}{4.1}{equation.4.1.2}}
 \backcite {sgd}{{17}{4.1}{equation.4.1.2}}
-\backcite {Wolpert1992}{{17}{4.1}{figure.4.1}}
-\backcite {scikit-learn}{{23}{4.3.1}{section*.8}}
-\backcite {finn2017modelagnostic}{{79}{5.1}{section.5.1}}
-\backcite {finn2017modelagnostic}{{80}{5.3}{section.5.3}}
-\backcite {finn2017modelagnostic}{{83}{5.4.1}{subsection.5.4.1}}
-\backcite {nichol2018firstorder}{{90}{6.2}{section.6.2}}
-\backcite {yao2021metalearning}{{90}{6.2}{section.6.2}}
+\backcite {Wolpert1992}{{18}{4.1}{figure.4.1}}
+\backcite {scikit-learn}{{24}{4.3.1}{section*.8}}
+\backcite {finn2017modelagnostic}{{45}{5.1}{section.5.1}}
+\backcite {finn2017modelagnostic}{{45}{5.1}{section.5.1}}
+\backcite {finn2017modelagnostic}{{46}{5.2}{section.5.2}}
+\backcite {finn2017modelagnostic}{{47}{5.3}{section.5.3}}
+\backcite {finn2017modelagnostic}{{51}{5.4.1}{subsection.5.4.1}}
+\backcite {AI4STARTS}{{58}{6.1}{section.6.1}}
+\backcite {nichol2018firstorder}{{58}{6.2}{section.6.2}}
+\backcite {yao2021metalearning}{{58}{6.2}{section.6.2}}
