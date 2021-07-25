@@ -13,7 +13,7 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama HR mostrando la muestra MS.}}{11}{figure.3.1}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces $M$ - $P_{\rm rot}$ para las estrellas elegidas.}}{12}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces $M$ - $P_{\rm rot}$ para las estrellas elegidas. La edad se muestra en escala de color.}}{12}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces $Edad$ - $P_{\rm rot}$ para las estrellas elegidas. Las estrellas asterosísimicas y de cúmulos se muestran en colores diferentes. También se representa la regresión lineal obtenida usando estos dos grupos.}}{13}{figure.3.4}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces $Edad$ - $P_{\rm rot}$ para las estrellas elegidas. Las estrellas astrosísmicas y de cúmulos se muestran en colores diferentes. También se representa la regresión lineal obtenida usando estos dos grupos.}}{13}{figure.3.4}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitectura de la red neuronal implementada. Se han usado 3 capas ocultas, con 50 unidades en cada una seguida de una ReLU. La salida no tiene función de activación, para realizar directamente la estimación de la edad.}}{18}{figure.4.1}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Benchmark A: Distribución de las estrellas que forman el subconjunto de entrenamiento.}}{19}{figure.4.2}%
@@ -50,9 +50,9 @@
 \contentsline {figure}{\numberline {4.33}{\ignorespaces Benchmark C. Predicción detallada de los modelos svm, dtr, lr y bayes.}}{44}{figure.4.33}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Paso a paso del algoritmo del Model-Agnostic Meta-Learning.}}{47}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Resultados del estudio de regresión sobre las ondas senoidales con K = 5.}}{49}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados del estudio de regresión sobre las ondas senoidales con K = 10.}}{49}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Resultados del estudio de regresión sobre las ondas senoidales con K = 20.}}{50}{figure.5.4}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Resultados del estudio de regresión sobre las ondas sinusoidales con K = 5.}}{49}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados del estudio de regresión sobre las ondas sinusoidales con K = 10.}}{49}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Resultados del estudio de regresión sobre las ondas sinusoidales con K = 20.}}{50}{figure.5.4}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Esquema de la inyección de datos durante la fase de entrenamiento.}}{51}{figure.5.5}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Esquema de la inyección de datos durante la fase de prueba.}}{52}{figure.5.6}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Esquema del funcionamiento interno del modelo durante el proceso de entrenamiento.}}{53}{figure.5.7}%
