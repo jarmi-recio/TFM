@@ -28,34 +28,55 @@
 \contentsline {figure}{\numberline {4.11}{\ignorespaces Benchmark A: Rendimiento para el modelo Stacking.}}{26}{figure.4.11}%
 \contentsline {figure}{\numberline {4.12}{\ignorespaces Benchmark A: Predicción detallada para el modelo de Stacking. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{26}{figure.4.12}%
 \contentsline {figure}{\numberline {4.13}{\ignorespaces Benchmark A: MAE en función del rango de edad del conjunto de prueba.}}{27}{figure.4.13}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Benchmark A. Predicción detallada de los modelos nnet, gp, kNN y rf.}}{28}{figure.4.14}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Benchmark A. Predicción detallada de los modelos svm, dtr, lr y bayes.}}{29}{figure.4.15}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Benchmark B1: Rendimiento de los modelos en función del MAE.}}{30}{figure.4.16}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Benchmark B2: Rendimiento de los modelos en función del MAE.}}{30}{figure.4.17}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Benchmark B1: Rendimiento para el modelo Neural Network.}}{31}{figure.4.18}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Benchmark B1: Predicción detallada para el modelo de Neural Network. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{32}{figure.4.19}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces Benchmark B1: MAE en función del rango de edad del conjunto de prueba.}}{32}{figure.4.20}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Benchmark B2: Rendimiento para el modelo Bayessian Regression.}}{33}{figure.4.21}%
-\contentsline {figure}{\numberline {4.22}{\ignorespaces Benchmark B2: Predicción detallada para el modelo de Bayessian Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{34}{figure.4.22}%
-\contentsline {figure}{\numberline {4.23}{\ignorespaces Benchmark B2: MAE en función del rango de edad del conjunto de prueba.}}{34}{figure.4.23}%
-\contentsline {figure}{\numberline {4.24}{\ignorespaces Benchmark B1. Predicción detallada de los modelos knn, rf, svm y dtr.}}{35}{figure.4.24}%
-\contentsline {figure}{\numberline {4.25}{\ignorespaces Benchmark B1. Predicción detallada de los modelos lr, bayes y gp.}}{37}{figure.4.25}%
-\contentsline {figure}{\numberline {4.26}{\ignorespaces Benchmark B2. Predicción detallada de los modelos knn, rf, svm y dtr.}}{38}{figure.4.26}%
-\contentsline {figure}{\numberline {4.27}{\ignorespaces Benchmark B1. Predicción detallada de los modelos lr, bayes y gp.}}{39}{figure.4.27}%
-\contentsline {figure}{\numberline {4.28}{\ignorespaces Benchmark C: Rendimiento de los modelos en función del MAE.}}{39}{figure.4.28}%
-\contentsline {figure}{\numberline {4.29}{\ignorespaces Benchmark C: Rendimiento para el modelo Gaussian Process. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}}{40}{figure.4.29}%
-\contentsline {figure}{\numberline {4.30}{\ignorespaces Benchmark C: Predicción detallada para el modelo de Gaussian Process. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}}{41}{figure.4.30}%
-\contentsline {figure}{\numberline {4.31}{\ignorespaces Benchmark C: MAE en función del rango de edad del conjunto de prueba.}}{41}{figure.4.31}%
-\contentsline {figure}{\numberline {4.32}{\ignorespaces Benchmark C. Predicción detallada de los modelos stacking, nnet, knn y rf.}}{43}{figure.4.32}%
-\contentsline {figure}{\numberline {4.33}{\ignorespaces Benchmark C. Predicción detallada de los modelos svm, dtr, lr y bayes.}}{44}{figure.4.33}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Modelo Neural Network}}{28}{figure.4.14}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Modelo Gaussian Process}}{28}{figure.4.15}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Modelo k-Nearest Neighbor}}{28}{figure.4.16}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Modelo Random Forest}}{28}{figure.4.17}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Benchmark B1: Rendimiento de los modelos en función del MAE.}}{29}{figure.4.22}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Modelo Support Vector Regression}}{30}{figure.4.18}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Modelo Decision Tree Regressor}}{30}{figure.4.19}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Modelo Linear Regressor}}{30}{figure.4.20}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Modelo Bayesian Regression}}{30}{figure.4.21}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Benchmark B2: Rendimiento de los modelos en función del MAE.}}{30}{figure.4.23}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Benchmark B1: Rendimiento para el modelo Neural Network.}}{31}{figure.4.24}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces Benchmark B1: Predicción detallada para el modelo de Neural Network. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{32}{figure.4.25}%
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Benchmark B1: MAE en función del rango de edad del conjunto de prueba.}}{32}{figure.4.26}%
+\contentsline {figure}{\numberline {4.27}{\ignorespaces Benchmark B2: Rendimiento para el modelo Bayessian Regression.}}{33}{figure.4.27}%
+\contentsline {figure}{\numberline {4.28}{\ignorespaces Benchmark B2: Predicción detallada para el modelo de Bayessian Regression. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).}}{34}{figure.4.28}%
+\contentsline {figure}{\numberline {4.29}{\ignorespaces Benchmark B2: MAE en función del rango de edad del conjunto de prueba.}}{34}{figure.4.29}%
+\contentsline {figure}{\numberline {4.30}{\ignorespaces Modelo k-Nearest Neighbor}}{36}{figure.4.30}%
+\contentsline {figure}{\numberline {4.31}{\ignorespaces Modelo Random Forest}}{36}{figure.4.31}%
+\contentsline {figure}{\numberline {4.32}{\ignorespaces Modelo Support Vector Regression}}{36}{figure.4.32}%
+\contentsline {figure}{\numberline {4.33}{\ignorespaces Modelo Decision Tree Regressor}}{36}{figure.4.33}%
+\contentsline {figure}{\numberline {4.34}{\ignorespaces Modelo Linear Regressor}}{37}{figure.4.34}%
+\contentsline {figure}{\numberline {4.35}{\ignorespaces Modelo Bayesian Regression}}{37}{figure.4.35}%
+\contentsline {figure}{\numberline {4.36}{\ignorespaces Modelo Gaussian Process}}{37}{figure.4.36}%
+\contentsline {figure}{\numberline {4.37}{\ignorespaces Modelo k-Nearest Neighbor}}{38}{figure.4.37}%
+\contentsline {figure}{\numberline {4.38}{\ignorespaces Modelo Random Forest}}{38}{figure.4.38}%
+\contentsline {figure}{\numberline {4.39}{\ignorespaces Modelo Support Vector Regression}}{38}{figure.4.39}%
+\contentsline {figure}{\numberline {4.40}{\ignorespaces Modelo Decision Tree Regression}}{38}{figure.4.40}%
+\contentsline {figure}{\numberline {4.41}{\ignorespaces Modelo Linear Regressor}}{39}{figure.4.41}%
+\contentsline {figure}{\numberline {4.42}{\ignorespaces Modelo Neural Network}}{39}{figure.4.42}%
+\contentsline {figure}{\numberline {4.43}{\ignorespaces Modelo Gaussian Process}}{39}{figure.4.43}%
+\contentsline {figure}{\numberline {4.44}{\ignorespaces Benchmark C: Rendimiento de los modelos en función del MAE.}}{40}{figure.4.44}%
+\contentsline {figure}{\numberline {4.45}{\ignorespaces Benchmark C: Rendimiento para el modelo Gaussian Process. El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}}{41}{figure.4.45}%
+\contentsline {figure}{\numberline {4.46}{\ignorespaces Benchmark C: Predicción detallada para el modelo de Gaussian Process. Se observa la edad real (en azul), la predicción de los modelos (en naranja), y el error correspondiente (en rojo).El punto amarillo se corresponde con la representación de la estimación de la edad del Sol.}}{41}{figure.4.46}%
+\contentsline {figure}{\numberline {4.47}{\ignorespaces Benchmark C: MAE en función del rango de edad del conjunto de prueba.}}{42}{figure.4.47}%
+\contentsline {figure}{\numberline {4.48}{\ignorespaces Modelo Stacking}}{43}{figure.4.48}%
+\contentsline {figure}{\numberline {4.49}{\ignorespaces Modelo Neural Network}}{43}{figure.4.49}%
+\contentsline {figure}{\numberline {4.50}{\ignorespaces Modelo k-Nearest Neighbor}}{43}{figure.4.50}%
+\contentsline {figure}{\numberline {4.51}{\ignorespaces Modelo Random Forest}}{43}{figure.4.51}%
+\contentsline {figure}{\numberline {4.52}{\ignorespaces Modelo Support Vector Regression}}{44}{figure.4.52}%
+\contentsline {figure}{\numberline {4.53}{\ignorespaces Modelo Decision Tree Regression}}{44}{figure.4.53}%
+\contentsline {figure}{\numberline {4.54}{\ignorespaces Modelo Linear Regressor}}{44}{figure.4.54}%
+\contentsline {figure}{\numberline {4.55}{\ignorespaces Modelo Bayesian Regression}}{44}{figure.4.55}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Paso a paso del algoritmo del Model-Agnostic Meta-Learning.}}{47}{figure.5.1}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Resultados del estudio de regresión sobre las ondas sinusoidales con K = 5.}}{49}{figure.5.2}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados del estudio de regresión sobre las ondas sinusoidales con K = 10.}}{49}{figure.5.3}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Resultados del estudio de regresión sobre las ondas sinusoidales con K = 20.}}{50}{figure.5.4}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Esquema de la inyección de datos durante la fase de entrenamiento.}}{51}{figure.5.5}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Esquema de la inyección de datos durante la fase de prueba.}}{52}{figure.5.6}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Esquema del funcionamiento interno del modelo durante el proceso de entrenamiento.}}{53}{figure.5.7}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Esquema del funcionamiento interno del modelo durante el proceso de prueba.}}{54}{figure.5.8}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Comparación del MSE para las distintas configuraciones de la red neuronal}}{55}{figure.5.9}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Resultados del estudio de regresión sobre las ondas sinusoidales con K = 5.}}{51}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Resultados del estudio de regresión sobre las ondas sinusoidales con K = 10.}}{51}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados del estudio de regresión sobre las ondas sinusoidales con K = 20.}}{52}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Esquema de la inyección de datos durante la fase de entrenamiento.}}{54}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Esquema de la inyección de datos durante la fase de prueba.}}{54}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Esquema del funcionamiento interno del modelo durante el proceso de entrenamiento.}}{55}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Esquema del funcionamiento interno del modelo durante el proceso de prueba.}}{56}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Comparación del MSE para las distintas configuraciones de la red neuronal}}{57}{figure.5.8}%
 \addvspace {10\p@ }

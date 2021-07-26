@@ -109,7 +109,7 @@ Se van a apartar 32 estrellas no agrupadas (incluido el Sol) datadas utilizando 
 Desafortunadamente, esta muestra exhibe dos sesgos importantes: 1) la muestra astrosísmica está sesgada hacia las estrellas masivas y ancianas; y 2) la muestra basada en cúmulos está cuantificada por edad y sesgada hacia edades más jóvenes. En los experimentos se muestra que, a pesar de los sesgos, las técnicas de aprendizaje automático pueden extraer información confiable del conjunto de datos para estimar edades estelares. Con el tiempo, especialmente con las misiones espaciales actuales y futuras, estos sesgos se irán mitigando progresivamente, con la consecuente mejora de las estimaciones.
 
 
-\section{Entendiendo la bas de datos}
+\section{Entendiendo la base de datos}
 
 En la Figura \ref{Fig:HR_select}, se muestra la posición en el diagrama de Hertzsprung-Russell de todas las estrellas MS (secuencia principal) seleccionadas. También se muestra cuáles son los miembros de un cúmulo y cuáles se han caracterizado mediante astrosismología. Aquí se puede ver que las estrellas astrosísmicas cubren la zona más masiva y/o evolucionada del diagrama HR, y las estrellas del cúmulo son más jóvenes y también cubren la región de baja masa.
 
@@ -371,7 +371,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
  \label{fig:benchA_details_stacking_3}
 \end{figure}
 
-En la Figura \ref{fig:benchA_details_1} se adjuntan las gráficas que detallan el rendimiento de los modelos Neural Network, Gaussian Process, kNN y Random Forest. En sus correspondientes gráficas se puede apreciar:
+En las Figuras \ref{fig:benchA_details_1_1}, \ref{fig:benchA_details_1_2}, \ref{fig:benchA_details_1_3} y \ref{fig:benchA_details_1_4} se adjuntan las gráficas que detallan el rendimiento de los modelos Neural Network, Gaussian Process, kNN y Random Forest. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Neural Network} 
 La red neuronal es el segundo mejor modelo, después del stacking, con un MAE de 0.405 Gyr. Al igual que con el modelo del Stacking, en las gráficas de la red neuronal se aprecia cierta dificultad para colocar todas las estrellas los cúmulos de 0.7 y 4.2 Gyr dentro del margen de confianza. Por otro lado, el error medio entre edades varia desde 0.2 a 0.8 Gyr, aumentando la diferencia del modelo de Stacking.
@@ -391,59 +391,65 @@ El último modelo de este bloque es el de Random Forest, con un MAE de 0.572 Gyr
 
 %Benchmark A
 \begin{figure*}[h]
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[nnet]{\label{fig:benchA_details_nnet_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_nnet_1.pdf}}
+\subfloat{\label{fig:benchA_details_nnet_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_nnet_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_nnet_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_nnet_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_nnet_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_nnet_3.pdf}}
 \end{minipage}\par\medskip
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Neural Network}
+\label{fig:benchA_details_1_1}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[gp]{\label{fig:benchA_details_gp_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_gp_1.pdf}}
+\subfloat{\label{fig:benchA_details_gp_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_gp_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_gp_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_gp_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_gp_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_gp_3.pdf}}
 \end{minipage}\par\medskip
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Gaussian Process}
+\label{fig:benchA_details_1_2}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[knn]{\label{fig:benchA_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_knn_1.pdf}}
+\subfloat{\label{fig:benchA_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_knn_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_knn_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_knn_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_knn_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_knn_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo k-Nearest Neighbor}
+_\label{fig:benchA_details_1_3}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[rf]{\label{fig:benchA_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_rf_1.pdf}}
+\subfloat{\label{fig:benchA_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_rf_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_rf_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_rf_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_rf_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_rf_3.pdf}}
 \end{minipage}
-\caption{Benchmark A. Predicción detallada de los modelos nnet, gp, kNN y rf.}
-\label{fig:benchA_details_1}
+\caption{Modelo Random Forest}
+\label{fig:benchA_details_1_4}
 \end{figure*}
 
-En la Figura \ref{fig:benchA_details_1} se adjuntan las gráficas que detallan el rendimiento de los modelos Support Vector Regression, Decision Tree Regressor, Linear Regressor y Bayesian Regression. En sus correspondientes gráficas se puede apreciar:
+En las Figuras \ref{fig:benchA_details_2_1}, \ref{fig:benchA_details_2_2}, \ref{fig:benchA_details_2_3} y \ref{fig:benchA_details_2_4} se adjuntan las gráficas que detallan el rendimiento de los modelos Support Vector Regression, Decision Tree Regressor, Linear Regressor y Bayesian Regression. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Support Vector Regression} 
 El modelo Support Vector Regression ha presentado un MAE de 0.676 Gyr. Se siguen presentando dificultades para estimar correctamente todas las estrellas de los cúmulos de 0.7, y sobre todo, 4.2 Gyr.También se aprecia cierta correlación entre la edad y el error medio obtenido en las estimaciones. 
@@ -460,56 +466,62 @@ El modelo Linear Regressor, con un MAE de 0.951 Gyr, sigue mostrando problemas d
 Por último, el modelo Bayesian Regression. Este muestra los peores resultados junto con el modelo Linear Regressor, ambos con un MAE de 0.951 Gyr. Tal y como se ha visto en el modelo anterior, las figuras muestran un error constante para todas las edades del conjunto de prueba. No se encuentran picos de error excesivamente elevados, pero la constante presencia de errores de estimación lo convierten en el peor modelo de este \emph{benchmark}. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure*}[h]
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[svm]{\label{fig:benchA_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_svm_1.pdf}}
+\subfloat{\label{fig:benchA_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_svm_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_svm_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_svm_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_svm_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_svm_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Support Vector Regression}
+\label{fig:benchA_details_2_1}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[dtr]{\label{fig:benchA_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_dtr_1.pdf}}
+\subfloat{\label{fig:benchA_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_dtr_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_dtr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_dtr_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_dtr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_dtr_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Decision Tree Regressor}
+\label{fig:benchA_details_2_2}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[lr]{\label{fig:benchA_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_lr_1.pdf}}
+\subfloat{\label{fig:benchA_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_lr_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_lr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_lr_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_lr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_lr_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Linear Regressor}
+\label{fig:benchA_details_2_3}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[bayes]{\label{fig:benchA_details_bayes_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_bayes_1.pdf}}
+\subfloat{\label{fig:benchA_details_bayes_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_bayes_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_bayes_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_bayes_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchA_details_bayes_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_A_bayes_3.pdf}}
 \end{minipage}
-\caption{Benchmark A. Predicción detallada de los modelos svm, dtr, lr y bayes.}
-\label{fig:benchA_details_2}
+\caption{Modelo Bayesian Regression}
+\label{fig:benchA_details_2_4}
 \end{figure*}
 
 
@@ -597,7 +609,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
 \end{figure}
 
 %Benchmark B1
-A continuación, se detalla el resto de modelos del Benchmark B1, en la Figura \ref{fig:benchB1_details_1} se adjuntan las gráficas correspondientes al rendimiento de los modelos kNN, Random Forest, Support Vector Regression y Decision Tree Regression. En sus correspondientes gráficas se puede apreciar:
+A continuación, se detalla el resto de modelos del Benchmark B1, en las Figuras \ref{fig:benchB1_details_1_1}, \ref{fig:benchB1_details_1_2}, \ref{fig:benchB1_details_1_3} y \ref{fig:benchB1_details_1_4} se adjuntan las gráficas correspondientes al rendimiento de los modelos kNN, Random Forest, Support Vector Regression y Decision Tree Regression. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{kNN} 
 El modelo kNN presenta un MAE de 1.605 Gyr. En las figuras se observa que solo se realizan estimaciones dentro del margen de error para edades inferiores a 5 Gyr. Además, la segunda figura muestra que el modelo es incapaz de generar estimaciones por encima de 4.2 Gyr, la edad máxima que conoce del conjunto de entrenamiento.  %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
@@ -612,59 +624,66 @@ El modelo Support Vector Regression, con un MAE de 1.724 Gyr, presenta diferenci
 El modelo Decision Tree Regression ha presentado un MAE de 1.621 Gyr. La primera figura ilustra los problemas que tiene el modelo para generar edades superiores a 4.2 Gyr. De hecho, parece que el modelo solo conoce estrellas de 4.2 y 3.2 Gyr, pues, tiende a esos valores durante todo el espectro de edades. Tal y como se ha visto hasta el momento, el error medio de estimación aumenta con la edad real a estimar. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure*}[h]
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[knn]{\label{fig:benchB1_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_knn_1.pdf}}
+\subfloat{\label{fig:benchB1_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_knn_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_knn_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_knn_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_knn_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_knn_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo k-Nearest Neighbor}
+\label{fig:benchB1_details_1_1}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[rf]{\label{fig:benchB1_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_rf_1.pdf}}
+\subfloat{\label{fig:benchB1_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_rf_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_rf_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_rf_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_rf_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_rf_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Random Forest}
+\label{fig:benchB1_details_1_2}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[svm]{\label{fig:benchB1_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_svm_1.pdf}}
+\subfloat{\label{fig:benchB1_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_svm_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_svm_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_svm_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_svm_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_svm_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Support Vector Regression}
+\label{fig:benchB1_details_1_3}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[dtr]{\label{fig:benchB1_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_dtr_1.pdf}}
+\subfloat{\label{fig:benchB1_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_dtr_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_dtr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_dtr_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_dtr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_dtr_3.pdf}}
 \end{minipage}
-\caption{Benchmark B1. Predicción detallada de los modelos knn, rf, svm y dtr.}
-\label{fig:benchB1_details_1}
+\caption{Modelo Decision Tree Regressor}
+\label{fig:benchB1_details_1_4}
 \end{figure*}
 
-En la Figura \ref{fig:benchB1_details_2} se adjuntan las gráficas que detallan el rendimiento de los modelos Linear Regressor, Bayesian Regression y Gaussian Process para el Benchmark B1. En sus correspondientes gráficas se puede apreciar:
+
+En las Figuras \ref{fig:benchB1_details_2_1}, \ref{fig:benchB1_details_2_2} y \ref{fig:benchB1_details_2_3} se adjuntan las gráficas que detallan el rendimiento de los modelos Linear Regressor, Bayesian Regression y Gaussian Process para el Benchmark B1. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Linear Regressor} 
 El modelo Linear Regressor muestra el segundo peor rendimiento de este \emph{benchmark} con un MAE de 1.923 Gyr. La primera figura muestra los problemas que tiene el modelo para estimar todo el espectro de edades, incluidas las estrellas de 4.2 Gyr que ya conoce y para las que estima edades entre 1 y 5 Gyr. El modelo consigue generar edades de hasta 6 Gyr, pero no consigue introducir demasiadas estimaciones dentro de los márgenes de error. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
@@ -676,49 +695,53 @@ El modelo Bayesian Regression ha presentado los peores resultados del \emph{benc
 Por último, el modelo Gaussian Process, con un MAE de 1.670 Gyr. Aquí se siguen observando para estimar la edad de 4.2 Gyr, pero no se llega al nivel de los dos modelos anteriores. Este modelo sigue la tendencia de todos los que hemos visto hasta el momento, no es capaz de estimar edades superiores a 4.2 Gyr aunque consigue introducir alguna estimación dentro del margen de error. Evidentemente, el error medio aumenta con las edades reales a estimar. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure*}[h]
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[lr]{\label{fig:benchB1_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_lr_1.pdf}}
+\subfloat{\label{fig:benchB1_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_lr_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_lr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_lr_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_lr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_lr_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Linear Regressor}
+\label{fig:benchB1_details_2_1}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[bayes]{\label{fig:benchB1_details_bayes_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_bayes_1.pdf}}
+\subfloat{\label{fig:benchB1_details_bayes_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_bayes_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_bayes_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_bayes_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_bayes_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_bayes_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Bayesian Regression}
+\label{fig:benchB1_details_2_2}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[gp]{\label{fig:benchB1_details_gp_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_gp_1.pdf}}
+\subfloat{\label{fig:benchB1_details_gp_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_gp_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_gp_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_gp_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB1_details_gp_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B1_gp_3.pdf}}
 \end{minipage}
-\caption{Benchmark B1. Predicción detallada de los modelos lr, bayes y gp.}
-\label{fig:benchB1_details_2}
+\caption{Modelo Gaussian Process}
+\label{fig:benchB1_details_2_3}
 \end{figure*}
 
 
 %Benchmark B2
-A continuación, se detalla el resto de modelos del Benchmark B2, en la Figura \ref{fig:benchB2_details_1} se adjuntan las gráficas correspondientes al rendimiento de los modelos kNN, Random Forest, Support Vector Regression y Decision Tree Regression. En sus correspondientes gráficas se puede apreciar:
+A continuación, se detalla el resto de modelos del Benchmark B2, en las Figuras \ref{fig:benchB2_details_1_1}, \ref{fig:benchB2_details_1_2}, \ref{fig:benchB2_details_1_3} y \ref{fig:benchB2_details_1_4} se adjuntan las gráficas correspondientes al rendimiento de los modelos kNN, Random Forest, Support Vector Regression y Decision Tree Regression. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{kNN} 
 El modelo kNN ha presentado un MAE de 1.841 Gyr. En la primera imagen se observan con mucha claridad los problemas que muestra el regresor lineal para estimar edades que no sean las de los cúmulos. La segunda figura confirma que solo se estiman valores de 0.79, 1, 2.5 y 4.2 Gyr. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
@@ -734,59 +757,66 @@ El modelo Support Vector Regression, con un MAE de 1.507 Gyr, muestra una nube d
 El modelo Decision Tree Regression, con un MAE de 1.901 Gyr, muestra un comportamiento similar al kNN, en que se ve con claridad si tendencia a estimar la edad de los cúmulos para todas las estrellas del conjunto de test. %TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure*}[h]
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[knn]{\label{fig:benchB2_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_knn_1.pdf}}
+\subfloat{\label{fig:benchB2_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_knn_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_knn_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_knn_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_knn_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_knn_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo k-Nearest Neighbor}
+\label{fig:benchB2_details_1_1}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[rf]{\label{fig:benchB2_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_rf_1.pdf}}
+\subfloat{\label{fig:benchB2_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_rf_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_rf_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_rf_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_rf_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_rf_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Random Forest}
+\label{fig:benchB2_details_1_2}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[svm]{\label{fig:benchB2_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_svm_1.pdf}}
+\subfloat{\label{fig:benchB2_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_svm_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_svm_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_svm_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_svm_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_svm_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Support Vector Regression}
+\label{fig:benchB2_details_1_3}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat[dtr]{\label{fig:benchB2_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_dtr_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_dtr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_dtr_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_dtr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_dtr_3.pdf}}
 \end{minipage}
-\caption{Benchmark B2. Predicción detallada de los modelos knn, rf, svm y dtr.}
-\label{fig:benchB2_details_1}
+\caption{Modelo Decision Tree Regression}
+\label{fig:benchB2_details_1_4}
 \end{figure*}
 
-En la Figura \ref{fig:benchB2_details_2} se adjuntan las gráficas que detallan el rendimiento de los modelos Linear Regressor, Neural Network y Gaussian Process para el Benchmark B2. En sus correspondientes gráficas se puede apreciar:
+
+En las Figuras \ref{fig:benchB2_details_2_1}, \ref{fig:benchB2_details_2_2} y \ref{fig:benchB2_details_2_3} se adjuntan las gráficas que detallan el rendimiento de los modelos Linear Regressor, Neural Network y Gaussian Process para el Benchmark B2. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Linear Regressor} 
 El modelo Linear Regressor, con un MAE de 1.561 Gyr, muestra un rendimiento similar a la máquina de vectores soporte. Te tiene una gran nube de estimaciones que caen dentro del margen de error para estrellas de hasta 4 Gyr, pero, para edades mayores presenta problemas en la estimación. La segunda figura muestra que se produce un error contante en la estimación de todo el espectro de edades.
@@ -798,47 +828,51 @@ La red neuronal, a diferencia del resto de escenarios, es uno de los modelos que
 
 \paragraph{Gaussian Process} 
 El último modelo de este \emph{benchmark} es Gaussian Process, el cual ha presentado un MAE de 1.624 Gyr. En la primera figura se puede observar un comportamiento ya conocido, pues, hasta las estrellas de 4 Gyr, consigue estimaciones aproximadas. Pero, cuando la edad a estimar pasa de 4 Gyr, se vuelve a demostrar la incapacidad para extrapolar y la tendencia a subestimar edades.
-%TODO: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
+%TODO_DONE: Si se ponen gráficas es para comentar algo sobre ellas, así que adelante.
 
 \begin{figure*}[h]
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[lr]{\label{fig:benchB2_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_lr_1.pdf}}
+\subfloat{\label{fig:benchB2_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_lr_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_lr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_lr_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_lr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_lr_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Linear Regressor}
+\label{fig:benchB2_details_2_1}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[nnet]{\label{fig:benchB2_details_nnet_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_nnet_1.pdf}}
+\subfloat{\label{fig:benchB2_details_nnet_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_nnet_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_nnet_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_nnet_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_nnet_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_nnet_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Neural Network}
+\label{fig:benchB2_details_2_2}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[gp]{\label{fig:benchB2_details_gp_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_gp_1.pdf}}
+\subfloat{\label{fig:benchB2_details_gp_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_gp_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_gp_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_gp_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchB2_details_gp_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_B2_gp_3.pdf}}
 \end{minipage}
-\caption{Benchmark B1. Predicción detallada de los modelos lr, bayes y gp.}
-\label{fig:benchB2_details_2}
+\caption{Modelo Gaussian Process}
+\label{fig:benchB2_details_2_3}
 \end{figure*}
 
 
@@ -899,7 +933,7 @@ A continuación, se muestran las 3 gráficas que detallan el rendimiento del mod
  \label{fig:benchC_best_3}
 \end{figure}
 
-A continuación, se detalla el resto de modelos del Benchmark C, en la Figura \ref{fig:benchC_details_1} se adjuntan las gráficas correspondientes al rendimiento de los modelos Stacking, Neural Network, kNN y Random Forest. En sus correspondientes gráficas se puede apreciar:
+A continuación, se detalla el resto de modelos del Benchmark C, en las Figuras \ref{fig:benchC_details_1_1}, \ref{fig:benchC_details_1_2}, \ref{fig:benchC_details_1_3} y \ref{fig:benchC_details_1_4} se adjuntan las gráficas correspondientes al rendimiento de los modelos Stacking, Neural Network, kNN y Random Forest. En sus correspondientes gráficas se puede apreciar:
 
 \paragraph{Stacking} 
 El modelo Stacking ha presentado un MAE de 0.991 Gyr. En la primera gráfica se vuelve a observa cierta dificultad para estimar estrellas cercanas a los 7 Gyr, y además, se aprecia mayor problema en la estimación de las estrellas más jóvenes. Este modelo sigue sin estimar el Sol dentro del margen de error. En este caso, se obtiene mayor error medio en la estimación de las estrellas más viejas.
@@ -914,56 +948,62 @@ El modelo kNN, con un MAE de 1.734 Gyr, presenta, a simple vista, mayor dispersi
 El modelo Random Forest, con un MAE de 1.006 Gyr, también presenta una buena estimación de la edad del Sol. Además, las dos primeras figuras muestran la oscilación de las estimaciones en torno a las edades reales, aunque la mayoría no lo suficientemente buenas como para entrar en el margen de error.
 
 \begin{figure*}[h]
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[stacking]{\label{fig:benchC_details_stacking_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_stacking_1.pdf}}
+\subfloat{\label{fig:benchC_details_stacking_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_stacking_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_stacking_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_stacking_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_stacking_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_stacking_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Stacking}
+\label{fig:benchC_details_1_1}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[nnet]{\label{fig:benchC_details_nnet_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_nnet_1.pdf}}
+\subfloat{\label{fig:benchC_details_nnet_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_nnet_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_nnet_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_nnet_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_nnet_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_nnet_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Neural Network}
+\label{fig:benchC_details_1_2}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[knn]{\label{fig:benchC_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_knn_1.pdf}}
+\subfloat{\label{fig:benchC_details_knn_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_knn_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_knn_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_knn_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_knn_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_knn_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo k-Nearest Neighbor}
+\label{fig:benchC_details_1_3}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[rf]{\label{fig:benchC_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_rf_1.pdf}}
+\subfloat{\label{fig:benchC_details_rf_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_rf_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_rf_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_rf_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_rf_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_rf_3.pdf}}
 \end{minipage}
-\caption{Benchmark C. Predicción detallada de los modelos stacking, nnet, knn y rf.}
-\label{fig:benchC_details_1}
+\caption{Modelo Random Forest}
+\label{fig:benchC_details_1_4}
 \end{figure*}
 
 En la Figura \ref{fig:benchC_details_2} se adjuntan las gráficas que detallan el rendimiento de los modelos Support Vector Regression, Decision Tree Regression, Linear Regressor y Bayesian Regression para el Benchmark C. En sus correspondientes gráficas se puede apreciar:
@@ -982,56 +1022,62 @@ El modelo Linear Regressor ha presentado un MAE de 1.297 Gyr. Sus dos primeras g
 Por último, se tiene el modelo Bayesian Regression, el cual ha presentado un MAE de 1.297 Gyr. Su comportamiento es similar al del modelo de regresión lineal, tomando un valor similar y una estimación de edades muy parecida.
 
 \begin{figure*}[h]
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[svm]{\label{fig:benchC_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_svm_1.pdf}}
+\subfloat{\label{fig:benchC_details_svm_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_svm_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_svm_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_svm_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_svm_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_svm_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Support Vector Regression}
+\label{fig:benchC_details_2_1}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[dtr]{\label{fig:benchC_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_dtr_1.pdf}}
+\subfloat{\label{fig:benchC_details_dtr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_dtr_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_dtr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_dtr_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_dtr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_dtr_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Decision Tree Regression}
+\label{fig:benchC_details_2_2}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[lr]{\label{fig:benchC_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_lr_1.pdf}}
+\subfloat{\label{fig:benchC_details_lr_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_lr_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_lr_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_lr_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_lr_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_lr_3.pdf}}
 \end{minipage}
-\begin{minipage}{.33\linewidth}
+\caption{Modelo Linear Regressor}
+\label{fig:benchC_details_2_3}
+\begin{minipage}{.35\linewidth}
 \centering
-\subfloat[bayes]{\label{fig:benchC_details_bayes_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_bayes_1.pdf}}
+\subfloat{\label{fig:benchC_details_bayes_1}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_bayes_1.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_bayes_2}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_bayes_2.pdf}}
 \end{minipage}%
-\begin{minipage}{.33\linewidth}
+\begin{minipage}{.35\linewidth}
 \centering
 \subfloat{\label{fig:benchC_details_bayes_3}\includegraphics[width=\linewidth]{Figuras/Experimentos/B_C_bayes_3.pdf}}
 \end{minipage}
-\caption{Benchmark C. Predicción detallada de los modelos svm, dtr, lr y bayes.}
-\label{fig:benchC_details_2}
+\caption{Modelo Bayesian Regression}
+\label{fig:benchC_details_2_4}
 \end{figure*}
 
 
@@ -1088,18 +1134,27 @@ Durante el metaentrenamiento, se muestrea una tarea proveniente de la distribuci
 
 Para el desarrollo del algoritmo se presenta un enfoque explícito para el problema. Ya que el modelo se ajustará utilizando una regla de aprendizaje basada en gradientes, el objetivo es hacer aprender a un modelo de tal manera que esta regla de aprendizaje basada en gradientes pueda hacer un avance rápido en nuevas tareas extraídas de la distribución total sin sobreajuste. Por tanto, el objetivo es encontrar los parámetros del modelo que sean sensibles a los cambios de las tareas, de modo que pequeños cambios en los parámetros producirán grandes mejoras en la función de pérdidas de cualquiera tarea. 
 
-La Figura \ref{fig:algorithm_maml} detalla paso a paso del algoritmo MAML. Inicialmente se requiere la distribución de tareas a la que se quiere adaptar el modelo, además del tamaños de los pasos de actualización de hiperparámetros.
+A continuación, se detalla paso a paso del algoritmo MAML. Inicialmente se requiere la distribución de tareas a la que se quiere adaptar el modelo, además del tamaños de los pasos de actualización de hiperparámetros.
 Entrando en detalle en cada paso del algoritmo, en primer lugar, se inicializa de forma aleatoria el vector de parámetros con el que se parametriza el modelo. El bucle principal del algoritmo comienza con un muestreo de tareas sobre la distribución inicial. Para cada una de estas tareas se evalúa la función de pérdidas respecto a las K muestras seleccionadas. A continuación, se realiza la adaptación de parámetros mediante el descenso de gradiente. Una vez se ha finalizado con el conjunto de tareas, se actualiza el vector de parámetros que parametriza el modelo.
 
-\begin{figure}[H]
-\begin{center}
- \includegraphics[width=0.8\linewidth]{Figuras/MAML/maml_alg.pdf}
-\end{center}
-\caption{Paso a paso del algoritmo del Model-Agnostic Meta-Learning.}
- \label{fig:algorithm_maml}
-\end{figure}
+\vspace{1cm}
 
-%TODO_DONE: creo que sería buena idea meter el algoritmo que aparece en el paper de MAMl. Sería copiar el algoritmo 1 que aparece en el artículo y ahbalr un poco de él.
+\begin{algorithm}[H]
+ \KwData{p(T): distribution over tasks}
+ \KwData{\alpha, \beta : step size hyperparameters}
+ randomly initialize \theta \;
+ \While{not done}{
+  Sample batch of tasks T_{i} \~ p(T)\;
+  \For{all Ti}{
+   Evaluate \nabla_{\theta} L_{T_{i}}(f_{\theta}) with respect to K examples\;
+   Compute adapted parameters with gradient descent: \theta_{i} = \theta − \alpha \nabla_{\theta} L_{Ti}(f_{\theta})\;
+   }
+  Update \theta ← \theta − \beta \nabla_{\theta} \sum_{Ti \~ p(T)} L_{Ti}(f_{\theta´_{i}})
+ }
+ \caption{Model-Agnostic Meta-Learning}
+\end{algorithm}
+
+%TODO: creo que sería buena idea meter el algoritmo que aparece en el paper de MAMl. Sería copiar el algoritmo 1 que aparece en el artículo y ahbalr un poco de él.
 
 \section{MAML en regresión}
 
@@ -1111,7 +1166,9 @@ Los investigadores proponen tres escenarios de aplicación para tratar de respon
 
 Conociendo los 3 escenarios expuestos en esta investigación y con el fin de abordar el problema de regresión de datación de estrellas, se toma como referencia el escenario de regresión simple. En este escenario, cada tarea implica una regresión de la entrada a la salida de una onda sinusoidal, donde la amplitud y la fase de la sinusoide varían en cada tareas.
 
-Para la generación de los senos se necesitan conocer los valores que pueden tomar la amplitud y la fase de los senos. Una vez definido esto, se parte de un vector equiespaciado con tantas muestras como puntos se quiere que tenga el seno. Sobre este vector se aplica la función seno con su correspondiente valor de fase y se multiplica por un valor amplitud. Así se obtienen tantos vectores senos como vectores se han definido para el tamaño de \emph{batch}.%TODO: al final cuantos vectores, de qué dimensiones, que se entienda lo que ve el algoritmo por dentro
+Para la generación de los senos se necesitan conocer los valores que pueden tomar la amplitud y la fase de los senos. Una vez definido esto, se parte de un vector equiespaciado con tantas muestras como puntos se quiere que tenga el seno. Sobre este vector se aplica la función seno con su correspondiente valor de fase y se multiplica por un valor amplitud. Así se obtienen tantos vectores senos como vectores se han definido para el tamaño de \emph{batch}.
+
+En la fase de entrenamiento, se generan 25 vectores, con los 20 puntos correspondientes al seno, por cada una de las 70000 iteraciones de metaentrenamiento. Son 25 vectores porque el tamaño de \emph{batch} es igual a 25. Después, en la etapa de prueba, se producen 600 iteraciones en las que se genera 1 vector de 20 puntos para cada iteración. En esta ocasión, el tamaño de \emph{batch} es igual a 1. Por lo tanto, el algoritmo tiene como entrada 25 vectores de 20 elementos por cada una de las 70000 iteraciones del metaentrenamiento y 1 vector de 20 elementos por cada una de las 600 iteraciones de prueba. De los 20 puntos que componen el seno, 10 se emplean íntegramente en el proceso de descenso de gradiente, por eso se denomina \emph{10-shot}. %TODO_DONE: al final cuantos vectores, de qué dimensiones, que se entienda lo que ve el algoritmo por dentro
 
 
 La función de pérdidas se corresponde con el error cuadrático medio entre la predicción y el valor real. El modelo regresor se basa en una red neuronal con 2 capas ocultas de tamaño 40 cada una, con función de activación ReLU. Para el entrenamiento del MAML, se utiliza un valor de actualización de gradiente igual a 10 con un tamaño fijo de \emph{step} de 0.01 y se emplea Adam como metaoptimizador.
@@ -1157,7 +1214,11 @@ En esta sección, se detalla la aplicación del algoritmo MAML sobre el problema
 
 Como se ha comentado en la introducción de este apartado, el set de datos elegido para estimar la edad estelar es el mismo que se detalla en la Sección \ref{sec:data}. Este set se compone de de 8 características asociadas a cada una de las estrellas que forman el dataset: temperatura estelar efectiva, logaritmo de la gravedad superficial, masa estelar, radio estelar, contenido de hierro sobre hidrógeno, luminosidad, periodo de rotación y la edad de la estrella.
 
-Este dataset es idéntico al que se ha detallado en la Sección \ref{sec:data}, ya que se parte de un conjunto de datos inicial sobre el que es necesario aplicar una serie de filtros asociados a la física detrás de la girocronolgía. Tras es filtrado, el conjunto de datos cuenta con un número relativamente reducido de muestras en comparación con los experimentos de regresión estudiados en \cite{finn2017modelagnostic}. Por tanto, ya que la el conjunto de datos completo incluye valores de error por exceso y defecto para cada una de las características, se aumenta el tamaño del dataset siguiendo una distribución normal de las características con sus valores de error asociados. Lo que resulta en un conjunto de más de 13000 estrellas con sus correspondientes características. %TODO: explica mejor cómo se genera, qué incluye el dataset, etc. Se trata de dar mas detalles. Explicando cuántos vectores, dimensiones, entre qué intervlaos se usa la función uniforme, pseudocódigo, etc. Hay que ser un pelín mas técnico.
+Este dataset es idéntico al que se ha detallado en la Sección \ref{sec:data}, ya que se parte de un conjunto de datos inicial sobre el que es necesario aplicar una serie de filtros asociados a la física detrás de la girocronolgía. Las características que se emplean para estimar la edad de las estrellas son: masa estelar, radio estelar, temperatura efectiva, luminosidad, metalicidad, logaritmo de la gravedad superficial y periodo de rotación.
+
+Tras es filtrado, el conjunto de datos cuenta con un número relativamente reducido de muestras en comparación con los experimentos de regresión estudiados en \cite{finn2017modelagnostic}. Por tanto, ya que la el conjunto de datos completo incluye valores de error por exceso y defecto para cada una de las características, se aumenta el tamaño del dataset siguiendo una distribución normal. Esta normal tiene como rango inferior el valor de cada característica menos su error por defecto y como rango superior, el valor de la característica más el error por exceso. Además, la función de la distribución normal tiene un parámetro asociado al número de muestras que se generan a partir de las características y sus valores de error asociado, este parámetro toma un valor igual a 20. Este proceso permite pasar de un conjunto de datos de 637 estrellas a un conjunto de datos de más de 13000 estrellas.
+
+En la práctica esto se traduce en 10600 vectores de 7 elementos, es decir, sus características, para el proceso de metaentrenamiento y 2651 vectores, con sus correspondientes 7 elementos, para el proceso de prueba. Es necesario tener en cuenta que el tamaño del \emph{batch} en el proceso de entrenamiento es igual a 20, por lo que las iteraciones totales de metaentrenamiento se obtienen de distribuir los 10600 vectores entre 20. Por otro lado, el tamaño de \emph{batch} del proceso de prueba es igual a 1, por lo que, no será necesario hacer un reparto de los vectores en cada iteración. %TODO_DONE: explica mejor cómo se genera, qué incluye el dataset, etc. Se trata de dar mas detalles. Explicando cuántos vectores, dimensiones, entre qué intervlaos se usa la función uniforme, pseudocódigo, etc. Hay que ser un pelín mas técnico.
 
 La división del conjunto total de estrellas en entrenamiento y prueba tiene una relación 80/20 respectivamente. Además, las edades se ordenan de forma creciente, por lo que, el conjunto de entrenamiento contiene estrellas de hasta 4.2 Gyrs de edad, mientras que el conjunto de prueba comprende edades de entre 4.2 Gyrs y 18.8 Gyrs.
 

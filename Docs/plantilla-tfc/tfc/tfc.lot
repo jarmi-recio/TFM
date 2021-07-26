@@ -10,7 +10,7 @@
 \contentsline {table}{\numberline {3.1}{\ignorespaces Características proporcionadas en la base de datos para cada estrella.}}{9}{table.3.1}%
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {4.1}{\ignorespaces Edad estimada para el Sol en Gyr. El método más preciso es rf. }}{40}{table.4.1}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Precisión de todos los métodos en los diferentes benchmarks. La precisión se mide como el porcentaje de estimaciones de edad que caen dentro del margen de confianza asociado a cada estrella.}}{44}{table.4.2}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Precisión de todos los métodos en los diferentes benchmarks. La precisión se mide como el porcentaje de estimaciones de edad que caen dentro del margen de confianza asociado a cada estrella.}}{45}{table.4.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces MSE para las diferentes arquitucturas y cada una de las actualizaciones de gradiente.}}{55}{table.5.1}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces MSE para las diferentes arquitucturas y cada una de las actualizaciones de gradiente.}}{57}{table.5.1}%
 \addvspace {10\p@ }
