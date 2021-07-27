@@ -1115,7 +1115,7 @@ Benchmark & nnet & lr & dtr & rf & svm & bayes & knn & gp & stacking \\
 
 \section{Introducción}
 
-En este trabajo, además de realizar un estudio comparativo sobre los modelos tradicionales de Inteligencia Artificial para regresión de edades estelares, proponemos abordar por primera vez, el aplicar técnicas de meta-learning a este problema. El meta-learning se define como el proceso de aprender a aprender con pocas muestras, o explicado de un modo mas técnico, sería el modo de entrenamiento de un modelo en varias tareas de aprendizaje, de modo que el modelo sea capaz de resolver nuevas tareas utilizando una pequeña cantidad de muestras. 
+En este trabajo, además de realizar un estudio comparativo sobre los modelos tradicionales de Inteligencia Artificial para regresión de edades estelares, se propone abordar por primera vez, el aplicar técnicas de meta-learning a este problema. El meta-learning se define como el proceso de aprender a aprender con pocas muestras, o explicado de un modo mas técnico, sería el modo de entrenamiento de un modelo en varias tareas de aprendizaje, de modo que el modelo sea capaz de resolver nuevas tareas utilizando una pequeña cantidad de muestras. 
 
 En particular, en este proyecto se estudia la aplicación del algoritmo MAML (model-agnostic meta-learning) \cite{finn2017modelagnostic}, para el problema de la estimación de edades estelares. Este algoritmo se denomina agnóstico del modelo porque es compatible con cualquier modelo entrenado con descenso de gradiente y aplicable a una variedad de diferentes problemas de aprendizaje, incluyendo clasificación, regresión y aprendizaje por refuerzo. 
 
@@ -1125,7 +1125,7 @@ La contribución principal de este trabajo fin de máster reside en un algoritmo
 
 \section{Model-Agnostic Meta-Learning Algorithm}
 \label{sec:metalearning}
-En esta sección comenzamos describiendo los detalles de MAML \cite{finn2017modelagnostic}. Durante el meta-learning, el modelo se entrena para poder adaptarse a un número grande o infinito de tareas. A continuación, se presenta una aproximación genérica de una tarea, permitiendo abordar una variedad de problemas de aprendizaje, desde la clasificación hasta el aprendizaje por refuerzo.
+En esta sección se comienza describiendo los detalles de MAML \cite{finn2017modelagnostic}. Durante el meta-learning, el modelo se entrena para poder adaptarse a un número grande o infinito de tareas. A continuación, se presenta una aproximación genérica de una tarea, permitiendo abordar una variedad de problemas de aprendizaje, desde la clasificación hasta el aprendizaje por refuerzo.
 
 Cada tarea consiste en una función de pérdidas, una distribución de las observaciones iniciales, una distribución de transición y una longitud de episodio. El modelo genera muestras con la longitud del episodio y la función de pérdidas proporciona retroalimentación específica para cada tarea.
 En el escenario de meta-learning, se tiene en cuenta una distribución de todas las tareas a las que se quiere adaptar el modelo. En la configuración del aprendizaje \emph{K-shot}, el modelo se entrena para que aprenda nuevas tareas de la distribución total, usando únicamente K muestras de la observación inicial y la retroalimentación proporcionada por la función de pérdidas para cada tarea. 
@@ -1141,15 +1141,15 @@ Entrando en detalle en cada paso del algoritmo, en primer lugar, se inicializa d
 
 \begin{algorithm}[H]
  \KwData{p(T): distribution over tasks}
- \KwData{\alpha, \beta : step size hyperparameters}
- randomly initialize \theta \;
+ \KwData{$\alpha$, $\beta$ : step size hyperparameters}
+ randomly initialize $\theta$ \;
  \While{not done}{
-  Sample batch of tasks T_{i} \~ p(T)\;
-  \For{all Ti}{
-   Evaluate \nabla_{\theta} L_{T_{i}}(f_{\theta}) with respect to K examples\;
-   Compute adapted parameters with gradient descent: \theta_{i} = \theta − \alpha \nabla_{\theta} L_{Ti}(f_{\theta})\;
-   }
-  Update \theta ← \theta − \beta \nabla_{\theta} \sum_{Ti \~ p(T)} L_{Ti}(f_{\theta´_{i}})
+ Sample batch of tasks $T_{i}$ $\~$ $p(T)$\;
+  \For{all $Ti$}{
+  Evaluate $\nabla_{\theta}$ $L_{T_{i}}(f_{\theta})$ with respect to K examples\;
+   Compute adapted parameters with gradient descent: $\theta_{i}$ = $\theta$ − $\alpha$ $\nabla_{\theta}$ $L_{Ti}(f_{\theta})$\;
+  }
+  Update $\theta$ ← $\theta$ − $\beta$ $\nabla_{\theta}$ $\sum_{Ti \~ p(T)}$ $L_{Ti}(f_{\theta´_{i}})$
  }
  \caption{Model-Agnostic Meta-Learning}
 \end{algorithm}
