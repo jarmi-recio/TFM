@@ -1138,23 +1138,24 @@ A continuación, se detalla paso a paso del algoritmo MAML. Inicialmente se requ
 Entrando en detalle en cada paso del algoritmo, en primer lugar, se inicializa de forma aleatoria el vector de parámetros con el que se parametriza el modelo. El bucle principal del algoritmo comienza con un muestreo de tareas sobre la distribución inicial. Para cada una de estas tareas se evalúa la función de pérdidas respecto a las K muestras seleccionadas. A continuación, se realiza la adaptación de parámetros mediante el descenso de gradiente. Una vez se ha finalizado con el conjunto de tareas, se actualiza el vector de parámetros que parametriza el modelo.
 
 \vspace{1cm}
-%TODO: debes traducirlo al Castellano
+%TODO_DONE: debes traducirlo al Castellano
 \begin{algorithm}[H]
- \KwData{p(T): distribution over tasks}
- \KwData{$\alpha$, $\beta$ : step size hyperparameters}
- randomly initialize $\theta$ \;
- \While{not done}{
- Sample batch of tasks $T_{i}$ $\~$ $p(T)$\;
+  \KwData{p(T): distribución de tareas}
+  \KwData{$\alpha$, $\beta$ : tamaños de los pasos de actualización de hiperparámetros}
+  Inicialización aleatoria de $\theta$\;
+  \While{not done}{
+  Muestreo de un \emph{batch} de tareas $T_{i}$ $\sim$ $p(T)$\;
   \For{all $Ti$}{
-  Evaluate $\nabla_{\theta}$ $L_{T_{i}}(f_{\theta})$ with respect to K examples\;
-   Compute adapted parameters with gradient descent: $\theta_{i}$ = $\theta$ − $\alpha$ $\nabla_{\theta}$ $L_{Ti}(f_{\theta})$\;
+    Evaluar $\nabla_{\theta}$ $L_{T_{i}}(f_{\theta})$ respecto a las K muestras\;
+    Realizar la adaptación de parámetros mediante el descenso de gradiente: $\theta_{i}'$ = $\theta$ - $\alpha$ $\nabla_{\theta}$ $L_{Ti}(f_{\theta})$\;
   }
-  Update $\theta$ ← $\theta$ − $\beta$ $\nabla_{\theta}$ $\sum_{Ti \~ p(T)}$ $L_{Ti}(f_{\theta´_{i}})$
- }
- \caption{Model-Agnostic Meta-Learning}
+  Actualizar $\theta$ ← $\theta$ - $\beta$ $\nabla_{\theta}$ $\sum_{Ti \sim p(T)}$ $L_{Ti}(f_{\theta_{i}'})$
+  }
+\caption{Model-Agnostic Meta-Learning}
 \end{algorithm}
 
-%TODO: creo que sería buena idea meter el algoritmo que aparece en el paper de MAMl. Sería copiar el algoritmo 1 que aparece en el artículo y ahbalr un poco de él.
+
+%TODO_DONE: creo que sería buena idea meter el algoritmo que aparece en el paper de MAMl. Sería copiar el algoritmo 1 que aparece en el artículo y ahbalr un poco de él.
 
 \section{MAML en regresión}
 
@@ -1241,7 +1242,7 @@ Durante la fase de entrenamiento del modelo, al algoritmo se le inyectan conjunt
 \end{figure}
 
 
-\subsection{Procese de aprendizaje} 
+\subsection{Proceso de aprendizaje} 
 
 Según se ha comentado en la sección anterior, el algoritmo procesa \emph{batches} de 20 estrellas durante el proceso de entrenamiento, 10 de estas estrellas pasan a ser directamente \emph{inputs} de la red neuronal del modelo y le proporcionan información del ajuste de pesos a las otras 10 estrellas que participarán en el proceso de actualización de gradiente. Esas 10 estrellas restantes, pasan por un proceso de actualización de gradiente en el que suceden 10 pasos, es decir, se producen 10 actualizaciones del gradiente hasta llegar a la estimación óptima. En cada una de las actualizaciones se produce una corrección de los pesos del modelo y se obtiene una medida de error asociada a la estimación de la edad por parte de la red neuronal con dichos pesos. La Figura \ref{fig:core_maml_train} ilustra el funcionamiento descrito.
 
@@ -1340,7 +1341,7 @@ Como reflexión personal, considero que el desarrollo de este proyecto me ha per
 Por otro lado, este proyecto también me ha ayudado a conocer un poco mejor la dinámica que podría seguirse en un proyecto de investigación. Acostumbrado al mundo de la empresa privada en el que todo se hace deprisa y con una calidad cuestionable, el tener que dedicarle horas a leer artículos y probar líneas de código distintas me permite adquirir nuevas competencias.
 
 %También considero que el papel de la figura de Director de TFM es crucial para obtener resultados satisfactorios, y es por eso que le agradezco a Roberto toda la ayuda y la orientación aportada para llegar a buen puerto en estre trabajo.
-%TODO: Gracias a ti Jarmi. Esto lo dejamos fuera de la memoria, pues para eso está la sección de agradecimientos.
+%TODO_DONE: Gracias a ti Jarmi. Esto lo dejamos fuera de la memoria, pues para eso está la sección de agradecimientos.
 
 
 
